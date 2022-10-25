@@ -1,59 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivityNoticias">
-
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="5dp"
-        android:background="#FFFFFF"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="5dp">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="4dp"
+        app:cardCornerRadius="10dp">
 
-        <ImageView
-            android:id="@+id/imgNoticia"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-             <TextView
-               android:id="@+id/tvNombre_noticia"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:gravity="center"
-               android:hint="nombre"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/tvDescripcion_noticia"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="center"
-            android:hint="descripcion"
-            android:textSize="24sp" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvLugar_noticia"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:gravity="center"
-            android:hint="Lugar"
-            android:textSize="30sp" />
+            <ImageView
+                android:id="@+id/imgNoticia"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/ic_launcher_background" />
 
-        <TextView
-            android:id="@+id/tvResponsable_noticia"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint="responsable"
-            android:textSize="24sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:orientation="vertical">
 
 
+                <TextView
+                    android:id="@+id/tvResponsable_noticia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="responsable"
+                    android:textSize="14sp" />
 
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+                   <TextView
+                       android:id="@+id/tvLugar_noticia"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:gravity="center"
+                       android:hint="Lugar"
+                       android:textSize="14sp" />
+                   <TextView
+                       android:id="@+id/tvDescripcion_noticia"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:gravity="center"
+                       android:hint="descripcion"
+                       android:textSize="14sp" />
+
+                   <TextView
+                       android:id="@+id/tvNombre_noticia"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:gravity="center"
+                       android:hint="nombre"
+                       android:textSize="14sp" />
+
+               </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

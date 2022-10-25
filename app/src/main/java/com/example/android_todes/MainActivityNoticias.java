@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.android_todes.InterfaceNoticia.NoticiaApi;
 import com.example.android_todes.Model_noticia.Activity_noticia;
@@ -25,7 +26,7 @@ public class MainActivityNoticias extends AppCompatActivity {
      TextView tvLugar_noticia;
      TextView tvResponsable_noticia;
      ImageView tvRuta_noticia;
-
+    private List<Activity_noticia> list_noticias;
 
 
     @Override
@@ -37,6 +38,7 @@ public class MainActivityNoticias extends AppCompatActivity {
         tvLugar_noticia=findViewById(R.id.tvLugar_noticia);
         tvResponsable_noticia=findViewById(R.id.tvResponsable_noticia);
         tvRuta_noticia=findViewById(R.id.imgNoticia);
+        getPosts();
 
     }
 
@@ -46,22 +48,23 @@ public class MainActivityNoticias extends AppCompatActivity {
                 .baseUrl("http://127.0.0.1:8000/api")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+
         NoticiaApi noticiaApi = retrofit.create(NoticiaApi.class);
         Call<List<Activity_noticia>> call = noticiaApi.getPosts();
         call.enqueue(new Callback<List<Activity_noticia>>() {
             @Override
             public void onResponse(Call<List<Activity_noticia>> call, Response<List<Activity_noticia>> response) {
 
-                if(!response.isSuccessful())
+                if(response.isSuccessful())
                 {
-
+                   list_noticias=response.body();
                 }
 
             }
 
             @Override
             public void onFailure(Call<List<Activity_noticia>> call, Throwable t) {
-
+                Toast.makeText(MainActivityNoticias.this,"ERROR DE CONEXION",Toast.LENGTH_SHORT).show();
             }
         });
     }
