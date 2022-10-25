@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Android_Todes</string>
+    <string name="title_activity_maps_ubicacion">MapsUbicacion</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>

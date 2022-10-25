@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".categoriasIncidencia"
     android:orientation="vertical">
 
 
@@ -21,12 +21,13 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/buttonRegresar"
+                android:id="@+id/buttonRegresaMain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:text="Regresar"
                 android:textSize="13dp"
+                android:onClick="Categorias"
                 />
 
             <TextView
@@ -51,14 +52,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="125dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/fisico" />
+                app:srcCompat="@drawable/fisico"
+                android:onClick="pasaCategorias"/>
 
             <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="wrap_content"
                 android:layout_height="125dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/genero" />
+                app:srcCompat="@drawable/genero"
+                android:onClick="pasaCategorias"/>
         </LinearLayout>
 
         <LinearLayout
@@ -72,14 +75,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="125dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/abuso" />
+                app:srcCompat="@drawable/abuso"
+                android:onClick="pasaCategorias"/>
 
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="wrap_content"
                 android:layout_height="125dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/discriminacion" />
+                app:srcCompat="@drawable/discriminacion"
+                android:onClick="pasaCategorias"/>
         </LinearLayout>
 
 
@@ -94,14 +99,16 @@
                 android:layout_width="151dp"
                 android:layout_height="125dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/igualdad" />
+                app:srcCompat="@drawable/igualdad"
+                android:onClick="pasaCategorias"/>
 
             <ImageView
                 android:layout_width="wrap_content"
 
                 android:layout_height="125dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/intrafamiliar" />
+                app:srcCompat="@drawable/intrafamiliar"
+                android:onClick="pasaCategorias"/>
         </LinearLayout>
 
         <Button
