@@ -150,7 +150,7 @@
             android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/editTextPasswordConfir"
+            android:id="@+id/eTPasswordConfir"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="1dp"
@@ -160,7 +160,7 @@
             android:inputType="textPassword" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttonregistrarse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"

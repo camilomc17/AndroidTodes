@@ -52,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
 
         }
     });
+
+
+
+
     }
     public void RegistarSesion(View view){
         Intent i = new Intent(this, RegistrarseActivity.class);
