@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -31,13 +33,14 @@ public class RegistrarseActivity extends AppCompatActivity {
     private EditText editTextTelefono;
     private EditText editTextPassword;
     private EditText eTPasswordConfir;
-    FirebaseFirestore mifirebase;
+    private Button btRegistrarse;
+    FirebaseFirestore AndroidTodes;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_registrarse);
         editTextnombre=findViewById(R.id.editTextnombre);
         editTextapellido=findViewById(R.id.editTextapellido);
         editTextNumero=findViewById(R.id.editTextNumero);
@@ -49,8 +52,27 @@ public class RegistrarseActivity extends AppCompatActivity {
         editTextPassword=findViewById(R.id.editTextPassword);
         eTPasswordConfir=findViewById(R.id.eTPasswordConfir);
         editTextFechanacimiento=findViewById(R.id.editTextFechanacimiento);
+        btRegistrarse=findViewById(R.id.btRegistrarse);
+        btRegistrarse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String nombre1 = editTextnombre.getText().toString();
+                String apellido1 = editTextapellido.getText().toString();
+                String numero1 = editTextNumero.getText().toString();
+                String contrasena1 = editTextPassword.getText().toString();
+                String contrasena2 = eTPasswordConfir.getText().toString();
+                String lista1 = checkBox1.getText().toString();
+                String lista2 = checkBox2.getText().toString();
+                String telefono = editTextTelefono.getText().toString();
+                String correo1= editTextEmailAddress.getText().toString();
+                String alias= editTextAlias.getText().toString();
+                String fechanaci= editTextFechanacimiento.toString().toString();
 
-        mifirebase = FirebaseFirestore.getInstance();
+            }
+        });
+
+
+        AndroidTodes = FirebaseFirestore.getInstance();
     }
 
 
@@ -72,7 +94,7 @@ public class RegistrarseActivity extends AppCompatActivity {
 
 
         int num=item.getItemId();
-        if (num==R.id.buttonregistrarse){
+        if (num==R.id.btRegistrarse){
             validacion();
             registrar(nombre1, apellido1, numero1, contrasena1, contrasena2, lista1, lista2, telefono, correo1, alias, fechanaci);
 
@@ -96,10 +118,10 @@ public class RegistrarseActivity extends AppCompatActivity {
         map.put("nacimiento",fechanaci);
 
 
-        mifirebase.collection("Personas").add(map).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+        AndroidTodes.collection("Personas").add(map).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {
-                Toast.makeText(getApplicationContext(),"registro guarded", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"registro guardado", Toast.LENGTH_SHORT).show();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
