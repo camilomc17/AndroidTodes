@@ -1,17 +1,26 @@
 package com.example.android_todes;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+
+import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -23,12 +32,19 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.android_todes.databinding.ActivityMapsUbicacionBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 public class MapsUbicacion extends AppCompatActivity {
 
     private GoogleMap mMap;
-private ActivityMapsUbicacionBinding binding;
+
     TextView tvMensaje;
+    Button btnMa;
+    RecyclerView mRecycler;
+
+    Button btnMuestraBottomSheet;
+
 
     // Minimo tiempo para updates en Milisegundos
     private static final long MIN_TIME = 10000; // 10 segundos
@@ -37,6 +53,61 @@ private ActivityMapsUbicacionBinding binding;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps_ubicacion);
+
+        mRecycler = findViewById(R.id.recyclerViewSingle);
+
+        btnMuestraBottomSheet = findViewById(R.id.idBtnShowBottomSheet);
+
+        mRecycler = findViewById(R.id.recyclerViewSingle);
+        mRecycler.setLayoutManager(new LinearLayoutManager(this));
+//      Query query = mFirestore.collection("pet").whereEqualTo("id_user", mAuth.getCurrentUser().getUid());
+
+
+        btnMuestraBottomSheet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BottomSheetDialog dialog = new BottomSheetDialog(MapsUbicacion.this);
+                View vista = LayoutInflater.from(getApplicationContext()).inflate(R.layout.bottom_sheet_dialog, null);
+                dialog.setCancelable(true);
+                dialog.setContentView(vista);
+
+                dialog.show();
+
+            }
+        });
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        // Set Home selected
+        bottomNavigationView.setSelectedItemId(R.id.phone);
+
+        // Perform item selected listener
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()) {
+                    case R.id.phone:
+                        Intent intent = new Intent(Intent.ACTION_DIAL);
+                        intent.setData(Uri.parse("tel:3107048069"));
+                        int result = ContextCompat.checkSelfPermission(MapsUbicacion.this, Manifest.permission.CALL_PHONE);
+                        if (result == PackageManager.PERMISSION_GRANTED) {
+                            startActivity(intent);
+                        } else {
+                            requestForCallPermission();
+                        }
+                }
+                return false;
+            }
+        });
+
+
+
+
+
+
+
+
+        btnMa=findViewById(R.id.btnMap);
 
         tvMensaje = findViewById(R.id.tvMensaje);
         if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
@@ -50,6 +121,14 @@ private ActivityMapsUbicacionBinding binding;
             iniciarLocalizacion();
         }
 
+
+    }
+    public void requestForCallPermission ()
+    {
+
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CALL_PHONE))
+        {
+        }
 
     }
 
@@ -103,6 +182,8 @@ private ActivityMapsUbicacionBinding binding;
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+
+
     public void RegresoCategorias (View view){
         Intent pasaCategorias= new Intent(MapsUbicacion.this,categoriasIncidencia.class);
         startActivity(pasaCategorias);
