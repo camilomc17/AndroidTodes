@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
     public void IniciarSesion(View view){
-        Intent i = new Intent(this, ActualizarContrasenaActivity.class);
+        Intent i = new Intent(this, ActualizarContrasena.class);
         startActivity(i);
     }
 }

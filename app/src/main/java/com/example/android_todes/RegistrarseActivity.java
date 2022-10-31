@@ -3,6 +3,7 @@ package com.example.android_todes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -186,6 +187,13 @@ public class RegistrarseActivity extends AppCompatActivity {
         if (contrasena1.equals("")) {
             editTextFechanacimiento.setError("required");
         }
+        
 
     }
+
+    public void PantallaInicio(View view){
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+    }
+
 }
