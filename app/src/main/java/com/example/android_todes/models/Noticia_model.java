@@ -1,12 +1,11 @@
-package com.example.android_todes.Model_noticia;
+package com.example.android_todes.models;
 
-public class Activity_noticia {
-
-   private String nombre_publicacion;
+public class Noticia_model {
+    private String nombre_publicacion;
     private String descripcion_publicacion;
     private String lugar;
     private String responsable;
-    private String estado;
+    private String  estado;
     private String tipo;
     private String ruta_archivo;
 

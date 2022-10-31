@@ -68,7 +68,6 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/id_butonregistrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_texttelefono" />
@@ -78,8 +77,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Registrar"
-        tools:layout_editor_absoluteX="146dp"
-        tools:layout_editor_absoluteY="552dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_textcontraseña" />
 
     <TextView
         android:id="@+id/id_tituloRegistro"
