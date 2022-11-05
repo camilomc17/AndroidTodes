@@ -10,7 +10,8 @@
         android:id="@+id/rv_noticias"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-    https://rickandmortyapi.com/api/character/avatar/361.jpeg
+    
+    <!--https://rickandmortyapi.com/api/character/avatar/361.jpeg
     https://rickandmortyapi.com/api/character/avatar/1.jpeg
     https://rickandmortyapi.com/api/character/avatar/2.jpeg-->
 

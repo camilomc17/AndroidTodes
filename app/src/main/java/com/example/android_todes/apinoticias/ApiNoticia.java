@@ -9,6 +9,5 @@ import retrofit2.http.GET;
 
 public interface ApiNoticia {
     @GET("api/noticias")
-    Call<List<Noticia_model>> getNoticias();
-
+    Call<List<Noticia_model>> obtenerListaNoticias();
 }

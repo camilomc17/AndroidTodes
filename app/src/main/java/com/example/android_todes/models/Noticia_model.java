@@ -1,11 +1,19 @@
 package com.example.android_todes.models;
 
 public class Noticia_model {
+    /*
+    "nombre_publicacion": "weeeee",
+    "descripcion_publicacion": "rrrrrrrrrrrrrrr",
+    "lugar": "el parque caldas",
+    "responsable": "el admin",
+    "estado": "activo",
+    "tipo": "noticia",
+    "ruta_archivo": "https:\/\/rickandmortyapi.com\/api\/character\/avatar\/361.jpeg"*/
     private String nombre_publicacion;
     private String descripcion_publicacion;
     private String lugar;
     private String responsable;
-    private String  estado;
+    private String estado;
     private String tipo;
     private String ruta_archivo;
 
