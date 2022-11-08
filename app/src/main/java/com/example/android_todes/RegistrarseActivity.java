@@ -13,187 +13,146 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class RegistrarseActivity extends AppCompatActivity {
+    public class RegistrarseActivity extends AppCompatActivity {
 
-    private EditText editTextnombre;
-    private EditText editTextapellido;
-    private EditText editTextNumero;
-    private CheckBox checkBox1;
-    private CheckBox checkBox2;
-    private EditText editTextEmailAddress;
-    private EditText editTextFechanacimiento;
-    private EditText editTextAlias;
-    private EditText editTextTelefono;
-    private EditText editTextPassword;
-    private EditText eTPasswordConfir;
+    private EditText etNombre, etApellido, etNumero, etCorreo, etFechanacimiento, editTextAlias, etTelefono, etPassword, etPassword2;
+    private CheckBox checkBox1, checkBox2;
     private Button btRegistrarse;
-    FirebaseFirestore AndroidTodes;
+
+        //FirebaseFirestore AndroidTodes;
 
 
-    @Override
+        private  String nombre1 = "";
+        private  String apellido1 = "";
+        private  String numero1 = "";
+        private  String contrasena1 = "";
+        private  String contrasena2 = "";
+        private  String lista1 = "";
+        private  String lista2 = "";
+        private  String telefono = "";
+        private  String correo1 = "";
+        private  String alias = "";
+        private  String fechanaci = "";
+
+        private FirebaseAuth Auth;
+        DatabaseReference Database;
+
+
+
+        @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrarse);
-        editTextnombre=findViewById(R.id.editTextnombre);
-        editTextapellido=findViewById(R.id.editTextapellido);
-        editTextNumero=findViewById(R.id.editTextNumero);
+
+        etNombre=findViewById(R.id.etNombre);
+        etApellido=findViewById(R.id.etApellido);
+        etNumero=findViewById(R.id.etNumero);
         checkBox1=findViewById(R.id.checkBox1);
         checkBox2=findViewById(R.id.checkBox2);
-        editTextTelefono=findViewById(R.id.editTextTelefono);
-        editTextEmailAddress=findViewById(R.id.editTextEmailAddress);
+        etTelefono=findViewById(R.id.etTelefono);
+        etCorreo=findViewById(R.id.etCorreo);
         editTextAlias=findViewById(R.id.editTextAlias);
-        editTextPassword=findViewById(R.id.editTextPassword);
-        eTPasswordConfir=findViewById(R.id.eTPasswordConfir);
-        editTextFechanacimiento=findViewById(R.id.editTextFechanacimiento);
+        etPassword=findViewById(R.id.etPassword);
+        etPassword2=findViewById(R.id.etPassword2);
+        etFechanacimiento=findViewById(R.id.etFechanacimiento);
         btRegistrarse=findViewById(R.id.btRegistrarse);
+
+        Auth = FirebaseAuth.getInstance();
+        Database = FirebaseDatabase.getInstance().getReference();
+
         btRegistrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String nombre1 = editTextnombre.getText().toString();
-                String apellido1 = editTextapellido.getText().toString();
-                String numero1 = editTextNumero.getText().toString();
-                String contrasena1 = editTextPassword.getText().toString();
-                String contrasena2 = eTPasswordConfir.getText().toString();
-                String lista1 = checkBox1.getText().toString();
-                String lista2 = checkBox2.getText().toString();
-                String telefono = editTextTelefono.getText().toString();
-                String correo1= editTextEmailAddress.getText().toString();
-                String alias= editTextAlias.getText().toString();
-                String fechanaci= editTextFechanacimiento.toString().toString();
+                nombre1 = etNombre.getText().toString();
+                apellido1 = etApellido.getText().toString();
+                numero1 = etNumero.getText().toString();
+                contrasena1 = etPassword.getText().toString();
+                contrasena2 = etPassword2.getText().toString();
+                lista1 = checkBox1.getText().toString();
+                lista2 = checkBox2.getText().toString();
+                telefono = etTelefono.getText().toString();
+                correo1= etCorreo.getText().toString();
+                alias= editTextAlias.getText().toString();
+                fechanaci= etFechanacimiento.toString().toString();
+
+                if (!nombre1.isEmpty() && !apellido1.isEmpty() && !numero1.isEmpty() &&contrasena1.isEmpty() &&contrasena2.isEmpty()
+                && lista1.isEmpty() && lista2.isEmpty() && telefono.isEmpty() && correo1.isEmpty() && alias.isEmpty()
+                && fechanaci.isEmpty()){
+
+                    if (etPassword.length() >= 6){
+                        registrarUser();
+                    }else {
+                        Toast.makeText(RegistrarseActivity.this,"contraseña debe tener al menos 6 caracteres" , Toast.LENGTH_SHORT).show();
+
+                    }
+
+                }else {
+                    Toast.makeText(RegistrarseActivity.this,"faltas campos por diligenciar" , Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
 
-
-        AndroidTodes = FirebaseFirestore.getInstance();
     }
+        private void registrarUser() {
+            Auth.createUserWithEmailAndPassword(correo1, contrasena1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()){
+
+                        Map<String, Object> map = new HashMap<>();
+
+                        map.put("nombre1", nombre1);
+                        map.put("apellido1", apellido1);
+                        map.put("numero1", numero1);
+                        map.put("contrasena1", contrasena1);
+                        map.put("contrasena2", contrasena2);
+                        map.put("lista1", lista1);
+                        map.put("lista2", lista2);
+                        map.put("telefono", telefono);
+                        map.put("correo1", correo1);
+                        map.put("alias", alias);
+                        map.put("fechanaci", fechanaci);
+
+                        String id = Auth.getCurrentUser().getUid();
 
 
-
-
-    public boolean onOptionsItemSelected(MenuItem item){
-        String nombre1 = editTextnombre.getText().toString();
-        String apellido1 = editTextapellido.getText().toString();
-        String numero1 = editTextNumero.getText().toString();
-        String contrasena1 = editTextPassword.getText().toString();
-        String contrasena2 = eTPasswordConfir.getText().toString();
-        String lista1 = checkBox1.getText().toString();
-        String lista2 = checkBox2.getText().toString();
-        String telefono = editTextTelefono.getText().toString();
-        String correo1= editTextEmailAddress.getText().toString();
-        String alias= editTextAlias.getText().toString();
-        String fechanaci= editTextFechanacimiento.toString().toString();
-
-
-
-        int num=item.getItemId();
-        if (num==R.id.btRegistrarse){
-            validacion();
-            registrar(nombre1, apellido1, numero1, contrasena1, contrasena2, lista1, lista2, telefono, correo1, alias, fechanaci);
+                        Database.child("Usuarios").child(id).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task2) {
+                                if (task2.isSuccessful()){
+                                    startActivity(new Intent(RegistrarseActivity.this, InicioSesion.class));
+                                    finish();
+                                }else{
+                                    Toast.makeText(RegistrarseActivity.this, "no se creo usuario", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                    }else {
+                        Toast.makeText(RegistrarseActivity.this, "no se puede registrar", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
 
         }
-        return super.onOptionsItemSelected(item);
-    }
 
-    private void registrar(String nombre1, String apellido1, String numero1, String contrasena1, String contrasena2, String lista1, String lista2, String telefono,
-                           String correo1, String alias, String fechanaci) {
-        Map<String, Object> map=new HashMap<>();
-        map.put("nombre",nombre1);
-        map.put("apellido",apellido1);
-        map.put("numero",numero1);
-        map.put("correo",correo1);
-        map.put("contrasena",contrasena1);
-        map.put("confirmar",contrasena2);
-        map.put("alias",alias);
-        map.put("lista",lista1);
-        map.put("lista2",lista2);
-        map.put("telefono",telefono);
-        map.put("nacimiento",fechanaci);
-
-
-        AndroidTodes.collection("Personas").add(map).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-            @Override
-            public void onSuccess(DocumentReference documentReference) {
-                Toast.makeText(getApplicationContext(),"registro guardado", Toast.LENGTH_SHORT).show();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getApplicationContext(),"error",Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-
-    private void validacion() {
-        String nombre1 = editTextnombre.getText().toString();
-        String apellido1 = editTextapellido.getText().toString();
-        String numero1 = editTextNumero.getText().toString();
-        String contrasena1 = editTextPassword.getText().toString();
-        String contrasena2 = eTPasswordConfir.getText().toString();
-        String lista1 = checkBox1.getText().toString();
-        String lista2 = checkBox2.getText().toString();
-        String telefono = editTextTelefono.getText().toString();
-        String correo1= editTextEmailAddress.getText().toString();
-        String alias= editTextAlias.getText().toString();
-        String fechanaci= editTextFechanacimiento.toString().toString();
-
-        if (nombre1.equals("")) {
-            editTextnombre.setError("required");
+        public  void IniciarSesion(View view) {
+            Intent i = new Intent(this,InicioSesion.class);
+            startActivity(i);
         }
-        if (apellido1.equals("")) {
-            editTextapellido.setError("required");
-        }
-
-        if (correo1.equals("")) {
-            editTextNumero.setError("required");
-        }
-
-        if (contrasena1.equals("")) {
-            editTextPassword.setError("required");
-        }
-
-        if (contrasena1.equals("")) {
-            eTPasswordConfir.setError("required");
-        }
-
-        if (contrasena1.equals("")) {
-            checkBox1.setError("required");
-        }
-        if (contrasena1.equals("")) {
-            checkBox2.setError("required");
-        }
-
-        if (contrasena1.equals("")) {
-            editTextTelefono.setError("required");
-        }
-
-        if (contrasena1.equals("")) {
-            editTextEmailAddress.setError("required");
-        }
-
-        if (contrasena1.equals("")) {
-            editTextAlias.setError("required");
-        }
-
-        if (contrasena1.equals("")) {
-            editTextFechanacimiento.setError("required");
-        }
-        
 
     }
-
-    public void PantallaInicio(View view){
-        Intent i = new Intent(this, MainActivity.class);
-        startActivity(i);
-    }
-
-}
