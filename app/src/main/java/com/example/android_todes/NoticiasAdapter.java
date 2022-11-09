@@ -40,6 +40,7 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.ViewHo
       holder.nombreNoticia.setText(noticiaModels.get(position).getNombre_publicacion());
       holder.descripcionNoticia.setText(noticiaModels.get(position).getDescripcion_publicacion());
      holder.lugarNoticia.setText(noticiaModels.get(position).getLugar());
+     holder.fechaNoticia.setText(noticiaModels.get(position).getFecha_y_hora());
      holder.responsableNoticia.setText(noticiaModels.get(position).getResponsable());
      //holder.estadoNoticia.setText(noticiaModels.get(position).getEstado());
      //holder.tipoNoticia.setText(noticiaModels.get(position).getTipo());
@@ -58,6 +59,7 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.ViewHo
         private TextView nombreNoticia;
         private TextView descripcionNoticia;
         private TextView lugarNoticia;
+        private TextView fechaNoticia;
         private TextView responsableNoticia;
       /*  private TextView estadoNoticia;
         private TextView tipoNoticia;*/
@@ -68,6 +70,7 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.ViewHo
             nombreNoticia = itemView.findViewById(R.id.tvNombre_noticia);
             descripcionNoticia = itemView.findViewById(R.id.tvDescripcion_noticia);
             lugarNoticia = itemView.findViewById(R.id.tvLugar_noticia);
+            fechaNoticia= itemView.findViewById(R.id.tvFecha_noticia);
             responsableNoticia = itemView.findViewById(R.id.tvResponsable_noticia);
          /*   estadoNoticia = itemView.findViewById(R.id.tvEstado_noticia);
             tipoNoticia = itemView.findViewById(R.id.tvTipo_noticia);*/

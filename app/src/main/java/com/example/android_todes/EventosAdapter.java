@@ -43,6 +43,7 @@ public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.ViewHold
        // holder.estadoEvento.setText(eventoModels.get(position).getEstado());
         holder.lugarEvento.setText(eventoModels.get(position).getLugar());
         holder.nombreEvento.setText(eventoModels.get(position).getNombre_publicacion());
+        holder.fechaEvento.setText(eventoModels.get(position).getFecha_y_hora());
         holder.responsableEvento.setText(eventoModels.get(position).getResponsable());
        // holder.tipoEvento.setText(eventoModels.get(position).getTipo());
         Glide.with(context).load(eventoModels.get(position).getRuta_archivo()).into(holder.rutaarchivoEvento);
@@ -58,6 +59,7 @@ public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.ViewHold
         private TextView nombreEvento;
         private TextView descripcionEvento;
         private TextView lugarEvento;
+        private TextView fechaEvento;
         private TextView responsableEvento;
     /*    private TextView estadoEvento;
         private TextView tipoEvento;*/
@@ -67,6 +69,7 @@ public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.ViewHold
              nombreEvento=itemView.findViewById(R.id.tvNombre_evento);
              descripcionEvento=itemView.findViewById(R.id.tvDescripcion_evento);
              lugarEvento=itemView.findViewById(R.id.tvLugar_evento);
+             fechaEvento= itemView.findViewById(R.id.tvFecha_evento);
              responsableEvento=itemView.findViewById(R.id.tvResponsable_evento);
            /*  estadoEvento=itemView.findViewById(R.id.tvEstado_evento);
              tipoEvento=itemView.findViewById(R.id.tvTipo_evento);*/

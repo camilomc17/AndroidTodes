@@ -1,9 +1,11 @@
 package com.example.android_todes.models;
 
 public class Noticia_model {
+
     private String nombre_publicacion;
     private String descripcion_publicacion;
     private String lugar;
+    private String fecha_y_hora;
     private String responsable;
     private String estado;
     private String tipo;
@@ -31,6 +33,13 @@ public class Noticia_model {
 
     public void setLugar(String lugar) {
         this.lugar = lugar;
+    }
+    public String getFecha_y_hora() {
+        return fecha_y_hora;
+    }
+
+    public void setFecha_y_hora(String fecha_y_hora) {
+        this.fecha_y_hora = fecha_y_hora;
     }
 
     public String getResponsable() {

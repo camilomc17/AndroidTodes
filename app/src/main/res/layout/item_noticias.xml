@@ -62,6 +62,13 @@
                     android:gravity="center"
                     android:text="Lugar"
                     android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/tvFecha_noticia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Fecha"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/tvResponsable_noticia"
