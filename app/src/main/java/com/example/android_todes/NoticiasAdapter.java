@@ -41,8 +41,8 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.ViewHo
       holder.descripcionNoticia.setText(noticiaModels.get(position).getDescripcion_publicacion());
      holder.lugarNoticia.setText(noticiaModels.get(position).getLugar());
      holder.responsableNoticia.setText(noticiaModels.get(position).getResponsable());
-     holder.estadoNoticia.setText(noticiaModels.get(position).getEstado());
-     holder.tipoNoticia.setText(noticiaModels.get(position).getTipo());
+     //holder.estadoNoticia.setText(noticiaModels.get(position).getEstado());
+     //holder.tipoNoticia.setText(noticiaModels.get(position).getTipo());
         Glide.with(context).load(noticiaModels.get(position).getRuta_archivo()).into(holder.rutaarchivoNoticia);
 
 
@@ -59,8 +59,8 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.ViewHo
         private TextView descripcionNoticia;
         private TextView lugarNoticia;
         private TextView responsableNoticia;
-        private TextView estadoNoticia;
-        private TextView tipoNoticia;
+      /*  private TextView estadoNoticia;
+        private TextView tipoNoticia;*/
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -69,8 +69,8 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.ViewHo
             descripcionNoticia = itemView.findViewById(R.id.tvDescripcion_noticia);
             lugarNoticia = itemView.findViewById(R.id.tvLugar_noticia);
             responsableNoticia = itemView.findViewById(R.id.tvResponsable_noticia);
-            estadoNoticia = itemView.findViewById(R.id.tvEstado_noticia);
-            tipoNoticia = itemView.findViewById(R.id.tvTipo_noticia);
+         /*   estadoNoticia = itemView.findViewById(R.id.tvEstado_noticia);
+            tipoNoticia = itemView.findViewById(R.id.tvTipo_noticia);*/
 
         }
     }

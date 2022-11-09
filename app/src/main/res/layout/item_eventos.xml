@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <Button
-        android:id="@+id/id_BTN_IR"
-        android:layout_width="90dp"
+        android:id="@+id/id_BTN_VOLVER"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:onClick="IrEvento"
-        android:text="IR" />
+        android:layout_marginRight="100dp"
+        android:onClick="IrNoticia"
+        android:text="VOLVER" />
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,7 +28,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/image_noticias"
+                android:id="@+id/image_eventos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/ic_launcher_background" />
@@ -39,7 +40,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tvNombre_noticia"
+                    android:id="@+id/tvNombre_evento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -48,7 +49,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/tvDescripcion_noticia"
+                    android:id="@+id/tvDescripcion_evento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -56,7 +57,7 @@
                     android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/tvLugar_noticia"
+                    android:id="@+id/tvLugar_evento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -64,7 +65,7 @@
                     android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/tvResponsable_noticia"
+                    android:id="@+id/tvResponsable_evento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -72,20 +73,20 @@
                     android:textSize="16sp" />
 
 
-                <!--    <TextView
-                    android:id="@+id/tvEstado_noticia"
+                <!--        <TextView
+                    android:id="@+id/tvEstado_evento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="estado"
                     android:textSize="16sp" />
                 <TextView
-                    android:id="@+id/tvTipo_noticia"
+                    android:id="@+id/tvTipo_evento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="tipo"
-                    android:textSize="16sp" />-->
+                    android:textSize="16sp" /> -->
 
 
             </LinearLayout>

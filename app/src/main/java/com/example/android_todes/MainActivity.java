@@ -1,61 +1,27 @@
 package com.example.android_todes;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
-
-import com.example.android_todes.apinoticias.ApiClient;
-import com.example.android_todes.apinoticias.ApiNoticia;
-import com.example.android_todes.models.Noticia_model;
-
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-  //almacenar el listado de noticias json
-    private List<Noticia_model> noticiaModels;
-      //recycleView
-       private RecyclerView recyclerView;
-    //esta para utilizar nuestro Adapter
-        private NoticiasAdapter noticiasAdapter;
+  private Button id_seguir;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+      id_seguir=findViewById(R.id.id_BTN_SEGUIR);
 
-        recyclerView=findViewById(R.id.rv_noticias);
-        recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),2));
-
-
-        obtenerNoticias();
     }
+public void IrConsumo(View view)
+{
+    Intent consumo = new Intent(MainActivity.this,MainActivityNoticia.class);
+    startActivity(consumo);
+}
 
-    public void obtenerNoticias() {
-        Call<List<Noticia_model>> call= ApiClient.getClient().create(ApiNoticia.class).obtenerListaNoticias();
-        call.enqueue(new Callback<List<Noticia_model>>() {
-            @Override
-            public void onResponse(Call<List<Noticia_model>> call, Response<List<Noticia_model>> response) {
-                if(response.isSuccessful()) {
-                    noticiaModels=response.body();
-                    noticiasAdapter=new NoticiasAdapter(noticiaModels,getApplicationContext());
-                    recyclerView.setAdapter(noticiasAdapter);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Noticia_model>> call, Throwable t) {
-                Toast.makeText(MainActivity.this,"ERROR DE CONEXION",Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 
 }
