@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void PantallaLogueo(View view) {
+/*    public void PantallaLogueo(View view) {
         Intent i = new Intent(this, InicioSesion.class);
         startActivity(i);
-    }
+    }*/
 }

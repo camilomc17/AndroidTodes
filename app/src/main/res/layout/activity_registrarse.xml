@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".RegistrarseActivity">
 
     <LinearLayout
 
@@ -21,8 +21,9 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginRight="3dp"
+            android:onClick="IniciarSesion"
             android:drawableLeft="@drawable/ic_action_flecha"
-            android:onClick="PantallaLogueo"
+
             android:padding="2dp" />
 
         <TextView
@@ -190,10 +191,6 @@
 
 
     </LinearLayout>
-
-
-
-
 
 
 

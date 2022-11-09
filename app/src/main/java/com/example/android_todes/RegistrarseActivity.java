@@ -74,6 +74,7 @@ import java.util.Map;
         Auth = FirebaseAuth.getInstance();
         Database = FirebaseDatabase.getInstance().getReference();
 
+
         btRegistrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -150,9 +151,9 @@ import java.util.Map;
 
         }
 
+
         public  void IniciarSesion(View view) {
             Intent i = new Intent(this,InicioSesion.class);
             startActivity(i);
         }
-
     }
