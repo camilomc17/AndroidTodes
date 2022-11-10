@@ -12,6 +12,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
 public class MainActivity extends AppCompatActivity {
     Animation animacion1 , animacion2;
     ImageView logo;
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler(getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent paginadashboard=new Intent(MainActivity.this,inicioapp.class);
+                Intent paginadashboard=new Intent(MainActivity.this,NavigationDrawerMenu.class);
                 startActivity(paginadashboard);
                 finish();
             }

@@ -5,9 +5,36 @@
       <map>
         <entry key="..\:/Android Todes/app/src/main/res/layout/activity_main.xml" value="0.14130434782608695" />
         <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/drawable/fondo.xml" value="0.1" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/drawable/ic__events.xml" value="0.353" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/drawable/ic_help.xml" value="0.353" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/drawable/ic_logout.xml" value="0.353" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/drawable/ic_menu_camera.xml" value="0.3635" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.3635" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.3635" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/drawable/ic_myreports.xml" value="0.353" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/drawable/ic_newreport.xml" value="0.353" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/drawable/ic_users.xml" value="0.353" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/drawable/side_nav_bar.xml" value="0.3635" />
         <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/font/abeezee.xml" value="0.25" />
         <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/activity_inicioapp.xml" value="0.3625" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/activity_iniciodpsplash.xml" value="0.3484375" />
         <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/activity_main_activitynavegacion.xml" value="0.3625" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/activity_navigation_drawer_menu.xml" value="0.1" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/activity_slider_menu.xml" value="0.3625" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/app_bar_main_activitynavegacion.xml" value="0.3625" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/content_main.xml" value="0.3614583333333333" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/content_main_activitynavegacion.xml" value="0.3625" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/drawer_header.xml" value="0.25" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/drawer_headr.xml" value="0.3614583333333333" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/drawer_toolbar.xml" value="0.3614583333333333" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/fragment_gallery.xml" value="0.3625" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/fragment_home.xml" value="0.3625" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/fragment_slideshow.xml" value="0.3625" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/nav_header_main_activitynavegacion.xml" value="0.3625" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/menu/activity_main_drawer.xml" value="0.3625" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/menu/drawer_menu.xml" value="0.3614583333333333" />
+        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/menu/main_activitynavegacion.xml" value="0.3625" />
       </map>
     </option>
   </component>
