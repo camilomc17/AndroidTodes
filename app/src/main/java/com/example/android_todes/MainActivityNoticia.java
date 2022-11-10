@@ -33,7 +33,7 @@ public class MainActivityNoticia extends AppCompatActivity {
         setContentView(R.layout.activity_main_noticia);
 
         recyclerView=findViewById(R.id.rv_noticias);
-        recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),2));
+        recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),1));
 
 
         obtenerNoticias();

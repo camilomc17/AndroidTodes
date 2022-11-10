@@ -4,13 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <Button
-        android:id="@+id/id_BTN_IR"
-        android:layout_width="90dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:onClick="IrEvento"
-        android:text="IR" />
+
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,26 +21,35 @@
             android:gravity="center"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/tvNombre_noticia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="nombre"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
             <ImageView
                 android:id="@+id/image_noticias"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 app:srcCompat="@drawable/ic_launcher_background" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tvNombre_noticia"
+                    android:id="@+id/tvResponsable_noticia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="nombre"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:text="responsable"
+                    android:textSize="18sp"/>
 
                 <TextView
                     android:id="@+id/tvDescripcion_noticia"
@@ -54,30 +58,30 @@
                     android:gravity="center"
                     android:text="descripcion"
                     android:textSize="16sp" />
+            </LinearLayout>
 
-                <TextView
-                    android:id="@+id/tvLugar_noticia"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Lugar"
-                    android:textSize="16sp" />
-                <TextView
-                    android:id="@+id/tvFecha_noticia"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Fecha"
-                    android:textSize="16sp" />
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvResponsable_noticia"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="responsable"
-                    android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/tvLugar_noticia"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Lugar"
+                        android:textSize="16sp" />
 
+                    <TextView
+                        android:id="@+id/tvFecha_noticia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Fecha"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
 
                 <!--    <TextView
                     android:id="@+id/tvEstado_noticia"
@@ -93,9 +97,6 @@
                     android:gravity="center"
                     android:text="tipo"
                     android:textSize="16sp" />-->
-
-
-            </LinearLayout>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

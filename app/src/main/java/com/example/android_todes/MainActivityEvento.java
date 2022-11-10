@@ -35,7 +35,7 @@ public class MainActivityEvento extends AppCompatActivity {
         setContentView(R.layout.activity_main_evento);
 
         recyclerView=findViewById(R.id.rv_eventos);
-        recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),2));
+        recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),1));
 
 
         obtenerEventos();

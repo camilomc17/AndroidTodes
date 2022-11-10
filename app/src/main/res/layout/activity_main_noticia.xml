@@ -5,13 +5,32 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivityNoticia">
+    <Button
+        android:id="@+id/id_BTN_IR"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="100dp"
+        android:onClick="IrEvento"
+        android:text="IR" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_noticias"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_noticias"
+        android:layout_width="match_parent"
+        android:layout_height="456dp"
+        android:layout_marginTop="5dp"/>
 
         <!--https://rickandmortyapi.com/api/character/avatar/361.jpeg
         https://rickandmortyapi.com/api/character/avatar/1.jpeg
         https://rickandmortyapi.com/api/character/avatar/2.jpeg-->
-    </RelativeLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="457dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:menu="@menu/bottom_navigation"
+        tools:layout_editor_absoluteX="16dp" /><!--app:menu="@menu/bottom_navigation_menu"-->
+
+</RelativeLayout>
