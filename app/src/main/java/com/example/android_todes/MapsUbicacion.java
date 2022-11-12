@@ -21,6 +21,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 
@@ -42,9 +43,10 @@ public class MapsUbicacion extends AppCompatActivity {
     TextView tvMensaje;
     Button btnMa;
     RecyclerView mRecycler;
-
+TextView dir;
     Button btnMuestraBottomSheet;
-
+TextView direShif;
+EditText  texDiecc;
 
     // Minimo tiempo para updates en Milisegundos
     private static final long MIN_TIME = 10000; // 10 segundos
@@ -54,9 +56,40 @@ public class MapsUbicacion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps_ubicacion);
 
-        mRecycler = findViewById(R.id.recyclerViewSingle);
+dir=findViewById(R.id.textDier);
+tvMensaje=findViewById(R.id.tvMensaje);
 
-        btnMuestraBottomSheet = findViewById(R.id.idBtnShowBottomSheet);
+
+
+Bundle recibeDatos=getIntent().getExtras();
+String info=recibeDatos.getString("KeyDatos");
+dir.setText(info);
+
+
+        btnMuestraBottomSheet=findViewById(R.id.idBtnShowBottomSheet);
+
+        btnMuestraBottomSheet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle enviaDatos= new Bundle();
+                enviaDatos.putString("KeyD",dir.getText().toString());
+                Intent intent = new Intent(MapsUbicacion.this,MapsUbicacion.class);
+                intent.putExtras(enviaDatos);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
+
+
+
+
+        mRecycler = findViewById(R.id.recyclerViewSingle);
+        texDiecc = findViewById(R.id.editTextDireccion);
+
 
         mRecycler = findViewById(R.id.recyclerViewSingle);
         mRecycler.setLayoutManager(new LinearLayoutManager(this));
@@ -67,7 +100,17 @@ public class MapsUbicacion extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 BottomSheetDialog dialog = new BottomSheetDialog(MapsUbicacion.this);
+
+
+
+
+
                 View vista = LayoutInflater.from(getApplicationContext()).inflate(R.layout.bottom_sheet_dialog, null);
+
+
+
+
+
                 dialog.setCancelable(true);
                 dialog.setContentView(vista);
 
@@ -123,6 +166,11 @@ public class MapsUbicacion extends AppCompatActivity {
 
 
     }
+
+
+
+
+
     public void requestForCallPermission ()
     {
 

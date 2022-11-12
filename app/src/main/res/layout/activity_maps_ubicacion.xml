@@ -20,6 +20,12 @@ tools:context=".MapsUbicacion">
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.15" />
 
+
+
+
+
+
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
@@ -57,7 +63,7 @@ tools:context=".MapsUbicacion">
 <TextView
     android:id="@+id/tvMensaje"
     android:layout_width="match_parent"
-    android:layout_height="60dp"
+    android:layout_height="80dp"
     android:layout_marginLeft="8dp"
     android:layout_marginTop="8dp"
     android:layout_marginRight="8dp"
@@ -109,4 +115,16 @@ tools:context=".MapsUbicacion">
         app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/bottom_navigation_menu"
         tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/textDier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMensaje"
+        app:layout_constraintEnd_toEndOf="@+id/tvMensaje"
+        app:layout_constraintHorizontal_bias="0.667"
+        app:layout_constraintStart_toStartOf="@+id/tvMensaje"
+        app:layout_constraintTop_toTopOf="@+id/tvMensaje"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

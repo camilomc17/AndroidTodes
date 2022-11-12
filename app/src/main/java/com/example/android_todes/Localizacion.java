@@ -17,22 +17,31 @@ public class Localizacion implements LocationListener {
 
     MapsUbicacion mapsUbicacion;
     TextView tvMensaje;
+    TextView editextDireccion;
+
+
+
 
     public MapsUbicacion getMapsUbicacion(){
         return mapsUbicacion;
     }
 
-    public void setMapsUbicacion(MapsUbicacion mapsUbicacion, TextView tvMensaje) {
+    public void setMapsUbicacion(MapsUbicacion mapsUbicacion, TextView tvMensaje ) {
         this.mapsUbicacion = mapsUbicacion;
         this.tvMensaje = tvMensaje;
+
     }
+
+
+
 
     @Override
     public void onLocationChanged(Location location) {
         // Este metodo se ejecuta cuando el GPS recibe nuevas coordenadas
         String texto = "Mi ubicación es: \n"
                 + "Latitud = " + location.getLatitude() + "\n"
-                + "Longitud = " + location.getLongitude();
+                + "Longitud = " + location.getLongitude()
+                ;
 
         tvMensaje.setText(texto);
 

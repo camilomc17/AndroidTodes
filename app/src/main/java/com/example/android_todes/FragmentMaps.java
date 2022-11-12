@@ -17,7 +17,7 @@ public class FragmentMaps extends SupportMapFragment implements OnMapReadyCallba
 
     double lat, lon;
 
-    public FragmentMaps() { }
+
 
 
     @Override
@@ -38,7 +38,7 @@ public class FragmentMaps extends SupportMapFragment implements OnMapReadyCallba
     public void onMapReady(GoogleMap googleMap) {
         LatLng latLng = new LatLng(lat, lon);
 
-        float zoom = 17;
+        float zoom = 70;
 
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom));
 

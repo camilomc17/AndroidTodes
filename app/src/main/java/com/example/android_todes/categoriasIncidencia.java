@@ -30,6 +30,9 @@ Button pasaMain;
         fisico = findViewById(R.id.imageViewFisico);
         discriminacion = findViewById(R.id.imageViewDiscriminacion);
         igualdad = findViewById(R.id.imageViewIgualdad);
+
+
+     
     }
     public void pasaMapa (View view){
         Intent atrasMenu= new Intent(categoriasIncidencia.this,MapsUbicacion.class);

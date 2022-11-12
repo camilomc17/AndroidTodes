@@ -41,23 +41,23 @@
             android:layout_toEndOf="@id/ivFoto"
             android:layout_toRightOf="@id/ivFoto"
             android:ems="10"
-            android:inputType="textPersonName"
             android:hint="Direccion"
+            android:inputType="textPersonName"
 
             android:textColor="@color/black"
             android:textSize="15sp" />
 
 
-
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/BOTONFormulario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cambiar"
             android:layout_below="@id/editTextDireccion"
             android:layout_marginTop="10dp"
             android:layout_toEndOf="@id/ivFoto"
-            android:layout_toRightOf="@id/ivFoto"/>
+            android:layout_toRightOf="@id/ivFoto"
+            android:onClick="irFomulario"
+            android:text="Cambiar" />
 
 
     </RelativeLayout>
