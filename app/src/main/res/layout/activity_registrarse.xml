@@ -11,29 +11,31 @@
     <LinearLayout
 
         android:id="@+id/lEnunciados"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:layout_gravity="center_horizontal"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@color/purple_200">
 
         <TextView
             android:id="@+id/tvFlecha"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginRight="3dp"
-            android:onClick="IniciarSesion"
             android:drawableLeft="@drawable/ic_action_flecha"
-
-            android:padding="2dp" />
+            android:layout_margin="20dp"
+            android:onClick="InicioSesion"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
         <TextView
             android:id="@+id/tvTitulo"
-            android:layout_width="202dp"
-            android:layout_height="47dp"
-            android:layout_margin="3dp"
-            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="REGISTRARSE"
-            android:textSize="25dp" />
+            android:textSize="30dp"
+            android:layout_margin="30dp"
+
+            />
 
     </LinearLayout>
 
@@ -44,147 +46,62 @@
         android:layout_height="match_parent"
         android:background="@drawable/shadow_header"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
-        <EditText
-            android:id="@+id/etNombre"
-            android:layout_width="340dp"
-            android:layout_height="50dp"
-            android:layout_margin="1dp"
-            android:layout_marginEnd="1dp"
-            android:background="@drawable/shape"
-            android:ems="7"
-            android:hint="Digite sus nombres"
-            android:inputType="textPersonName" />
-
-        <EditText
-            android:id="@+id/etApellido"
-            android:layout_width="340dp"
-            android:layout_height="50dp"
-            android:layout_margin="3dp"
-            android:layout_marginEnd="1dp"
-            android:background="@drawable/shape"
-            android:ems="7"
-            android:hint="Digite sus apeliidos"
-            android:inputType="textPersonName" />
-
-
-        <EditText
-            android:id="@+id/etNumero"
-            android:layout_width="340dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_marginEnd="1dp"
-            android:background="@drawable/shape"
-            android:ems="7"
-            android:hint="Digite su numero de identificación"
-            android:inputType="number"
-            android:padding="4dp" />
-
-
-        <LinearLayout
-            android:id="@+id/ltipdoc"
-            android:layout_width="294dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_marginEnd="1dp"
-            android:background="@drawable/shape"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:padding="2dp">
-
-            <CheckBox
-                android:id="@+id/checkBox1"
-                android:layout_width="86dp"
-                android:layout_height="32dp"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="35dp"
-                android:text="@string/checkBox1"
-                tools:ignore="TouchTargetSizeCheck" />
-
-
-            <CheckBox
-                android:id="@+id/checkBox2"
-                android:layout_width="86dp"
-                android:layout_height="32dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="1dp"
-                android:text="@string/checkBox2"
-                tools:ignore="TouchTargetS,TouchTargetSizeCheck" />
-
-        </LinearLayout>
-
-        <EditText
-            android:id="@+id/etFechanacimiento"
-            android:layout_width="340dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_marginEnd="1dp"
-            android:background="@drawable/shape"
-            android:ems="10"
-            android:hint="Digite su fecha de nacimiento"
-            android:inputType="date" />
 
         <EditText
             android:id="@+id/etCorreo"
-            android:layout_width="340dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_marginEnd="1dp"
-            android:background="@drawable/shape"
-            android:ems="10"
+            android:layout_width="253dp"
+            android:layout_height="38dp"
+            android:background="@drawable/bordes"
             android:hint="Digite correo electrónico"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:textAlignment="center"
+            android:textColorHint="@color/oscuromorado2"
+            android:textSize="15dp"
+            android:layout_marginBottom="3dp"
 
-        <EditText
-            android:id="@+id/etTelefono"
-            android:layout_width="340dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="1dp"
-            android:background="@drawable/shape"
-            android:ems="10"
-            android:hint="Digite su teléfono"
-            android:inputType="number" />
-
-        <EditText
-            android:id="@+id/editTextAlias"
-            android:layout_width="340dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_marginEnd="1dp"
-            android:background="@drawable/shape"
-            android:ems="10"
-            android:hint="Alias"
-            android:inputType="textPersonName" />
+            />
 
         <EditText
             android:id="@+id/etPassword"
-            android:layout_width="340dp"
-            android:layout_height="50dp"
+            android:layout_width="253dp"
+            android:layout_height="38dp"
             android:layout_marginTop="1dp"
-            android:background="@drawable/shape"
+            android:background="@drawable/bordes"
             android:ems="10"
             android:hint="Digite su contraseña"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            android:textSize="15dp"
+            android:layout_margin="10dp"
+            android:textColorHint="@color/oscuromorado2"/>
 
         <EditText
             android:id="@+id/etPassword2"
-            android:layout_width="340dp"
-            android:layout_height="50dp"
+            android:layout_width="253dp"
+            android:layout_height="38dp"
             android:layout_margin="5dp"
             android:layout_marginEnd="1dp"
-            android:background="@drawable/shape"
+            android:background="@drawable/bordes"
             android:ems="10"
             android:hint="Confirme su contraseña"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            android:textSize="15dp"
+            android:textColorHint="@color/oscuromorado2"/>
 
         <Button
-            android:id="@+id/btRegistrarse"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:onClick="IniciarSesion"
+            android:id="@+id/btGuardar"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:onClick="InicioSesion"
             android:text="@string/button"
+            android:background="@drawable/botton"
+            app:backgroundTint="@null"
+            
 
             />
 

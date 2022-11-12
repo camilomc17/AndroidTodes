@@ -25,7 +25,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/verde"
+                android:background="@drawable/color_login"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -34,14 +34,18 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:paddingStart="5dp"
-                    app:srcCompat="@drawable/todes" />
+                    app:srcCompat="@drawable/logotodes" />
 
                 <TextView
                     android:id="@+id/tviniciosesion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="bottom|end"
-                    android:text=" Inicio de Sesión" />
+                    android:text=" Inicio de Sesión"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"/>
+
+
             </LinearLayout>
         </FrameLayout>
     </LinearLayout>
@@ -58,19 +62,16 @@
             android:id="@+id/contenedor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
             android:orientation="vertical">
 
             <EditText
                 android:id="@+id/etCorreo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-                android:backgroundTint="#D6DCDB"
-                android:drawableLeft="@drawable/ic_action_name"
+                android:background="@drawable/bordes"
+                android:drawableLeft="@drawable/ic_baseline_email_24"
                 android:ems="10"
                 android:hint="Correo electronico"
-                android:background="@drawable/bordes"
                 android:inputType="textEmailAddress"
                 android:padding="15dp" />
 
@@ -80,8 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/bordes"
-                android:backgroundTint="#D6DCDB"
-                android:drawableLeft="@drawable/ic_action_passw"
+                android:drawableLeft="@drawable/ic_candado"
                 android:ems="10"
                 android:hint="Contraseña"
                 android:inputType="numberPassword"
@@ -89,16 +89,16 @@
 
             <Button
                 android:id="@+id/btIngresar"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/botton"
-                android:backgroundTint="@color/colortodes"
-                android:gravity="center_vertical"
+                app:backgroundTint="@null"
                 android:text="Ingresar"
                 android:textAllCaps="true"
-                app:iconGravity="textTop" />
+                app:iconGravity="textTop"
+                android:textColor="@color/oscuromorado"/>
 
             <TextView
                 android:id="@+id/tvmensaje"
@@ -117,18 +117,19 @@
                 android:layout_height="73dp"
                 android:layout_gravity="center"
                 android:layout_margin="-9dp"
-                app:srcCompat="@drawable/invitado" />
+                app:srcCompat="@drawable/icon_group" />
 
             <TextView
                 android:id="@+id/tvSincuenta"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_gravity="center"
                 android:layout_margin="4dp"
                 android:gravity="center"
-                android:minHeight="48dp"
+                android:minHeight="40dp"
                 android:onClick="Registrarse"
                 android:text="¿No tienes cuenta? Registrate" />
+
         </LinearLayout>
 
     </LinearLayout>

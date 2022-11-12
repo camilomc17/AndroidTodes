@@ -1,8 +1,6 @@
 <resources>
     <string name="app_name">Android_Todes</string>
     <string name="tvRegistrarse">Android_Todes</string>
-    <string name="checkBox1">Android_Todes</string>
-    <string name="checkBox2">Android_Todes</string>
     <string name="button">Registrar</string>
 
 
