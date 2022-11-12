@@ -9,6 +9,14 @@
             </item>
 
             <item
+                android:id="@+id/events"
+                android:icon="@drawable/ic__events"
+                android:title="Eventos">
+            </item>
+    <group
+        android:id="@+id/grupo2">
+
+            <item
                 android:id="@+id/myreports"
                 android:icon="@drawable/ic_myreports"
                 android:title="Mis reportes">
@@ -20,12 +28,7 @@
                 android:title="Crear reporte">
             </item>
 
-            <item
-                android:id="@+id/events"
-                android:icon="@drawable/ic__events"
-                android:title="Eventos">
-            </item>
-
+    </group>
             <item
                 android:id="@+id/help"
                 android:icon="@drawable/ic_help"

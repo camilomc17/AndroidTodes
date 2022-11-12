@@ -14,18 +14,22 @@ import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
-    Animation animacion1 , animacion2;
-    ImageView logo;
-
-    TextView descripcion , todestext;
-    int SPLASH_TIME=5000;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+        iniciarapp();
+
+    }
+    public void iniciarapp (){
+        Animation animacion1 , animacion2;
+        ImageView logo;
+
+        TextView descripcion , todestext;
+        int SPLASH_TIME=5000;
+
         animacion1 = AnimationUtils.loadAnimation(this,R.anim.animacion1);
         animacion2 = AnimationUtils.loadAnimation(this,R.anim.animacion2);
         todestext=findViewById(R.id.todestext);
