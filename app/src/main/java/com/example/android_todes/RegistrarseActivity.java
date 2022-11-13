@@ -72,6 +72,7 @@ import java.util.Map;
         }
 
         private void registrarUser() {
+
             Auth.createUserWithEmailAndPassword(email, contrasena).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {

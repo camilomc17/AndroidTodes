@@ -58,6 +58,10 @@
         android:orientation="vertical"
         android:padding="40dp">
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
         <LinearLayout
             android:id="@+id/contenedor"
             android:layout_width="match_parent"
@@ -71,7 +75,7 @@
                 android:background="@drawable/bordes"
                 android:drawableLeft="@drawable/ic_baseline_email_24"
                 android:ems="10"
-                android:hint="Correo electronico"
+                android:hint="Correo electrónico"
                 android:inputType="textEmailAddress"
                 android:padding="15dp" />
 
@@ -131,6 +135,7 @@
                 android:text="¿No tienes cuenta? Registrate" />
 
         </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
 </LinearLayout>
