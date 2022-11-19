@@ -48,135 +48,103 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="318dp"
-            android:layout_height="51dp"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.418"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewSubtitulo">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="318dp"
+        android:layout_height="51dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="244dp">
 
 
-            <CheckBox
-                android:id="@+id/checkBox"
-                android:layout_width="33dp"
-                android:layout_height="31dp"
-                android:layout_weight="1"
-                android:text="" />
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="33dp"
+            android:layout_height="31dp"
+            android:layout_weight="1"
+            android:text="" />
 
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="267dp"
-                android:layout_height="32dp"
-                android:layout_weight="1"
-                android:background="@drawable/fondo"
-                android:text="No hay información de la victima"
-                android:textAlignment="center"
-                android:textColor="#090808"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <EditText
-            android:id="@+id/editTextTextPersonName10"
-            android:layout_width="225dp"
-            android:layout_height="43dp"
-            android:layout_marginTop="4dp"
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="267dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
             android:background="@drawable/fondo"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Nombres y Apellidos"
+            android:text="No hay información de la victima"
             android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName11"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName11"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+            android:textColor="#090808"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
-        <EditText
-            android:id="@+id/editTextTextPersonName11"
-            android:layout_width="225dp"
-            android:layout_height="43dp"
-            android:layout_marginTop="4dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Edad aproximada"
-            android:background="@drawable/fondo"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName12"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName12"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName10" />
+    <EditText
+        android:id="@+id/editTextTextPersonName10"
+        android:layout_width="225dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/fondo"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Nombre incidencia"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName13"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName13"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-        <EditText
-            android:id="@+id/editTextTextPersonName12"
-            android:layout_width="225dp"
-            android:layout_height="43dp"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/fondo"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Genero"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName13"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName13"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName11" />
+    <EditText
+        android:id="@+id/editTextTextPersonName13"
+        android:layout_width="225dp"
+        android:layout_height="43dp"
+        android:background="@drawable/fondo"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Lugar"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName14"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName14"
+        tools:layout_editor_absoluteY="379dp" />
 
+    <EditText
+        android:id="@+id/editTextTextPersonName14"
+        android:layout_width="226dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/fondo"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Fecha"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName15"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName15"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName13" />
 
-        <EditText
-            android:id="@+id/editTextTextPersonName13"
-            android:layout_width="225dp"
-            android:layout_height="43dp"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/fondo"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Lugar"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName14"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName14"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName12" />
-
-        <EditText
-            android:id="@+id/editTextTextPersonName14"
-            android:layout_width="226dp"
-            android:layout_height="41dp"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/fondo"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Fecha"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName15"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName15"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName13" />
-
-        <EditText
-            android:id="@+id/editTextTextPersonName15"
-            android:layout_width="225dp"
-            android:layout_height="46dp"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/fondo"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Hora"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName16"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName16"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName14" />
+    <EditText
+        android:id="@+id/editTextTextPersonName15"
+        android:layout_width="225dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/fondo"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Hora"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName16"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName16"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName14" />
 
     <EditText
         android:id="@+id/editTextTextPersonName16"
         android:layout_width="225dp"
         android:layout_height="113dp"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/fondo"
         android:ems="10"
         android:inputType="textPersonName"
@@ -186,56 +154,47 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName15" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floating_action_button"
+        android:id="@+id/btnGaleria"
         android:layout_width="76dp"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        android:layout_marginTop="52dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.939"
+        app:layout_constraintHorizontal_bias="0.961"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName16"
-        app:layout_constraintVertical_bias="0.062"
-        app:srcCompat="@drawable/ic_action_galeria" />
+        app:srcCompat="@drawable/ic_action_galeria"
+        tools:layout_editor_absoluteY="168dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floating_btnCamara"
+        android:id="@+id/btnCamara"
         android:layout_width="76dp"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        android:layout_marginTop="52dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintHorizontal_bias="0.007"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName16"
-        app:layout_constraintVertical_bias="0.023"
-        app:srcCompat="@drawable/ic_action_camara" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation"
-            style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:menu="@menu/bottom_navegation"
-            tools:layout_editor_absoluteX="3dp" />
+        app:srcCompat="@drawable/ic_action_camara"
+        tools:layout_editor_absoluteY="168dp" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="472dp"
         android:layout_height="45dp"
-        android:layout_marginBottom="52dp"
 
         android:text="Enviar reporte"
-        app:layout_constraintBottom_toBottomOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" /><!--app:menu="@menu/bottom_navigation_menu"-->
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="670dp" />
+
+    <ImageView
+        android:id="@+id/imagen_visor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="106dp"
+         /><!--app:menu="@menu/bottom_navigation_menu"-->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
