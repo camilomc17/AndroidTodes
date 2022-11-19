@@ -119,5 +119,11 @@ import java.util.Map;
         }
 
 
+        public  void Pasarcamara(View view) {
+            Intent i = new Intent(this,CameraActivity.class);
+            startActivity(i);
+        }
+
+
     }
 
