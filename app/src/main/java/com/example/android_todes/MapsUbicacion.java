@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,14 +24,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 
-
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.example.android_todes.databinding.ActivityMapsUbicacionBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
@@ -41,39 +33,56 @@ public class MapsUbicacion extends AppCompatActivity {
     private GoogleMap mMap;
 
     TextView tvMensaje;
-    Button btnMa;
+    Button btnRegresarUbi;
     RecyclerView mRecycler;
 TextView dir;
     Button btnMuestraBottomSheet;
-TextView direShif;
+
 EditText  texDiecc;
+Button contiFormu;
+
+
 
     // Minimo tiempo para updates en Milisegundos
     private static final long MIN_TIME = 10000; // 10 segundos
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps_ubicacion);
 
-dir=findViewById(R.id.textDier);
+
+
+btnRegresarUbi=findViewById(R.id.btnRegresoUbica);
 tvMensaje=findViewById(R.id.tvMensaje);
+contiFormu=findViewById(R.id.butIrFormulario);
+
+        dir=findViewById(R.id.textDier);
+        Bundle recibeDatos=getIntent().getExtras();
+        String info=recibeDatos.getString("Keydireccion");
+        dir.setText(info);
+
+btnRegresarUbi.setOnClickListener(new View.OnClickListener(){
+
+    public void onClick(View view){
+        Intent intent = new Intent(MapsUbicacion.this,MiUbicacion.class);
+        startActivity(intent);
+    }
+     });
 
 
-
-Bundle recibeDatos=getIntent().getExtras();
-String info=recibeDatos.getString("KeyDatos");
-dir.setText(info);
 
 
         btnMuestraBottomSheet=findViewById(R.id.idBtnShowBottomSheet);
 
-        btnMuestraBottomSheet.setOnClickListener(new View.OnClickListener() {
+        contiFormu.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Bundle enviaDatos= new Bundle();
+            public void onClick(View view) {
+               Bundle enviaDatos= new Bundle();
                 enviaDatos.putString("KeyD",dir.getText().toString());
-                Intent intent = new Intent(MapsUbicacion.this,MapsUbicacion.class);
+                Intent intent = new Intent(MapsUbicacion.this,formulario.class);
                 intent.putExtras(enviaDatos);
                 startActivity(intent);
             }
@@ -96,10 +105,14 @@ dir.setText(info);
 //      Query query = mFirestore.collection("pet").whereEqualTo("id_user", mAuth.getCurrentUser().getUid());
 
 
+
+
         btnMuestraBottomSheet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 BottomSheetDialog dialog = new BottomSheetDialog(MapsUbicacion.this);
+
+
 
 
 
@@ -111,12 +124,24 @@ dir.setText(info);
 
 
 
+
+
+
+
+
                 dialog.setCancelable(true);
                 dialog.setContentView(vista);
 
                 dialog.show();
 
-            }
+
+
+
+                }
+
+
+
+
         });
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
@@ -150,7 +175,7 @@ dir.setText(info);
 
 
 
-        btnMa=findViewById(R.id.btnMap);
+
 
         tvMensaje = findViewById(R.id.tvMensaje);
         if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
@@ -232,9 +257,12 @@ dir.setText(info);
      */
 
 
-    public void RegresoCategorias (View view){
-        Intent pasaCategorias= new Intent(MapsUbicacion.this,categoriasIncidencia.class);
-        startActivity(pasaCategorias);
+
+
+    public void pasarFormulario (View view){
+        Intent pasaCate = new Intent(MapsUbicacion.this,formulario.class);
+        startActivity(pasaCate);
 
     }
+
 }

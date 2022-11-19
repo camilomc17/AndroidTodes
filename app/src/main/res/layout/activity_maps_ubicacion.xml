@@ -63,7 +63,7 @@ tools:context=".MapsUbicacion">
 <TextView
     android:id="@+id/tvMensaje"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_height="90dp"
     android:layout_marginLeft="8dp"
     android:layout_marginTop="8dp"
     android:layout_marginRight="8dp"
@@ -91,10 +91,10 @@ tools:context=".MapsUbicacion">
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/btnMap"
+        android:id="@+id/btnRegresoUbica"
         android:layout_width="88dp"
         android:layout_height="39dp"
-        android:onClick="RegresoCategorias"
+
         android:text="Regresar"
         android:textSize="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/fragment"
@@ -126,5 +126,18 @@ tools:context=".MapsUbicacion">
         app:layout_constraintHorizontal_bias="0.667"
         app:layout_constraintStart_toStartOf="@+id/tvMensaje"
         app:layout_constraintTop_toTopOf="@+id/tvMensaje"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.83" />
+
+    <Button
+        android:id="@+id/butIrFormulario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Continuar"
+
+        app:layout_constraintBottom_toBottomOf="@+id/fragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.71"
+        app:layout_constraintStart_toEndOf="@+id/idBtnShowBottomSheet"
+        app:layout_constraintTop_toTopOf="@+id/tvMensaje"
+        app:layout_constraintVertical_bias="0.155" />
 </androidx.constraintlayout.widget.ConstraintLayout>

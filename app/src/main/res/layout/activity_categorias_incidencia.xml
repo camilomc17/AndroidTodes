@@ -27,7 +27,7 @@
                 android:layout_marginLeft="15dp"
                 android:text="Regresar"
                 android:textSize="13dp"
-                android:onClick="RegresoMain"
+
                 />
 
             <TextView
@@ -40,11 +40,7 @@
                 android:textSize="24dp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/resiveDire"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -59,7 +55,7 @@
                 android:layout_height="125dp"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/fisico"
-                android:onClick="pasaMapa"/>
+                android:onClick="pasaUbicacion"/>
 
 
 
@@ -69,7 +65,7 @@
                 android:layout_height="125dp"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/genero"
-                android:onClick="pasaMapa"/>
+                android:onClick="pasaUbicacion"/>
         </LinearLayout>
 
         <LinearLayout
@@ -84,7 +80,7 @@
                 android:layout_height="125dp"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/abuso"
-                android:onClick="pasaMapa"/>
+                android:onClick="pasaUbicacion"/>
 
             <ImageView
                 android:id="@+id/imageViewDiscriminacion"
@@ -92,7 +88,7 @@
                 android:layout_height="125dp"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/discriminacion"
-                android:onClick="pasaMapa"/>
+                android:onClick="pasaUbicacion"/>
         </LinearLayout>
 
 
@@ -108,7 +104,7 @@
                 android:layout_height="125dp"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/igualdad"
-                android:onClick="pasaMapa"/>
+                android:onClick="pasaUbicacion"/>
 
             <ImageView
                 android:id="@+id/imageIntrafamiliar"
@@ -116,7 +112,7 @@
                 android:layout_height="125dp"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/intrafamiliar"
-                android:onClick="pasaMapa"/>
+                android:onClick="pasaUbicacion"/>
         </LinearLayout>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView

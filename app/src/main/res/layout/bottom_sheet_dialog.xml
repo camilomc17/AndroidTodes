@@ -1,12 +1,14 @@
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="2dp">
+
+
 
         <ImageView
             android:id="@+id/ivFoto"
@@ -53,11 +55,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/editTextDireccion"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="50dp"
             android:layout_toEndOf="@id/ivFoto"
             android:layout_toRightOf="@id/ivFoto"
-            android:onClick="irFomulario"
+            android:onClick="pasarFormulario"
             android:text="Cambiar" />
+
+
 
 
     </RelativeLayout>

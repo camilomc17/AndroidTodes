@@ -31,11 +31,17 @@ Button pasaMain;
         discriminacion = findViewById(R.id.imageViewDiscriminacion);
         igualdad = findViewById(R.id.imageViewIgualdad);
 
+        pasaMain.setOnClickListener(new View.OnClickListener(){
 
+            public void onClick(View v){
+                Intent intent = new Intent(categoriasIncidencia.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
      
     }
-    public void pasaMapa (View view){
-        Intent atrasMenu= new Intent(categoriasIncidencia.this,MapsUbicacion.class);
+    public void pasaUbicacion (View view){
+        Intent atrasMenu= new Intent(categoriasIncidencia.this,MiUbicacion.class);
         startActivity(atrasMenu);
 
     }

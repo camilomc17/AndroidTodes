@@ -4,6 +4,10 @@
     package="com.example.android_todes">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="com.dev.cromer.jason.coverme.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -16,6 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Todes"
         tools:targetApi="31">
+        <activity
+            android:name=".MiUbicacion"
+            android:exported="false" />
         <activity
             android:name=".formulario"
             android:exported="false" />

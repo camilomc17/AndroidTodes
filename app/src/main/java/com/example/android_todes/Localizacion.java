@@ -1,24 +1,34 @@
 package com.example.android_todes;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
+import android.location.LocationManager;
 import android.location.LocationProvider;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.Locale;
 
 public class Localizacion implements LocationListener {
 
     MapsUbicacion mapsUbicacion;
     TextView tvMensaje;
-    TextView editextDireccion;
-
 
 
 
@@ -60,7 +70,19 @@ public class Localizacion implements LocationListener {
         FragmentManager fragmentManager = getMapsUbicacion().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.fragment, fragment, null);
+
         fragmentTransaction.commit();
+
+
+
+
+
+       // if (fragment != null)
+         //   if (fragment.isVisible()) {
+              //  getMapsUbicacion().getSupportFragmentManager().beginTransaction().hide(fragment).commit();
+          //  } else {
+             //   getMapsUbicacion().getSupportFragmentManager().beginTransaction().show(fragment).commit();
+           // }
     }
 
     @Override
@@ -99,4 +121,8 @@ public class Localizacion implements LocationListener {
     public void onProviderDisabled(@NonNull String provider) {
         LocationListener.super.onProviderDisabled(provider);
     }
+
+
+
+
 }
