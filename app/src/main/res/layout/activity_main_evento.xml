@@ -22,6 +22,7 @@
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold" />
+
     <Button
         android:id="@+id/id_BTN_VOLVER"
         android:layout_width="100dp"
