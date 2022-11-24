@@ -89,7 +89,7 @@ public class MainActivityNoticia extends AppCompatActivity {
     }
     public void IrEvento(View view)
     {
-        Intent regresar = new Intent(MainActivityNoticia.this,MainActivityEvento.class);
+        Intent regresar = new Intent(MainActivityNoticia.this,FormActivityDenuncia.class);
         startActivity(regresar);
     }
 }

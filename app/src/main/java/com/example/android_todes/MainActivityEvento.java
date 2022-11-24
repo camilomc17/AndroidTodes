@@ -42,7 +42,7 @@ public class MainActivityEvento extends AppCompatActivity {
 
 
         obtenerEventos();
-        BottomNavigationView navigationViews = findViewById(R.id.bottom_navigation_noticia);
+        BottomNavigationView navigationViews = findViewById(R.id.bottom_navigation_evento);
         navigationViews.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
     private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -66,7 +66,6 @@ public class MainActivityEvento extends AppCompatActivity {
                     startActivity(llamada_emergency);
                     return true;
             }
-
             return false;
         }
     };

@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Android_Todes</string>
-
     <string name="title_evento">EVENTOS</string>
     <string name="title_noticias">NOTICIAS</string>
 </resources>
