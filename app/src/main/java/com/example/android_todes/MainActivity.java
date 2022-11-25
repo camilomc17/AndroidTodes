@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     }
 public void IrConsumo(View view)
 {
-    Intent consumo = new Intent(MainActivity.this,MainActivityEvento.class);
+    Intent consumo = new Intent(MainActivity.this,FormActivityDenuncia.class);
     startActivity(consumo);
 }
 

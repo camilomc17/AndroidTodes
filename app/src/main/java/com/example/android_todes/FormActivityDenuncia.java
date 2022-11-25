@@ -2,21 +2,30 @@ package com.example.android_todes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class FormActivityDenuncia extends AppCompatActivity {
+import java.util.Calendar;
+
+public class FormActivityDenuncia extends AppCompatActivity implements View.OnClickListener {
 
     FloatingActionButton Btn_irgalery;
     FloatingActionButton Btn_ircamara;
     ImageView imagenIncidencia;
+    TextView fecha;
+    Button btnfecha;
+    private int dia,mes,anio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +35,10 @@ public class FormActivityDenuncia extends AppCompatActivity {
         Btn_ircamara=findViewById(R.id.button_ir_camara);
         Btn_irgalery=findViewById(R.id.button_ir_galery);
         imagenIncidencia=findViewById(R.id.imagen_para_incidencia);
+
+        fecha = findViewById(R.id.TextFecha);
+        btnfecha = findViewById(R.id.buttonFecha);
+        btnfecha.setOnClickListener(this);
 
         Btn_ircamara.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +55,8 @@ public class FormActivityDenuncia extends AppCompatActivity {
         });
 
     }
+
+
      private void abrirGalery()
      {
          Intent galeria = new Intent();
@@ -72,5 +87,24 @@ public class FormActivityDenuncia extends AppCompatActivity {
              Bitmap imgBitmap =(Bitmap) extras.get("data");
              imagenIncidencia.setImageBitmap(imgBitmap);
          }
-     }    
+     }
+
+    @Override
+    public void onClick(View view) {
+        if(view == btnfecha){
+            final Calendar C = Calendar.getInstance();
+            dia = C.get(Calendar.DAY_OF_MONTH);
+            mes = C.get(Calendar.MONTH);
+            anio = C.get(Calendar.YEAR);
+
+            DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+                @Override
+                public void onDateSet(DatePicker view, int Year, int Month, int Day) {
+                    fecha.setText(Day+"/"+Month+"/"+Year);
+                }
+            }
+                    ,dia,mes,anio);
+            datePickerDialog.show();
+        }
+    }
 }
