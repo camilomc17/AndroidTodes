@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+            <item
+                android:id="@+id/myprofile"
+                android:icon="@drawable/ic_users"
+                android:title="Mi perfil">
+            </item>
+
+            <item
+                android:id="@+id/events"
+                android:icon="@drawable/ic__events"
+                android:title="Eventos">
+            </item>
+    <group
+        android:id="@+id/grupo2">
+
+            <item
+                android:id="@+id/myreports"
+                android:icon="@drawable/ic_myreports"
+                android:title="Mis reportes">
+            </item>
+
+            <item
+                android:id="@+id/newreport"
+                android:icon="@drawable/ic_newreport"
+                android:title="Crear reporte">
+            </item>
+
+    </group>
+            <item
+                android:id="@+id/help"
+                android:icon="@drawable/ic_help"
+                android:title="ayuda">
+            </item>
+
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/ic_logout"
+                android:title="Salir">
+            </item>
+
+
+
+
+</menu>
