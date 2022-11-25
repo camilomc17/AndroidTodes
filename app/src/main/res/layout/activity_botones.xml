@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ActivityBotones">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <Button
+            android:id="@+id/btnfecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha" />
+
+
+        <TextView
+            android:id="@+id/tvfecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+
+        <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/MenuPrincipal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            app:menu_fab_label="Menu">
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnMiPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_users"
+                app:fab_label="Mi Perfil" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnEventos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="IrEvento"
+                android:src="@drawable/ic_events"
+                app:fab_label="Eventos" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnMisReportes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_myreports"
+                app:fab_label="Mis Reportes" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/CrearReporte"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_newreport"
+                app:fab_label="Crear Reportes" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnAyuda"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_help"
+                app:fab_label="Ayuda" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnCerrarSesion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_close"
+                app:fab_label="Cerrar sesion" />
+
+
+        </com.github.clans.fab.FloatingActionMenu>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
