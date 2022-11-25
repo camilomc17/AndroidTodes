@@ -103,7 +103,7 @@
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
                 android:ems="10"
-                android:hint="dd/mm/aa"
+                android:hint="         dd/mm/aa"
                 android:inputType="textPersonName"
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName16"

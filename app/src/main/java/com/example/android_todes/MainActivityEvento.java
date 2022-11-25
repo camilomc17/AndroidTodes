@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.android_todes.apieventos.ApiClientEvento;
 import com.example.android_todes.apieventos.ApiEvento;
 import com.example.android_todes.models.Evento_model;
+import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.List;
@@ -32,10 +33,18 @@ public class MainActivityEvento extends AppCompatActivity {
     //esta para utilizar nuestro Adapter
     private EventosAdapter eventosAdapter;
 
+
+    FloatingActionMenu actionMenu;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_evento);
+
+
+        actionMenu = (FloatingActionMenu) findViewById(R.id.MenuPrincipal);
+        actionMenu.setClosedOnTouchOutside(true);
 
         recyclerView=findViewById(R.id.rv_eventos);
         recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),1));
@@ -87,9 +96,32 @@ public class MainActivityEvento extends AppCompatActivity {
             }
         });
     }
+
+
+    public void IrMiPerfil(){
+
+    }
+
+    public void IrCrearIncidencia(View view){
+        Intent intentE=new Intent(this,FormActivityDenuncia.class);
+        startActivity(intentE);
+
+
+    }
+    public void IrMisIncidencias(View view){
+
+
+    }
+    public void IrAyuda(){
+
+    }
+    public void CerrarSesion(){
+
+    }
+
     public void IrNoticia(View view)
     {
-        Intent ir = new Intent(MainActivityEvento.this,MainActivityNoticia.class);
+        Intent ir = new Intent(this,MainActivityNoticia.class);
         startActivity(ir);
     }
 

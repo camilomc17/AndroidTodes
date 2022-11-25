@@ -23,13 +23,7 @@
         android:textSize="25dp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/id_BTN_VOLVER"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="100dp"
-        android:onClick="IrNoticia"
-        android:text="VOLVER" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_eventos"
@@ -43,6 +37,73 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="2dp"
         android:layout_marginBottom="0dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+
+
+        <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/MenuPrincipal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="50dp"
+            app:menu_fab_label="Menu">
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnMiPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_users"
+                app:fab_label="Mi Perfil"/>
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnNoticias"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="IrNoticia"
+                android:src="@drawable/ic_news"
+                app:fab_label="Noticias"/>
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnMisReportes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_myreports"
+                app:fab_label="Mis Reportes"/>
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/CrearReporte"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_newreport"
+                android:onClick="IrCrearIncidencia"
+                app:fab_label="Crear Reportes"/>
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnAyuda"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_help"
+                app:fab_label="Ayuda"/>
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnCerrarSesion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_logout"
+                app:fab_label="Cerrar sesion"/>
+
+
+        </com.github.clans.fab.FloatingActionMenu>
+    </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_evento"

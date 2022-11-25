@@ -16,12 +16,17 @@
         android:theme="@style/Theme.Android_Todes"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ActivityMenuBotones"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".FormActivityDenuncia"
             android:exported="false" />
         <activity
-
             android:name=".MainActivityEvento"
             android:exported="false" />
         <activity

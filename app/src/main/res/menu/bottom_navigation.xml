@@ -4,7 +4,8 @@
         android:id="@+id/phone_emergency"
         android:enabled="true"
         android:title="Emergencia"
-        android:icon="@drawable/ic_alert"/>
+        android:icon="@drawable/ic_alert"
+        />
     <item
         android:id="@+id/phone_ambulance"
         android:enabled="true"

@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.android_todes.apinoticias.ApiClient;
 import com.example.android_todes.apinoticias.ApiNoticia;
 import com.example.android_todes.models.Noticia_model;
+import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.List;
@@ -31,10 +32,16 @@ public class MainActivityNoticia extends AppCompatActivity {
     //esta para utilizar nuestro Adapter
     private NoticiasAdapter noticiasAdapter;
 
+
+    FloatingActionMenu actionMenu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_noticia);
+
+        actionMenu = (FloatingActionMenu) findViewById(R.id.MenuPrincipal);
+        actionMenu.setClosedOnTouchOutside(true);
 
         recyclerView=findViewById(R.id.rv_noticias);
         recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),1));
@@ -87,9 +94,36 @@ public class MainActivityNoticia extends AppCompatActivity {
             }
         });
     }
-    public void IrEvento(View view)
-    {
-        Intent regresar = new Intent(MainActivityNoticia.this,FormActivityDenuncia.class);
-        startActivity(regresar);
+
+
+    public void IrMiPerfil(){
+
     }
+
+    public void IrCrearIncidencia(View view){
+        Intent intentE=new Intent(this,FormActivityDenuncia.class);
+        startActivity(intentE);
+
+
+    }
+    public void IrMisIncidencias(View view){
+
+
+    }
+    public void IrAyuda(){
+
+    }
+    public void CerrarSesion(){
+
+    }
+
+    public void IrEvento(View view) {
+        Intent intentE=new Intent(this,MainActivityEvento.class);
+        startActivity(intentE);
+
+    }
+
+
+
+
 }
