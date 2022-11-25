@@ -16,6 +16,10 @@
         android:theme="@style/Theme.Android_Todes"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
+        <activity
+            android:name=".FormActivityDenuncia"
+            android:exported="false" />
         <activity
 
             android:name=".MainActivityEvento"

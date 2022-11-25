@@ -1,7 +1,6 @@
 package com.example.android_todes.models;
 
 public class Noticia_model {
-
     private String nombre_publicacion;
     private String descripcion_publicacion;
     private String lugar;

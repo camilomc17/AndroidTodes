@@ -1,17 +1,21 @@
 package com.example.android_todes;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
 import com.example.android_todes.apinoticias.ApiClient;
 import com.example.android_todes.apinoticias.ApiNoticia;
 import com.example.android_todes.models.Noticia_model;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.List;
 
@@ -37,9 +41,34 @@ public class MainActivityNoticia extends AppCompatActivity {
 
 
         obtenerNoticias();
+        BottomNavigationView navigationView = findViewById(R.id.bottom_navigation_noticia);
+        navigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
+    private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
+            switch (item.getItemId()) {
+                case R.id.phone_admin:
+                    String cellAdmin = "+57-";
+                    Intent llamada_admin = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", cellAdmin, null));
+                    startActivity(llamada_admin);
+                    return true;
+                case R.id.phone_ambulance:
+                    String cellAmbulance = "+57-23";
+                    Intent llamada_ambulance = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", cellAmbulance, null));
+                    startActivity(llamada_ambulance);
+                    return true;
+                case R.id.phone_emergency:
+                    String cellEmergency = "+57-911";
+                    Intent llamada_emergency = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", cellEmergency, null));
+                    startActivity(llamada_emergency);
+                    return true;
+            }
 
+            return false;
+        }
+    };
     public void obtenerNoticias() {
         Call<List<Noticia_model>> call= ApiClient.getClient().create(ApiNoticia.class).obtenerListaNoticias();
         call.enqueue(new Callback<List<Noticia_model>>() {
@@ -60,7 +89,7 @@ public class MainActivityNoticia extends AppCompatActivity {
     }
     public void IrEvento(View view)
     {
-        Intent ir = new Intent(MainActivityNoticia.this,MainActivityEvento.class);
-        startActivity(ir);
+        Intent regresar = new Intent(MainActivityNoticia.this,FormActivityDenuncia.class);
+        startActivity(regresar);
     }
 }
