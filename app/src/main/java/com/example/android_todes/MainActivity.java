@@ -49,9 +49,9 @@ public class MainActivity extends AppCompatActivity {
         new Handler(getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent paginadashboard = new Intent(MainActivity.this, NavigationDrawerMenu.class);
+             /*   Intent paginadashboard = new Intent(MainActivity.this);
                 startActivity(paginadashboard);
-                finish();
+                finish();*/
             }
 
         }, SPLASH_TIME);
