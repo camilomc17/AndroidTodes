@@ -32,15 +32,14 @@ public class MainActivity extends AppCompatActivity {
     public void iniciarapp() {
         Animation animacion1, animacion2;
         ImageView logo;
+        TextView descripcion , todestext;
+        int SPLASH_TIME=5000;
 
-        TextView descripcion, todestext;
-        int SPLASH_TIME = 5000;
-
-        animacion1 = AnimationUtils.loadAnimation(this, R.anim.animacion1);
-        animacion2 = AnimationUtils.loadAnimation(this, R.anim.animacion2);
-        todestext = findViewById(R.id.todestext);
-        descripcion = findViewById(R.id.descripcion);
-        logo = findViewById(R.id.logo);
+        animacion1 = AnimationUtils.loadAnimation(this,R.anim.animacion1);
+        animacion2 = AnimationUtils.loadAnimation(this,R.anim.animacion2);
+        todestext=findViewById(R.id.todestext);
+        descripcion=findViewById(R.id.descripcion);
+        logo=findViewById(R.id.loguito);
         logo.setAnimation(animacion1);
         logo.setAnimation(animacion2);
         descripcion.setAnimation(animacion1);
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler(getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent paginadashboard = new Intent(MainActivity.this, MainActivityNoticia.class);
+                Intent paginadashboard = new Intent(MainActivity.this, NavigationDrawerMenu.class);
                 startActivity(paginadashboard);
                 finish();
             }
