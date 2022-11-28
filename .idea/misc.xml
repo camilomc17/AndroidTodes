@@ -3,62 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android Todes/app/src/main/res/layout/activity_eventos.xml" value="0.18115942028985507" />
         <entry key="..\:/Android Todes/app/src/main/res/layout/activity_main.xml" value="0.14130434782608695" />
-
-        <entry key="..\:/AndroidTodes/app/src/main/res/layout/activity_main.xml" value="0.28888888888888886" />
-        <entry key="..\:/AndroidTodes/app/src/main/res/layout/activity_main_noticias.xml" value="0.20655737704918034" />
-        <entry key="..\:/AndroidTodes/app/src/main/res/layout/activity_registro.xml" value="0.3523076923076923" />
-        <entry key="..\:/xampp/htdocs/Android CONSUMO-EVENTOS/AndroidTodes/app/src/main/res/drawable/fond_consumos.xml" value="0.1" />
-
-        <entry key="..\:/xampp/htdocs/Android CONSUMO-EVENTOS/AndroidTodes/app/src/main/res/drawable/fond_form_inicidencia.xml" value="0.1" />
-        <entry key="..\:/xampp/htdocs/Android CONSUMO-EVENTOS/AndroidTodes/app/src/main/res/layout/activity_form_denuncia.xml" value="0.22" />
-
-        <entry key="..\:/xampp/htdocs/Android CONSUMO-EVENTOS/AndroidTodes/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
-        <entry key="..\:/xampp/htdocs/Android CONSUMO-EVENTOS/AndroidTodes/app/src/main/res/layout/activity_main_evento.xml" value="0.22" />
-        <entry key="..\:/xampp/htdocs/Android CONSUMO-EVENTOS/AndroidTodes/app/src/main/res/layout/activity_main_noticia.xml" value="0.1" />
-        <entry key="..\:/xampp/htdocs/Android CONSUMO-EVENTOS/AndroidTodes/app/src/main/res/layout/activity_main_noticias.xml" value="0.1" />
-        <entry key="..\:/xampp/htdocs/Android CONSUMO-EVENTOS/AndroidTodes/app/src/main/res/layout/activity_registro.xml" value="0.15353260869565216" />
-        <entry key="..\:/xampp/htdocs/Android CONSUMO-EVENTOS/AndroidTodes/app/src/main/res/layout/item_eventos.xml" value="0.15353260869565216" />
-        <entry key="..\:/xampp/htdocs/Android CONSUMO-EVENTOS/AndroidTodes/app/src/main/res/layout/item_noticias.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/Lenovo/Downloads/AndroidTodes/app/src/main/res/layout/activity_form_denuncia.xml" value="0.4068965517241379" />
+        <entry key="..\:/xampp/htdocs/Android CONSUMO-EVENTOS/AndroidTodes/app/src/main/res/layout/activity_form_denuncia.xml" value="0.33" />
+        <entry key="..\:/xampp/htdocs/Android CONSUMO-EVENTOS/AndroidTodes/app/src/main/res/layout/activity_main.xml" value="0.3625" />
         <entry key="..\:/xampp/htdocs/Android CONSUMO-EVENTOS/AndroidTodes/app/src/main/res/menu/bottom_navigation.xml" value="0.1" />
-        <entry key="..\:/xampp/htdocs/Android CONSUMO-EVENTOS/AndroidTodes/app/src/main/res/mipmap-anydpi-v26/ic_galery.xml" value="0.175" />
-        <entry key="..\:/xampp/htdocs/Android CONSUMO-EVENTOS/AndroidTodes/app/src/main/res/mipmap-anydpi-v26/ic_galery_round.xml" value="0.1" />
-        <entry key="..\:/xampp/htdocs/AndroidTodes/app/src/main/res/layout/activity_registro.xml" value="0.3625" />
-
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/drawable/fondo.xml" value="0.22" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/drawable/fondo_drawer.xml" value="0.3205" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/drawable/ic__events.xml" value="0.353" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/drawable/ic_help.xml" value="0.353" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/drawable/ic_logout.xml" value="0.353" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/drawable/ic_menu_camera.xml" value="0.3635" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.3635" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.3635" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/drawable/ic_myreports.xml" value="0.353" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/drawable/ic_newreport.xml" value="0.353" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/drawable/ic_users.xml" value="0.353" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/drawable/side_nav_bar.xml" value="0.3635" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/font/abeezee.xml" value="0.25" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/activity_inicioapp.xml" value="0.3625" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/activity_iniciodpsplash.xml" value="0.3484375" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/activity_main_activitynavegacion.xml" value="0.3625" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/activity_navigation_drawer_menu.xml" value="0.22" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/activity_slider_menu.xml" value="0.3625" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/app_bar_main_activitynavegacion.xml" value="0.3625" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/content_main.xml" value="0.3614583333333333" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/content_main_activitynavegacion.xml" value="0.3625" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/drawer_header.xml" value="0.33" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/drawer_headr.xml" value="0.3614583333333333" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/drawer_toolbar.xml" value="0.3614583333333333" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/fragment_gallery.xml" value="0.3625" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/fragment_home.xml" value="0.3625" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/fragment_slideshow.xml" value="0.3625" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/layout/nav_header_main_activitynavegacion.xml" value="0.3625" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/menu/activity_main_drawer.xml" value="0.3625" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/menu/drawer_menu.xml" value="0.25" />
-        <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/AndroidTodes/app/src/main/res/menu/main_activitynavegacion.xml" value="0.3625" />
-
       </map>
     </option>
   </component>
