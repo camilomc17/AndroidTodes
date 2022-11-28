@@ -10,6 +10,7 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,9 +24,9 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
     FloatingActionButton Btn_irgalery;
     FloatingActionButton Btn_ircamara;
     ImageView imagenIncidencia;
-    TextView fecha;
+    EditText fecha;
     Button btnfecha;
-    private int dia,mes,anio;
+    private int dia,mes,year;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,7 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
         Btn_irgalery=findViewById(R.id.button_ir_galery);
         imagenIncidencia=findViewById(R.id.imagen_para_incidencia);
 
-        fecha = findViewById(R.id.TextFecha);
+        fecha = findViewById(R.id.campoFecha);
         btnfecha = findViewById(R.id.buttonFecha);
         btnfecha.setOnClickListener(this);
 
@@ -95,7 +96,7 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
             final Calendar C = Calendar.getInstance();
             dia = C.get(Calendar.DAY_OF_MONTH);
             mes = C.get(Calendar.MONTH);
-            anio = C.get(Calendar.YEAR);
+            year = C.get(Calendar.YEAR);
 
             DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
                 @Override
@@ -103,7 +104,7 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
                     fecha.setText(Day+"/"+Month+"/"+Year);
                 }
             }
-                    ,dia,mes,anio);
+                    ,dia,mes,year);
             datePickerDialog.show();
         }
     }
