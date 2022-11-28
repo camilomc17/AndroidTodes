@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     public void iniciarapp (){
         Animation animacion1 , animacion2;
         ImageView logo;
-
         TextView descripcion , todestext;
         int SPLASH_TIME=5000;
 
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         animacion2 = AnimationUtils.loadAnimation(this,R.anim.animacion2);
         todestext=findViewById(R.id.todestext);
         descripcion=findViewById(R.id.descripcion);
-        logo=findViewById(R.id.logo);
+        logo=findViewById(R.id.loguito);
         logo.setAnimation(animacion1);
         logo.setAnimation(animacion2);
         descripcion.setAnimation(animacion1);
