@@ -37,7 +37,7 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
         Btn_irgalery=findViewById(R.id.button_ir_galery);
         imagenIncidencia=findViewById(R.id.imagen_para_incidencia);
 
-        fecha = findViewById(R.id.campoFecha);
+        fecha = findViewById(R.id.TextFecha);
         btnfecha = findViewById(R.id.buttonFecha);
         btnfecha.setOnClickListener(this);
 
@@ -56,8 +56,6 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
         });
 
     }
-
-
      private void abrirGalery()
      {
          Intent galeria = new Intent();
@@ -68,7 +66,6 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
              startActivityForResult(galeria, 1);
          }
      }
-
      private void abrirCamara()
      {
          Intent camara = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -78,8 +75,7 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
          }
 
      }
-
-     protected void onActivityResult(int requestCode, int resultCode, Intent data) 
+     protected void onActivityResult(int requestCode, int resultCode, Intent data)
      {
          super.onActivityResult(requestCode, resultCode, data);
          if(requestCode==1 && resultCode==RESULT_OK)
@@ -89,9 +85,8 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
              imagenIncidencia.setImageBitmap(imgBitmap);
          }
      }
-
-    @Override
-    public void onClick(View view) {
+         @Override
+           public void onClick(View view) {
         if(view == btnfecha){
             final Calendar C = Calendar.getInstance();
             dia = C.get(Calendar.DAY_OF_MONTH);
@@ -108,4 +103,47 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
             datePickerDialog.show();
         }
     }
+
+
+    /*
+    private void validation() {
+        String nom=nombre.getText().toString();
+        String ape=apellido.getText().toString();
+        String contra=contraseña.getText().toString();
+        String email1=email.getText().toString();
+        if(nom.equals(""))
+        {
+            nombre.setError("required");
+        }
+        if(ape.equals(""))
+        {
+            apellido.setError("Escriba su apellido es Obligatorio");
+        }
+        if(contra.equals(""))
+        {
+            contraseña.setError("No ingreso su contaseña");
+        }
+        if(email1.equals(""))
+        {
+            email.setError("Ingrese su correo electronico");
+        }
+    }
+    public void guardar(String nom,String ape,String contra,String email1)
+    {
+        Map<String,Object> map = new HashMap<>();
+        map.put("nombre",nom);
+        map.put("apellido",ape);
+        map.put("contraseña",contra);
+        map.put("email",email1);
+
+        myfirebase.collection("Users")
+                .add(map)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Toast.makeText(getApplicationContext(),"Usuario quedo Guardado", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+     */
 }
