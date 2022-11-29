@@ -37,9 +37,11 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
     FloatingActionButton Btn_irgalery;
     FloatingActionButton Btn_ircamara;
     ImageView imagenIncidencia;
-    EditText Nombre;
+    EditText nombres_apellidos;
+    EditText edad;
     EditText lugar_incidencia;
     EditText fecha_incidencia;
+    EditText hora;
     EditText descripcion_incidencia;
     Button btn_send_diligencia;
 
@@ -66,10 +68,12 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
         Btn_irgalery=findViewById(R.id.button_ir_galery);
 
         imagenIncidencia=findViewById(R.id.imagen_para_incidencia);
-        Nombre=findViewById(R.id.editNombreIncidencia);
+        nombres_apellidos=findViewById(R.id.editNombreYApellidos);
+        edad=findViewById(R.id.editEdad);
         lugar_incidencia=findViewById(R.id.editLugarDiligencia);
         descripcion_incidencia=findViewById(R.id.Descripcion_de_incidencia);
         fecha_incidencia = findViewById(R.id.TextFecha);
+        hora=findViewById(R.id.editHoraDiligencia);
         btn_send_diligencia=findViewById(R.id.enviarDiligencia);
         databaseReference = FirebaseDatabase.getInstance().getReference();
         validation();
@@ -94,25 +98,35 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
 
     }
     private void validation() {
-        String nom=Nombre.getText().toString();
+        String nom_apes=nombres_apellidos.getText().toString();
+        String ed=edad.getText().toString();
         String lug=lugar_incidencia.getText().toString();
         String fech=fecha_incidencia.getText().toString();
+        String hor=hora.getText().toString();
         String des=descripcion_incidencia.getText().toString();
-        if(nom.equals(""))
+        if(nom_apes.equals(""))
         {
-            Nombre.setError("required");
+            nombres_apellidos.setError("Ingrese nombre de la victima");
+        }
+        if(ed.equals(""))
+        {
+            edad.setError("Edad aproximada");
         }
         if(lug.equals(""))
         {
-            lugar_incidencia.setError("Escriba su apellido es Obligatorio");
+            lugar_incidencia.setError("Lugar");
         }
         if(fech.equals(""))
         {
-            fecha_incidencia.setError("No ingreso su contaseña");
+            fecha_incidencia.setError("Fecha");
+        }
+        if(hor.equals(""))
+        {
+            hora.setError("hora");
         }
         if(des.equals(""))
         {
-            descripcion_incidencia.setError("Ingrese su correo electronico");
+            descripcion_incidencia.setError("Ingrese los sucesos");
         }
     }
 
@@ -121,7 +135,7 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
         btn_send_diligencia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String nombre_inci = Nombre.getText().toString();
+                String nombre_inci = nombres_apellidos.getText().toString();
                 String lugar_inci = lugar_incidencia.getText().toString();
                 String  fecha_inci = fecha_incidencia.getText().toString();
                 String  descripcion_inci = descripcion_incidencia.getText().toString();

@@ -6,12 +6,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fond_form_inicidencia"
     tools:context=".FormActivityDenuncia">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         app2:layout_constraintBottom_toBottomOf="parent"
         app2:layout_constraintEnd_toEndOf="parent"
@@ -22,7 +21,12 @@
             android:id="@+id/linearLayoutTextview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
             android:orientation="vertical"
             app2:layout_constraintBottom_toTopOf="@+id/linearLayout2"
             app2:layout_constraintEnd_toEndOf="parent"
@@ -33,12 +37,12 @@
                 android:id="@+id/textViewSubtitulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
                 android:text="Te recomendamos suministrar la mayor información posible "
                 android:textAlignment="center"
                 android:textColor="#090909"
-                android:textSize="14sp" />
+                android:textSize="12sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -71,10 +75,15 @@
             android:layout_below="@+id/linearLayoutTextview"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
             android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="0dp"
+            android:background="@drawable/shadow_header"
+            android:backgroundTint="#411470"
             android:orientation="vertical"
+            android:padding="6dp"
             app2:layout_constraintEnd_toEndOf="parent"
             app2:layout_constraintStart_toStartOf="parent"
             app2:layout_constraintTop_toBottomOf="@+id/linearLayoutTextview">
@@ -82,16 +91,17 @@
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
                 android:layout_gravity="center"
+                android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
-                android:layout_marginEnd="10dp">
+                android:layout_marginEnd="0dp"
+                android:padding="4dp">
 
                 <LinearLayout
                     android:id="@+id/linearLayoutCamposForm"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="0dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginEnd="0dp"
                     android:gravity="center"
                     android:orientation="vertical"
@@ -99,11 +109,13 @@
 
 
                     <EditText
-                        android:id="@+id/editNombreIncidencia"
+                        android:id="@+id/editNombreYApellidos"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="3"
-                        android:hint="Nombre incidencia"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/borde_edit_text"
+                        android:ems="4"
+                        android:hint="Nombres y Apellidos"
                         android:inputType="textPersonName"
                         android:textAlignment="center"
                         app:layout_constraintEnd_toEndOf="@+id/editLugar"
@@ -112,39 +124,55 @@
                     <EditText
                         android:id="@+id/editLugarDiligencia"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="3"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/borde_edit_text"
+                        android:ems="4"
                         android:hint="Lugar"
                         android:inputType="textPersonName"
                         android:textAlignment="center"
                         app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName14"
                         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName14"
-                        tools:ignore="MissingConstraints"
                         tools:layout_editor_absoluteY="320dp" />
 
+                    <EditText
+                        android:id="@+id/editEdad"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/borde_edit_text"
+                        android:ems="4"
+                        android:hint="Edad"
+                        android:inputType="textPersonName"
+                        android:textAlignment="center"
+                        app:layout_constraintEnd_toEndOf="@+id/editLugar"
+                        app:layout_constraintStart_toStartOf="@+id/editLugar" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/borde_edit_text"
                         android:gravity="center"
                         android:orientation="horizontal">
 
                         <EditText
                             android:id="@+id/TextFecha"
-                            android:layout_width="298dp"
-                            android:layout_height="wrap_content"
+                            android:layout_width="296dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="0dp"
                             android:gravity="center"
-                            android:hint="                        dd/mm/aa"
+                            android:hint="                      dd/mm/aa"
                             android:textAlignment="center"
-                            android:textSize="20dp"
                             app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName16"
                             app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName16" />
 
                         <Button
                             android:id="@+id/buttonFecha"
                             style="@style/Widget.AppCompat.Button.Borderless"
-                            android:layout_width="110dp"
-                            android:layout_height="40dp"
+                            android:layout_width="100dp"
+                            android:layout_height="30dp"
                             android:layout_marginLeft="0dp"
                             app2:icon="@drawable/ic_calendar_diligencia"
                             app2:iconSize="30dp"
@@ -152,23 +180,83 @@
                     </LinearLayout>
 
                     <EditText
-                        android:id="@+id/Descripcion_de_incidencia"
+                        android:id="@+id/editHoraDiligencia"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="6"
-                        android:hint="Descripción de la situación"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/borde_edit_text"
+                        android:ems="4"
+                        android:hint="Hora"
                         android:inputType="textPersonName"
                         android:textAlignment="center"
-                        tools:ignore="MissingConstraints" />
+                        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName14"
+                        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName14"
+                        tools:layout_editor_absoluteY="320dp" />
+
+                    <EditText
+                        android:id="@+id/Descripcion_de_incidencia"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/borde_edit_text"
+                        android:ems="4"
+                        android:hint="Descripción de la situación"
+                        android:inputType="textPersonName"
+                        android:textAlignment="center" />
 
                     <ImageView
                         android:id="@+id/imagen_para_incidencia"
                         android:layout_width="match_parent"
-                        android:layout_height="200dp"
+                        android:layout_height="150dp"
+                        android:layout_marginTop="4dp"
                         android:src="@drawable/ic_image_diligencia"
                         tools:layout_editor_absoluteX="16dp" />
 
+                    <LinearLayout
+                        android:id="@+id/linearLayout3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        app2:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/button_ir_galery"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="30dp"
+                            android:src="@drawable/ic_galeria_foreground"
+                            app2:maxImageSize="30dp" />
+
+                        <Button
+                            android:id="@+id/enviarDiligencia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="44dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:text="ENVIAR"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/button_ir_camara"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="30dp"
+                            android:src="@drawable/ic_camara_foreground"
+                            app2:maxImageSize="30dp" />
+
+                    </LinearLayout>
                 </LinearLayout>
 
             </ScrollView>
@@ -176,46 +264,7 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/linearLayout3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginBottom="0dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            app2:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/button_ir_galery"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="40dp"
-                android:src="@drawable/ic_galeria_foreground"
-                app2:maxImageSize="30dp" />
-
-            <Button
-                android:id="@+id/enviarDiligencia"
-                android:layout_width="wrap_content"
-                android:layout_height="44dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:text="ENVIAR"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/button_ir_camara"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:src="@drawable/ic_camara_foreground"
-                app2:maxImageSize="30dp" />
-
-        </LinearLayout>
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- android:background="@drawable/fond_form_inicidencia"-->
