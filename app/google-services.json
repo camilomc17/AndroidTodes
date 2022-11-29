@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "374358711443",
+    "firebase_url": "https://android-todes-default-rtdb.firebaseio.com",
     "project_id": "android-todes",
     "storage_bucket": "android-todes.appspot.com"
   },

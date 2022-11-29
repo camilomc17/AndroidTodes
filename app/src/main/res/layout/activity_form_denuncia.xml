@@ -122,7 +122,7 @@
                         app:layout_constraintStart_toStartOf="@+id/editLugar" />
 
                     <EditText
-                        android:id="@+id/editLugarDiligencia"
+                        android:id="@+id/editLugarIncidencia"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginStart="0dp"
@@ -158,7 +158,7 @@
                         android:orientation="horizontal">
 
                         <EditText
-                            android:id="@+id/TextFecha"
+                            android:id="@+id/EditFechaIncidencia"
                             android:layout_width="296dp"
                             android:layout_height="40dp"
                             android:layout_marginStart="0dp"
@@ -180,7 +180,7 @@
                     </LinearLayout>
 
                     <EditText
-                        android:id="@+id/editHoraDiligencia"
+                        android:id="@+id/editHoraIncidencia"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginStart="0dp"
@@ -195,7 +195,7 @@
                         tools:layout_editor_absoluteY="320dp" />
 
                     <EditText
-                        android:id="@+id/Descripcion_de_incidencia"
+                        android:id="@+id/editDescripcionIncidencia"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginTop="2dp"
@@ -206,7 +206,7 @@
                         android:textAlignment="center" />
 
                     <ImageView
-                        android:id="@+id/imagen_para_incidencia"
+                        android:id="@+id/imagenIncidencia"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:layout_marginTop="4dp"
@@ -238,7 +238,7 @@
                             app2:maxImageSize="30dp" />
 
                         <Button
-                            android:id="@+id/enviarDiligencia"
+                            android:id="@+id/enviarIncidencia"
                             android:layout_width="wrap_content"
                             android:layout_height="44dp"
                             android:layout_gravity="center"
