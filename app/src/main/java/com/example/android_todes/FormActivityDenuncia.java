@@ -1,10 +1,14 @@
 package com.example.android_todes;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.icu.text.StringSearch;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -13,9 +17,18 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.Calendar;
 
@@ -24,9 +37,25 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
     FloatingActionButton Btn_irgalery;
     FloatingActionButton Btn_ircamara;
     ImageView imagenIncidencia;
-    EditText fecha;
+    EditText Nombre;
+    EditText lugar_incidencia;
+    EditText fecha_incidencia;
+    EditText descripcion_incidencia;
+    Button btn_send_diligencia;
+
+    DatabaseReference databaseReference;
+    ProgressDialog cargando;
+
+    private FirebaseFirestore firestore;
+    StorageReference storageReference;
+    String storage_path = "imagesIncidencia/";
+    private Uri image_url;
+    String photo = "photo";
+    String id;
+
     Button btnfecha;
     private int dia,mes,year;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +64,20 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
 
         Btn_ircamara=findViewById(R.id.button_ir_camara);
         Btn_irgalery=findViewById(R.id.button_ir_galery);
-        imagenIncidencia=findViewById(R.id.imagen_para_incidencia);
 
-        fecha = findViewById(R.id.TextFecha);
+        imagenIncidencia=findViewById(R.id.imagen_para_incidencia);
+        Nombre=findViewById(R.id.editNombreIncidencia);
+        lugar_incidencia=findViewById(R.id.editLugarDiligencia);
+        descripcion_incidencia=findViewById(R.id.Descripcion_de_incidencia);
+        fecha_incidencia = findViewById(R.id.TextFecha);
+        btn_send_diligencia=findViewById(R.id.enviarDiligencia);
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+        validation();
+        guardarFormulario();
+
+
         btnfecha = findViewById(R.id.buttonFecha);
         btnfecha.setOnClickListener(this);
-
         Btn_ircamara.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,6 +93,44 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
         });
 
     }
+    private void validation() {
+        String nom=Nombre.getText().toString();
+        String lug=lugar_incidencia.getText().toString();
+        String fech=fecha_incidencia.getText().toString();
+        String des=descripcion_incidencia.getText().toString();
+        if(nom.equals(""))
+        {
+            Nombre.setError("required");
+        }
+        if(lug.equals(""))
+        {
+            lugar_incidencia.setError("Escriba su apellido es Obligatorio");
+        }
+        if(fech.equals(""))
+        {
+            fecha_incidencia.setError("No ingreso su contaseña");
+        }
+        if(des.equals(""))
+        {
+            descripcion_incidencia.setError("Ingrese su correo electronico");
+        }
+    }
+
+    private void guardarFormulario()
+    {
+        btn_send_diligencia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String nombre_inci = Nombre.getText().toString();
+                String lugar_inci = lugar_incidencia.getText().toString();
+                String  fecha_inci = fecha_incidencia.getText().toString();
+                String  descripcion_inci = descripcion_incidencia.getText().toString();
+
+
+            }
+        });
+    }
+
      private void abrirGalery()
      {
          Intent galeria = new Intent();
@@ -96,7 +171,7 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
             DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int Year, int Month, int Day) {
-                    fecha.setText(Day+"/"+Month+"/"+Year);
+                    fecha_incidencia.setText(Day+"/"+Month+"/"+Year);
                 }
             }
                     ,dia,mes,year);
@@ -106,28 +181,7 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
 
 
     /*
-    private void validation() {
-        String nom=nombre.getText().toString();
-        String ape=apellido.getText().toString();
-        String contra=contraseña.getText().toString();
-        String email1=email.getText().toString();
-        if(nom.equals(""))
-        {
-            nombre.setError("required");
-        }
-        if(ape.equals(""))
-        {
-            apellido.setError("Escriba su apellido es Obligatorio");
-        }
-        if(contra.equals(""))
-        {
-            contraseña.setError("No ingreso su contaseña");
-        }
-        if(email1.equals(""))
-        {
-            email.setError("Ingrese su correo electronico");
-        }
-    }
+
     public void guardar(String nom,String ape,String contra,String email1)
     {
         Map<String,Object> map = new HashMap<>();
