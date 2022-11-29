@@ -74,6 +74,7 @@
         app2:layout_constraintStart_toStartOf="parent"
         app2:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
+
         <EditText
             android:id="@+id/editNombreIncidencia"
             android:layout_width="match_parent"
@@ -153,6 +154,7 @@
             app2:layout_constraintEnd_toEndOf="parent"
             app2:layout_constraintStart_toStartOf="parent"
             app2:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+       
     </LinearLayout>
 
 
@@ -200,5 +202,6 @@
 
 
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
