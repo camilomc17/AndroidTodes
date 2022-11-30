@@ -1,13 +1,13 @@
 package com.example.android_todes;
 
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.icu.text.StringSearch;
+
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -24,8 +24,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
@@ -50,7 +48,7 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
     EditText descripcion_incidencia;
     Button btn_send_incidencia;
 
-   // DatabaseReference databaseReference;
+    DatabaseReference databaseReference;
     ProgressDialog cargando;
 
     FirebaseFirestore myfirestore;
@@ -73,6 +71,8 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
         Btn_irgalery=findViewById(R.id.button_ir_galery);
 
         atras=findViewById(R.id.button_atras);
+
+
         nombres_apellidos=findViewById(R.id.editNombreYApellidos);
         edad=findViewById(R.id.editEdad);
         lugar_incidencia=findViewById(R.id.editLugarIncidencia);
@@ -81,11 +81,8 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
         descripcion_incidencia=findViewById(R.id.editDescripcionIncidencia);
         imagenIncidencia=findViewById(R.id.imagenIncidencia);
         btn_send_incidencia=findViewById(R.id.enviarIncidencia);
+        databaseReference = FirebaseDatabase.getInstance().getReference();
         myfirestore= FirebaseFirestore.getInstance();
-
-
-        guardarFormulario();
-
 
         btnfecha = findViewById(R.id.buttonFecha);
         btnfecha.setOnClickListener(this);
@@ -103,73 +100,72 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
             }
         });
 
-    }
-
-    private void guardarFormulario()
-    {
         btn_send_incidencia.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
+                validation();
                 String noms_apes= nombres_apellidos.getText().toString();
-                String years= edad.getText().toString();
+                int years= Integer.parseInt(edad.getText().toString());
                 String lugar_inci = lugar_incidencia.getText().toString();
                 String fecha_inci = fecha_incidencia.getText().toString();
                 String hora_inci = hora.getText().toString();
                 String descripcion_inci = descripcion_incidencia.getText().toString();
 
-                if(noms_apes.equals(""))
-                {
-                    nombres_apellidos.setError("Ingrese nombre de la victima");
-                }
-                if(years.equals(""))
-                {
-                    edad.setError("Edad aproximada");
-                }
-                if(lugar_inci.equals(""))
-                {
-                    lugar_incidencia.setError("Lugar");
-                }
-                if(fecha_inci.equals(""))
-                {
-                    fecha_incidencia.setError("Fecha");
-                }
-                if(hora_inci.equals(""))
-                {
-                    hora.setError("hora");
-                }
-                if(descripcion_inci.equals(""))
-                {
-                    descripcion_incidencia.setError("Ingrese los sucesos");
-                }
-                /*estas son las variables del EditText*/
-                nombres_apellidos.setText("");
-                edad.setText("");
-                lugar_incidencia.setText("");
-                fecha_incidencia.setText("");
-                hora.setText("");
-                descripcion_incidencia.setText("");
-
-
-
-                // Toast.makeText(this,"registro quedo guardado",Toast.LENGTH_SHORT).show();
-                Map<String,Object> map = new HashMap<>();
-                map.put("nombres_apellidos",noms_apes);
-                map.put("edad",years);
-                map.put("ubicacion",lugar_inci);
-                map.put("date",fecha_inci);
-                map.put("hora",hora_inci);
-                map.put("descripcion",descripcion_inci);
-
-                myfirestore.collection("Incidencias").add(map).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(getApplicationContext(), "Formulario enviado correctamente", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                enviarIncidencia(noms_apes, years, lugar_inci, fecha_inci, hora_inci, descripcion_inci);
 
             }
         });
     }
+
+    private void enviarIncidencia(String noms_apes, int years, String lugar_inci, String fecha_inci, String hora_inci, String descripcion_inci)
+    {
+        Map<String,Object> map = new HashMap<>();
+        map.put("nombres_apellidos", noms_apes);
+        map.put("edad", years);
+        map.put("ubicacion", lugar_inci);
+        map.put("date", fecha_inci);
+        map.put("hora", hora_inci);
+        map.put("descripcion", descripcion_inci);
+
+        databaseReference.child("Incidencias").push().setValue(map);
+    }
+
+    private void validation()
+    {
+        String noms_apes= nombres_apellidos.getText().toString();
+        String years= edad.getText().toString();
+        String lugar_inci = lugar_incidencia.getText().toString();
+        String fecha_inci = fecha_incidencia.getText().toString();
+        String hora_inci = hora.getText().toString();
+        String descripcion_inci = descripcion_incidencia.getText().toString();
+
+        if(noms_apes.equals(""))
+        {
+            nombres_apellidos.setError("Ingrese nombre de la victima");
+        }
+        if(years.equals(""))
+        {
+            edad.setError("Edad aproximada");
+        }
+        if(lugar_inci.equals(""))
+        {
+            lugar_incidencia.setError("Lugar");
+        }
+        if(fecha_inci.equals(""))
+        {
+            fecha_incidencia.setError("Fecha");
+        }
+        if(hora_inci.equals(""))
+        {
+            hora.setError("hora");
+        }
+        if(descripcion_inci.equals(""))
+        {
+            descripcion_incidencia.setError("Ingrese los sucesos");
+        }
+    }
+
 
      private void abrirGalery()
      {
@@ -243,4 +239,5 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
                     }
                 });
     }
+    request.time < timestamp.date(2022, 12, 30);
      */

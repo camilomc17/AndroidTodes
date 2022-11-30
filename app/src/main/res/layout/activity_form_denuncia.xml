@@ -151,7 +151,7 @@
                         android:background="@drawable/borde_edit_text"
                         android:ems="4"
                         android:hint="Edad"
-                        android:inputType="textPersonName"
+                        android:inputType="number"
                         android:textAlignment="center"
                         app:layout_constraintEnd_toEndOf="@+id/editLugar"
                         app:layout_constraintStart_toStartOf="@+id/editLugar" />
