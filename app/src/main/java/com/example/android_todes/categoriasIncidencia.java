@@ -2,56 +2,47 @@ package com.example.android_todes;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.Button;
+import android.widget.ImageView;
 
-import com.example.android_todes.apieventos.ApiClientEvento;
-import com.example.android_todes.apieventos.ApiEvento;
-import com.example.android_todes.models.Evento_model;
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.util.List;
+public class categoriasIncidencia extends AppCompatActivity {
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
-public class MainActivityEvento extends AppCompatActivity {
-
-    //almacenar el listado de noticias json
-    private List<Evento_model> eventoModels;
-    //recycleView
-    private RecyclerView recyclerView;
-    //esta para utilizar nuestro Adapter
-    private EventosAdapter eventosAdapter;
-
+Button pasaMain;
+    ImageView abuso;
+    ImageView genero;
+    ImageView intrafamily;
+    ImageView fisico;
+    ImageView discriminacion;
+    ImageView igualdad;
 
     FloatingActionMenu actionMenu;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_evento);
+        setContentView(R.layout.activity_categorias_incidencia);
 
+
+        abuso = findViewById(R.id.imageViewAbuso);
+        genero = findViewById(R.id.imageViewGenero);
+        intrafamily = findViewById(R.id.imageIntrafamiliar);
+        fisico = findViewById(R.id.imageViewFisico);
+        discriminacion = findViewById(R.id.imageViewDiscriminacion);
+        igualdad = findViewById(R.id.imageViewIgualdad);
 
         actionMenu = (FloatingActionMenu) findViewById(R.id.MenuPrincipal);
         actionMenu.setClosedOnTouchOutside(true);
 
-        recyclerView=findViewById(R.id.rv_eventos);
-        recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),1));
-
-
-        obtenerEventos();
-        BottomNavigationView navigationViews = findViewById(R.id.bottom_navigation_evento);
+        BottomNavigationView navigationViews = findViewById(R.id.bottom_navigation_incidencia);
         navigationViews.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
     private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -78,36 +69,12 @@ public class MainActivityEvento extends AppCompatActivity {
             return false;
         }
     };
-    public void obtenerEventos() {
-        Call<List<Evento_model>> call = ApiClientEvento.getClientEvento().create(ApiEvento.class).obtenerListaEventos();
-        call.enqueue(new Callback<List<Evento_model>>() {
-            @Override
-            public void onResponse(Call<List<Evento_model>> call, Response<List<Evento_model>> response) {
-                if(response.isSuccessful()) {
-                    eventoModels=response.body();
-                    eventosAdapter=new EventosAdapter(eventoModels,getApplicationContext());
-                    recyclerView.setAdapter(eventosAdapter);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Evento_model>> call, Throwable t) {
-                Toast.makeText(MainActivityEvento.this,"ERROR DE CONEXION",Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
 
     public void IrMiPerfil(){
 
     }
 
-    public void IrCrearIncidencia(View view){
-        Intent intentE=new Intent(this,categoriasIncidencia.class);
-        startActivity(intentE);
 
-
-    }
     public void IrMisIncidencias(View view){
 
 
@@ -118,11 +85,26 @@ public class MainActivityEvento extends AppCompatActivity {
     public void CerrarSesion(){
 
     }
+    public void IrEvento(View view)
+    {
+        Intent ir = new Intent(this,MainActivityEvento.class);
+        startActivity(ir);
+    }
 
     public void IrNoticia(View view)
     {
         Intent ir = new Intent(this,MainActivityNoticia.class);
         startActivity(ir);
     }
+
+    public void pasaUbicacion (View view){
+        Intent atrasMenu= new Intent(categoriasIncidencia.this,MiUbicacion.class);
+        startActivity(atrasMenu);
+
+    }
+
+
+
+
 
 }

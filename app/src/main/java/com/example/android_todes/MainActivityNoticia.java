@@ -101,7 +101,7 @@ public class MainActivityNoticia extends AppCompatActivity {
     }
 
     public void IrCrearIncidencia(View view){
-        Intent intentE=new Intent(this,FormActivityDenuncia.class);
+        Intent intentE=new Intent(this,categoriasIncidencia.class);
         startActivity(intentE);
 
 
