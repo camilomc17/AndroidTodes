@@ -40,7 +40,7 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
 
     FloatingActionButton Btn_irgalery;
     FloatingActionButton Btn_ircamara;
-
+     Button atras;
     ImageView imagenIncidencia;
     EditText nombres_apellidos;
     EditText edad;
@@ -72,7 +72,7 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
         Btn_ircamara=findViewById(R.id.button_ir_camara);
         Btn_irgalery=findViewById(R.id.button_ir_galery);
 
-
+        atras=findViewById(R.id.button_atras);
         nombres_apellidos=findViewById(R.id.editNombreYApellidos);
         edad=findViewById(R.id.editEdad);
         lugar_incidencia=findViewById(R.id.editLugarIncidencia);
@@ -218,7 +218,11 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
             datePickerDialog.show();
         }
     }
-
+     public void Atras(View view)
+     {
+         Intent atras = new Intent(FormActivityDenuncia.this,MainActivityNoticia.class);
+         startActivity(atras);
+     }
 }
 /*
 

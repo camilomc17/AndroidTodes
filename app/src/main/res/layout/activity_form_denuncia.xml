@@ -33,6 +33,13 @@
             app2:layout_constraintStart_toStartOf="parent"
             app2:layout_constraintTop_toTopOf="parent">
 
+            <Button
+                android:id="@+id/button_atras"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="Atras"
+                android:text="ATRAS" />
+
             <TextView
                 android:id="@+id/textViewSubtitulo"
                 android:layout_width="match_parent"
