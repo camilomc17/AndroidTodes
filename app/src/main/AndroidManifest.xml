@@ -3,9 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.android_todes">
 
-
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-feature android:name="android.hardware.camera"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -13,6 +11,7 @@
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="com.dev.cromer.jason.coverme.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.INTERNET" />
+  <uses-feature android:name="android.hardware.camera" android:required="true"/>
 
 
     <application
@@ -69,6 +68,15 @@
             android:label="@string/title_activity_maps_ubicacion" />
         <activity
             android:name=".categoriasIncidencia"
+            android:exported="false" />
+        <activity
+            android:name=".InicioSesion"
+            android:exported="false" />
+        <activity
+            android:name=".ActualizarContrasena"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrarseActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

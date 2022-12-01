@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".RegistrarseActivity">
+
+    <LinearLayout
+
+        android:id="@+id/lEnunciados"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:background="@drawable/color_login">
+
+        <TextView
+            android:id="@+id/tvFlecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_marginRight="3dp"
+            android:drawableLeft="@drawable/ic_action_flecha"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:onClick="InicioSesion"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REGISTRARSE"
+            android:onClick="Pasarcamara"
+            android:textSize="30dp"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/lsecundario"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shadow_header"
+        android:gravity="center"
+        android:orientation="vertical">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center">
+
+
+    <EditText
+        android:id="@+id/etCorreo"
+        android:layout_width="253dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="3dp"
+        android:background="@drawable/bordes"
+        android:hint="Digite correo electrónico"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        android:textColorHint="@color/oscuromorado2"
+        android:textSize="15dp"
+
+        />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="253dp"
+        android:layout_height="48dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/bordes"
+        android:ems="10"
+        android:hint="Digite su contraseña"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:textColorHint="@color/oscuromorado2"
+
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/etPassword2"
+        android:layout_width="253dp"
+        android:layout_height="48dp"
+        android:layout_margin="5dp"
+        android:layout_marginEnd="1dp"
+        android:background="@drawable/bordes"
+        android:ems="10"
+        android:hint="Confirme su contraseña"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:textColorHint="@color/oscuromorado2"
+        android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/btGuardar"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:onClick="InicioSesion"
+            android:text="REGISTRARSE"
+            android:background="@drawable/botton"
+            app:backgroundTint="@null"/>
+
+</LinearLayout>
+    </ScrollView>
+
+    </LinearLayout>
+
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

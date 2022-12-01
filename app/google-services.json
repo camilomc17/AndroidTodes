@@ -1,33 +1,37 @@
 {
   "project_info": {
-    "project_number": "162266123006",
-    "project_id": "android-todes-5523e",
-    "storage_bucket": "android-todes-5523e.appspot.com"
+    "project_number": "390356232637",
+    "project_id": "androidtodes",
+    "storage_bucket": "androidtodes.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:162266123006:android:52cc34731a2bfcf915b3af",
+        "mobilesdk_app_id": "1:390356232637:android:872bcf80d3740ccebdcad4",
+
         "android_client_info": {
           "package_name": "com.example.android_todes"
         }
       },
       "oauth_client": [
         {
-          "client_id": "162266123006-o9rjmhbs8gv7h86qlm4vtkvbprh8fqu4.apps.googleusercontent.com",
+          "client_id": "390356232637-mg9g205ivd961f9c9c8d75g55j1l1vu9.apps.googleusercontent.com",
+
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDe2zpkXBIYy_Zi1Z-5dNqxmLDu1QcX3zY"
+          "current_key": "AIzaSyBH6Gd3txGSfFp8_4a_1CHlNFJo8lKA1I8"
+
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "162266123006-o9rjmhbs8gv7h86qlm4vtkvbprh8fqu4.apps.googleusercontent.com",
+              "client_id": "390356232637-mg9g205ivd961f9c9c8d75g55j1l1vu9.apps.googleusercontent.com",
+
               "client_type": 3
             }
           ]
