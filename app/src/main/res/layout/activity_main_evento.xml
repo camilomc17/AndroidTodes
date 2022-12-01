@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivityEvento"
-    android:background="@drawable/fond_consumos">
+    android:background="@drawable/fond_form_inicidencia">
     <!--android:background="@drawable/bandera"-->
     <TextView
         android:id="@+id/textViewEventos"
@@ -116,8 +116,8 @@
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:itemIconSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="6.0"
         app:menu="@menu/bottom_navigation" />
     <!--style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"

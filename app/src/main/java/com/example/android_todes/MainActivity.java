@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
         iniciarapp();
 
     }
-
     public void iniciarapp() {
         Animation animacion1, animacion2;
         ImageView logo;

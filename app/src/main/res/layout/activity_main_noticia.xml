@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivityNoticia"
-    android:background="@drawable/fond_consumos">
+    android:background="@drawable/fond_form_inicidencia">
 
     <TextView
         android:id="@+id/textViewNoticias"

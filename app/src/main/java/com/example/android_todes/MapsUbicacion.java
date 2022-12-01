@@ -72,9 +72,6 @@ btnRegresarUbi.setOnClickListener(new View.OnClickListener(){
     }
      });
 
-
-
-
         btnMuestraBottomSheet=findViewById(R.id.idBtnShowBottomSheet);
 
         contiFormu.setOnClickListener(new View.OnClickListener() {
@@ -82,20 +79,11 @@ btnRegresarUbi.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
                Bundle enviaDatos= new Bundle();
                 enviaDatos.putString("KeyD",dir.getText().toString());
-                Intent intent = new Intent(MapsUbicacion.this,formulario.class);
+                Intent intent = new Intent(MapsUbicacion.this,FormActivityDenuncia.class);
                 intent.putExtras(enviaDatos);
                 startActivity(intent);
             }
         });
-
-
-
-
-
-
-
-
-
         mRecycler = findViewById(R.id.recyclerViewSingle);
         texDiecc = findViewById(R.id.editTextDireccion);
 
@@ -104,79 +92,23 @@ btnRegresarUbi.setOnClickListener(new View.OnClickListener(){
         mRecycler.setLayoutManager(new LinearLayoutManager(this));
 //      Query query = mFirestore.collection("pet").whereEqualTo("id_user", mAuth.getCurrentUser().getUid());
 
-
-
-
         btnMuestraBottomSheet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 BottomSheetDialog dialog = new BottomSheetDialog(MapsUbicacion.this);
 
 
-
-
-
-
-
                 View vista = LayoutInflater.from(getApplicationContext()).inflate(R.layout.bottom_sheet_dialog, null);
-
-
-
-
-
-
-
-
-
 
                 dialog.setCancelable(true);
                 dialog.setContentView(vista);
-
                 dialog.show();
 
 
-
-
                 }
 
 
-
-
         });
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-
-        // Set Home selected
-        bottomNavigationView.setSelectedItemId(R.id.phone);
-
-        // Perform item selected listener
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                switch (item.getItemId()) {
-                    case R.id.phone:
-                        Intent intent = new Intent(Intent.ACTION_DIAL);
-                        intent.setData(Uri.parse("tel:3107048069"));
-                        int result = ContextCompat.checkSelfPermission(MapsUbicacion.this, Manifest.permission.CALL_PHONE);
-                        if (result == PackageManager.PERMISSION_GRANTED) {
-                            startActivity(intent);
-                        } else {
-                            requestForCallPermission();
-                        }
-                }
-                return false;
-            }
-        });
-
-
-
-
-
-
-
-
-
-
         tvMensaje = findViewById(R.id.tvMensaje);
         if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED
@@ -189,9 +121,34 @@ btnRegresarUbi.setOnClickListener(new View.OnClickListener(){
             iniciarLocalizacion();
         }
 
-
+        BottomNavigationView navigationView = findViewById(R.id.bottom_navigation_incidencia);
+        navigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
+    private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
+            switch (item.getItemId()) {
+                case R.id.phone_admin:
+                    String cellAdmin = "+57-";
+                    Intent llamada_admin = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", cellAdmin, null));
+                    startActivity(llamada_admin);
+                    return true;
+                case R.id.phone_ambulance:
+                    String cellAmbulance = "+57-23";
+                    Intent llamada_ambulance = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", cellAmbulance, null));
+                    startActivity(llamada_ambulance);
+                    return true;
+                case R.id.phone_emergency:
+                    String cellEmergency = "+57-911";
+                    Intent llamada_emergency = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", cellEmergency, null));
+                    startActivity(llamada_emergency);
+                    return true;
+            }
+
+            return false;
+        }
+    };
 
 
 
