@@ -4,6 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android Todes/app/src/main/res/layout/activity_main.xml" value="0.14130434782608695" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/PROYECTOANDROIDTODES/AndroidTodes/app/src/main/res/drawable/colorfond.xml" value="0.1345" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/PROYECTOANDROIDTODES/AndroidTodes/app/src/main/res/drawable/fondo2.xml" value="0.1345" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/PROYECTOANDROIDTODES/AndroidTodes/app/src/main/res/drawable/fondo3.xml" value="0.1345" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/PROYECTOANDROIDTODES/AndroidTodes/app/src/main/res/layout/activity_crearreporte.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/PROYECTOANDROIDTODES/AndroidTodes/app/src/main/res/layout/activity_eventos.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/PROYECTOANDROIDTODES/AndroidTodes/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/PROYECTOANDROIDTODES/AndroidTodes/app/src/main/res/layout/activity_misreportes.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

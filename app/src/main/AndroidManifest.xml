@@ -14,6 +14,15 @@
         android:theme="@style/Theme.Android_Todes"
         tools:targetApi="31">
         <activity
+            android:name=".crearreporte"
+            android:exported="false" />
+        <activity
+            android:name=".misreportes"
+            android:exported="false" />
+        <activity
+            android:name=".eventos"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
