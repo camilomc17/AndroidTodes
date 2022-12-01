@@ -7,23 +7,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class misreportes extends AppCompatActivity {
-    ImageButton anterior;
+public class MainActivityOpcionLlamadas extends AppCompatActivity {
     ImageButton siguiente;
-
+    ImageButton anterior;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_misreportes);
-        siguiente=findViewById(R.id.imageButtonMR2);
-        anterior=findViewById(R.id.imageButtonMR1);
+        setContentView(R.layout.activity_main_opcion_llamadas);
+        anterior=findViewById(R.id.imageButtonCR1);
+        siguiente=findViewById(R.id.imageButtonCR2);
     }
     public void Siguiente(View view){
-        Intent pasar=new Intent(this,crearreporte.class);
+        Intent pasar=new Intent(this,MainActivityMiPerfil.class);
         startActivity(pasar);
     }
     public void Anterior(View view){
-        Intent antes= new Intent(this,eventos.class);
+        Intent antes= new Intent(this,MainActivityOpcionMisIncidencias.class);
         startActivity(antes);
     }
 }
