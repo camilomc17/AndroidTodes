@@ -113,7 +113,7 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
                 String descripcion_inci = descripcion_incidencia.getText().toString();
 
                 enviarIncidencia(noms_apes, years, lugar_inci, fecha_inci, hora_inci, descripcion_inci);
-                Toast.makeText(FormActivityDenuncia.this,"EL FORMULARIO SE ENVIO CORRECTAMENTE",Toast.LENGTH_SHORT).show();
+                Toast.makeText(FormActivityDenuncia.this,"FORMULARIO SE ENVIO CORRECTAMENTE",Toast.LENGTH_SHORT).show();
 
             }
         });

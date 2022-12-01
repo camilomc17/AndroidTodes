@@ -98,8 +98,10 @@ public class MainActivityEvento extends AppCompatActivity {
     }
 
 
-    public void IrMiPerfil(){
-
+    public void IrMiPerfil(View view){
+        Intent ir_perfil = new Intent(this,MainActivityNoticia.class);
+        startActivity(ir_perfil);
+        finish();
     }
 
     public void IrCrearIncidencia(View view){
