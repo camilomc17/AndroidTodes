@@ -4,8 +4,8 @@
     package="com.example.android_todes">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-feature android:name="android.hardware.camera"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -18,7 +18,9 @@
         android:theme="@style/Theme.Android_Todes"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
+        <activity
+            android:name=".MainActivityMiPerfil"
+            android:exported="false" />
         <activity
             android:name=".FormActivityDenuncia"
             android:exported="false" />
@@ -27,6 +29,15 @@
             android:exported="false" />
         <activity
             android:name=".MainActivityNoticia"
+            android:exported="false" />
+        <activity
+            android:name=".crearreporte"
+            android:exported="false" />
+        <activity
+            android:name=".misreportes"
+            android:exported="false" />
+        <activity
+            android:name=".eventos"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

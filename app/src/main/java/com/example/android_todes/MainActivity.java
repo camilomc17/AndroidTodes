@@ -8,20 +8,17 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-  private Button id_seguir;
+    Button id_seguir;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-      id_seguir=findViewById(R.id.id_BTN_SEGUIR);
-
+        id_seguir = findViewById(R.id.id_BTN_SEGUIR);
     }
-public void IrConsumo(View view)
-{
-    Intent consumo = new Intent(MainActivity.this,MainActivityEvento.class);
-    startActivity(consumo);
-}
 
-
+    public void IrConsumo(View view) {
+        Intent consumo = new Intent(MainActivity.this, MainActivityEvento.class);
+        startActivity(consumo);
+    }
 }
