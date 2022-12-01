@@ -24,7 +24,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivityNoticia extends AppCompatActivity {
+public class ActivityNoticiaInvitado extends AppCompatActivity {
+
     //almacenar el listado de noticias json
     private List<Noticia_model> noticiaModels;
     //recycleView
@@ -38,8 +39,7 @@ public class MainActivityNoticia extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_noticia);
-
+        setContentView(R.layout.activity_noticia_invitado);
         actionMenu = (FloatingActionMenu) findViewById(R.id.MenuPrincipal);
         actionMenu.setClosedOnTouchOutside(true);
 
@@ -90,42 +90,21 @@ public class MainActivityNoticia extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Noticia_model>> call, Throwable t) {
-                Toast.makeText(MainActivityNoticia.this,"ERROR DE CONEXION",Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivityNoticiaInvitado.this,"ERROR DE CONEXION",Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     // Metodos de los botones
     public void IrEventos(View view) {
-        Intent intentE=new Intent(this,MainActivityEvento.class);
+        Intent intentE=new Intent(this,ActivityEventosInvitado.class);
         startActivity(intentE);
     }
-    public void IrMiPerfil(View view){
-        Intent ir_perfil = new Intent(this,MainActivityEvento.class);
-        startActivity(ir_perfil);
-        finish();
+
+    public void IrInicioSesion(View view){
+        Intent ir = new Intent(this,InicioSesion.class);
+        startActivity(ir);
     }
-
-    public void IrCrearIncidencia(View view){
-        Intent intentE = new Intent(this,categoriasIncidencia.class);
-        startActivity(intentE);
-
-
-    }
-    public void IrMisIncidencias(View view){
-
-
-    }
-    public void IrAyuda(){
-
-    }
-    public void CerrarSesion(){
-
-    }
-
-
-
-
 
 
 }

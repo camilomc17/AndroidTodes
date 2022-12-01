@@ -97,11 +97,11 @@ public class MainActivityEvento extends AppCompatActivity {
         });
     }
 
-
-    public void IrMiPerfil(View view){
-        Intent ir_perfil = new Intent(this,MainActivityNoticia.class);
-        startActivity(ir_perfil);
-        finish();
+    // Metodos de los botones
+    public void IrNoticias(View view)
+    {
+        Intent ir = new Intent(this,MainActivityNoticia.class);
+        startActivity(ir);
     }
 
     public void IrCrearIncidencia(View view){
@@ -114,6 +114,12 @@ public class MainActivityEvento extends AppCompatActivity {
 
 
     }
+
+    public void IrMiPerfil(View view){
+        Intent ir_perfil = new Intent(this,MainActivityNoticia.class);
+        startActivity(ir_perfil);
+    }
+
     public void IrAyuda(){
 
     }
@@ -121,10 +127,6 @@ public class MainActivityEvento extends AppCompatActivity {
 
     }
 
-    public void IrNoticia(View view)
-    {
-        Intent ir = new Intent(this,MainActivityNoticia.class);
-        startActivity(ir);
-    }
+
 
 }

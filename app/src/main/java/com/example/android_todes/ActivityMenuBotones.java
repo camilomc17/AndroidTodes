@@ -26,9 +26,8 @@ public class ActivityMenuBotones extends AppCompatActivity {
     }
 
         public void IrMiPerfil(View view){
-      Intent ir_perfil = new Intent(this,MainActivityEvento.class);
-     startActivity(ir_perfil);
-     finish();
+            Intent ir_perfil = new Intent(this,MainActivityEvento.class);
+            startActivity(ir_perfil);
         }
 
         public void IrCrearIncidencia(){

@@ -12,9 +12,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.android_todes.apinoticias.ApiClient;
-import com.example.android_todes.apinoticias.ApiNoticia;
-import com.example.android_todes.models.Noticia_model;
+import com.example.android_todes.apieventos.ApiClientEvento;
+import com.example.android_todes.apieventos.ApiEvento;
+import com.example.android_todes.models.Evento_model;
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -23,14 +23,14 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+public class ActivityEventosInvitado extends AppCompatActivity {
 
-public class MainActivityNoticia extends AppCompatActivity {
     //almacenar el listado de noticias json
-    private List<Noticia_model> noticiaModels;
+    private List<Evento_model> eventoModels;
     //recycleView
     private RecyclerView recyclerView;
     //esta para utilizar nuestro Adapter
-    private NoticiasAdapter noticiasAdapter;
+    private EventosAdapter eventosAdapter;
 
 
     FloatingActionMenu actionMenu;
@@ -38,18 +38,18 @@ public class MainActivityNoticia extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_noticia);
+        setContentView(R.layout.activity_eventos_invitado);
 
         actionMenu = (FloatingActionMenu) findViewById(R.id.MenuPrincipal);
         actionMenu.setClosedOnTouchOutside(true);
 
-        recyclerView=findViewById(R.id.rv_noticias);
+        recyclerView=findViewById(R.id.rv_eventos);
         recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),1));
 
 
-        obtenerNoticias();
-        BottomNavigationView navigationView = findViewById(R.id.bottom_navigation_noticia);
-        navigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        obtenerEventos();
+        BottomNavigationView navigationViews = findViewById(R.id.bottom_navigation_evento);
+        navigationViews.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
     private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
@@ -72,59 +72,40 @@ public class MainActivityNoticia extends AppCompatActivity {
                     startActivity(llamada_emergency);
                     return true;
             }
-
             return false;
         }
     };
-    public void obtenerNoticias() {
-        Call<List<Noticia_model>> call= ApiClient.getClient().create(ApiNoticia.class).obtenerListaNoticias();
-        call.enqueue(new Callback<List<Noticia_model>>() {
+    public void obtenerEventos() {
+        Call<List<Evento_model>> call = ApiClientEvento.getClientEvento().create(ApiEvento.class).obtenerListaEventos();
+        call.enqueue(new Callback<List<Evento_model>>() {
             @Override
-            public void onResponse(Call<List<Noticia_model>> call, Response<List<Noticia_model>> response) {
+            public void onResponse(Call<List<Evento_model>> call, Response<List<Evento_model>> response) {
                 if(response.isSuccessful()) {
-                    noticiaModels=response.body();
-                    noticiasAdapter=new NoticiasAdapter(noticiaModels,getApplicationContext());
-                    recyclerView.setAdapter(noticiasAdapter);
+                    eventoModels=response.body();
+                    eventosAdapter=new EventosAdapter(eventoModels,getApplicationContext());
+                    recyclerView.setAdapter(eventosAdapter);
                 }
             }
 
             @Override
-            public void onFailure(Call<List<Noticia_model>> call, Throwable t) {
-                Toast.makeText(MainActivityNoticia.this,"ERROR DE CONEXION",Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<List<Evento_model>> call, Throwable t) {
+                Toast.makeText(ActivityEventosInvitado.this,"ERROR DE CONEXION",Toast.LENGTH_SHORT).show();
             }
         });
     }
 
+
     // Metodos de los botones
-    public void IrEventos(View view) {
-        Intent intentE=new Intent(this,MainActivityEvento.class);
-        startActivity(intentE);
-    }
-    public void IrMiPerfil(View view){
-        Intent ir_perfil = new Intent(this,MainActivityEvento.class);
-        startActivity(ir_perfil);
-        finish();
+    public void IrNoticias(View view)
+    {
+        Intent ir = new Intent(this,ActivityNoticiaInvitado.class);
+        startActivity(ir);
     }
 
-    public void IrCrearIncidencia(View view){
-        Intent intentE = new Intent(this,categoriasIncidencia.class);
-        startActivity(intentE);
-
-
+    public void IrIniciarSesion(View view){
+        Intent ir = new Intent(this,InicioSesion.class);
+        startActivity(ir);
     }
-    public void IrMisIncidencias(View view){
-
-
-    }
-    public void IrAyuda(){
-
-    }
-    public void CerrarSesion(){
-
-    }
-
-
-
 
 
 
