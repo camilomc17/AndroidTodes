@@ -104,14 +104,14 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
 
             @Override
             public void onClick(View view) {
-                validation();
+
                 String noms_apes= nombres_apellidos.getText().toString();
                 int years= Integer.parseInt(edad.getText().toString());
                 String lugar_inci = lugar_incidencia.getText().toString();
                 String fecha_inci = fecha_incidencia.getText().toString();
                 String hora_inci = hora.getText().toString();
                 String descripcion_inci = descripcion_incidencia.getText().toString();
-
+                validation();
                 enviarIncidencia(noms_apes, years, lugar_inci, fecha_inci, hora_inci, descripcion_inci);
                 Toast.makeText(FormActivityDenuncia.this,"FORMULARIO SE ENVIO CORRECTAMENTE",Toast.LENGTH_SHORT).show();
 
