@@ -33,7 +33,7 @@ public class MapsUbicacion extends AppCompatActivity {
     private GoogleMap mMap;
 
     TextView tvMensaje;
-    Button btnRegresarUbi;
+   // Button btnRegresarUbi;
     RecyclerView mRecycler;
     TextView dir;
     Button btnMuestraBottomSheet;
@@ -54,7 +54,7 @@ public class MapsUbicacion extends AppCompatActivity {
 
 
 
-btnRegresarUbi=findViewById(R.id.btnRegresoUbica);
+//btnRegresarUbi=findViewById(R.id.btnRegresoUbica);
 tvMensaje=findViewById(R.id.tvMensaje);
 contiFormu=findViewById(R.id.butIrFormulario);
 
@@ -63,13 +63,13 @@ contiFormu=findViewById(R.id.butIrFormulario);
         String info=recibeDatos.getString("Keydireccion");
         dir.setText(info);
 
-btnRegresarUbi.setOnClickListener(new View.OnClickListener(){
+/*btnRegresarUbi.setOnClickListener(new View.OnClickListener(){
 
     public void onClick(View view){
         Intent intent = new Intent(MapsUbicacion.this,MiUbicacion.class);
         startActivity(intent);
     }
-     });
+     });*/
 
         btnMuestraBottomSheet=findViewById(R.id.idBtnShowBottomSheet);
 
@@ -149,17 +149,14 @@ btnRegresarUbi.setOnClickListener(new View.OnClickListener(){
         }
     };
 
-
-
-
-    public void requestForCallPermission ()
+  /*  public void requestForCallPermission ()
     {
 
         if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CALL_PHONE))
         {
         }
 
-    }
+    }*/
 
     private void iniciarLocalizacion() {
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);

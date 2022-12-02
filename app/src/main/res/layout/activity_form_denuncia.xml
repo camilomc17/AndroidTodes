@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.coml/apk/res-auto"
     xmlns:app2="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,14 +8,14 @@
     android:layout_height="match_parent"
     tools:context=".FormActivityDenuncia">
 
-    <RelativeLayout
+    <!--<RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         app2:layout_constraintBottom_toBottomOf="parent"
         app2:layout_constraintEnd_toEndOf="parent"
         app2:layout_constraintStart_toStartOf="parent"
-        app2:layout_constraintTop_toTopOf="parent">
+        app2:layout_constraintTop_toTopOf="parent">-->
 
         <LinearLayout
             android:id="@+id/linearLayoutTextview"
@@ -33,12 +33,12 @@
             app2:layout_constraintStart_toStartOf="parent"
             app2:layout_constraintTop_toTopOf="parent">
 
-            <Button
+         <!--<Button
                 android:id="@+id/button_atras"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="Atras"
-                android:text="ATRAS" />
+                android:text="ATRAS" />-->
 
             <TextView
                 android:id="@+id/textViewSubtitulo"
@@ -151,7 +151,7 @@
                         android:background="@drawable/borde_edit_text"
                         android:ems="4"
                         android:hint="Edad"
-                        android:inputType="number"
+                        android:inputType="text"
                         android:textAlignment="center"
                         app:layout_constraintEnd_toEndOf="@+id/editLugar"
                         app:layout_constraintStart_toStartOf="@+id/editLugar" />
@@ -253,6 +253,7 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="10dp"
                             android:text="ENVIAR"
+                            android:onClick="Enviar"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -266,14 +267,15 @@
                             app2:maxImageSize="30dp" />
 
                     </LinearLayout>
+
                 </LinearLayout>
 
             </ScrollView>
 
-
         </LinearLayout>
 
 
-    </RelativeLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!--</RelativeLayout>-->
+
+</RelativeLayout>
     <!-- android:background="@drawable/fond_form_inicidencia"-->

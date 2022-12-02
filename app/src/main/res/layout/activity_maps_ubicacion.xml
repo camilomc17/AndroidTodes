@@ -89,11 +89,10 @@ tools:context=".MapsUbicacion">
         app:layout_constraintTop_toBottomOf="@+id/tvMensaje"
         app:layout_constraintVertical_bias="1.0" />
 
-    <Button
+    <!--<Button
         android:id="@+id/btnRegresoUbica"
         android:layout_width="88dp"
         android:layout_height="39dp"
-
         android:text="Regresar"
         android:textSize="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/fragment"
@@ -101,7 +100,7 @@ tools:context=".MapsUbicacion">
         app:layout_constraintHorizontal_bias="0.971"
         app:layout_constraintStart_toStartOf="@+id/fragment"
         app:layout_constraintTop_toTopOf="@+id/tvMensaje"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0" />-->
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_incidencia"

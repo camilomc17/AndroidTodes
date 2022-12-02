@@ -35,8 +35,6 @@ Button ircatego;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mi_ubicacion);
 
-
-
         latitud =  findViewById(R.id.txtLatitud);
         longitud = findViewById(R.id.txtLongitud);
         direccion =  findViewById(R.id.txtDireccion);
@@ -62,10 +60,6 @@ Button ircatego;
 
 
     }
-
-
-
-
 
 
     private void locationStart() {
