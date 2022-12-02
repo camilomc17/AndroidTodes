@@ -251,6 +251,7 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="10dp"
                             android:text="ENVIAR"
+                            android:onClick="Enviar"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent" />
 

@@ -100,25 +100,69 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
             }
         });
 
-        btn_send_incidencia.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View view) {
-                validation();
-                String noms_apes= nombres_apellidos.getText().toString();
-                int years= Integer.parseInt(edad.getText().toString());
-                String lugar_inci = lugar_incidencia.getText().toString();
-                String fecha_inci = fecha_incidencia.getText().toString();
-                String hora_inci = hora.getText().toString();
-                String descripcion_inci = descripcion_incidencia.getText().toString();
-
-                enviarIncidencia(noms_apes, years, lugar_inci, fecha_inci, hora_inci, descripcion_inci);
-
-            }
-        });
     }
+    public void Enviar(View view)
+    {
+        String noms_apes= nombres_apellidos.getText().toString();
+        String years=edad.getText().toString();
+        String lugar_inci = lugar_incidencia.getText().toString();
+        String fecha_inci = fecha_incidencia.getText().toString();
+        String hora_inci = hora.getText().toString();
+        String descripcion_inci = descripcion_incidencia.getText().toString();
+        if(validation()) {
+            enviarIncidencia(noms_apes, years, lugar_inci, fecha_inci, hora_inci, descripcion_inci);
+            Toast.makeText(FormActivityDenuncia.this, "FORMULARIO SE ENVIO CORRECTAMENTE", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(FormActivityDenuncia.this, "Falta ingresar datos", Toast.LENGTH_SHORT).show();
 
-    private void enviarIncidencia(String noms_apes, int years, String lugar_inci, String fecha_inci, String hora_inci, String descripcion_inci)
+        }
+
+    }
+    public boolean validation()
+    {
+        boolean retorno=true;
+
+        String noms_apes= nombres_apellidos.getText().toString();
+        String years=edad.getText().toString();
+        String lugar_inci = lugar_incidencia.getText().toString();
+        String fecha_inci = fecha_incidencia.getText().toString();
+        String hora_inci = hora.getText().toString();
+        String descripcion_inci = descripcion_incidencia.getText().toString();
+
+        if(noms_apes.isEmpty())
+        {
+            nombres_apellidos.setError("Ingrese nombre de la victima");
+            retorno=false;
+        }
+        if(years.isEmpty())
+        {
+            edad.setError("Ingrese la edad aproximada");
+            retorno=false;
+        }
+        if(lugar_inci.isEmpty())
+        {
+            lugar_incidencia.setError("Ingrese el lugar");
+            retorno=false;
+        }
+        if(fecha_inci.isEmpty())
+        {
+            fecha_incidencia.setError("fecha de los hechos");
+            retorno=false;
+        }
+        if(hora_inci.isEmpty())
+        {
+            hora.setError("Ingrese la hora");
+            retorno=false;
+        }
+        if(descripcion_inci.isEmpty())
+        {
+            descripcion_incidencia.setError("Ingrese los sucesos");
+            retorno=false;
+        }
+        return retorno;
+    }
+    private void enviarIncidencia(String noms_apes,String years, String lugar_inci, String fecha_inci, String hora_inci, String descripcion_inci)
     {
         Map<String,Object> map = new HashMap<>();
         map.put("nombres_apellidos", noms_apes);
@@ -127,44 +171,9 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
         map.put("date", fecha_inci);
         map.put("hora", hora_inci);
         map.put("descripcion", descripcion_inci);
-
         databaseReference.child("Incidencias").push().setValue(map);
     }
 
-    private void validation()
-    {
-        String noms_apes= nombres_apellidos.getText().toString();
-        String years= edad.getText().toString();
-        String lugar_inci = lugar_incidencia.getText().toString();
-        String fecha_inci = fecha_incidencia.getText().toString();
-        String hora_inci = hora.getText().toString();
-        String descripcion_inci = descripcion_incidencia.getText().toString();
-
-        if(noms_apes.equals(""))
-        {
-            nombres_apellidos.setError("Ingrese nombre de la victima");
-        }
-        if(years.equals(""))
-        {
-            edad.setError("Edad aproximada");
-        }
-        if(lugar_inci.equals(""))
-        {
-            lugar_incidencia.setError("Lugar");
-        }
-        if(fecha_inci.equals(""))
-        {
-            fecha_incidencia.setError("Fecha");
-        }
-        if(hora_inci.equals(""))
-        {
-            hora.setError("hora");
-        }
-        if(descripcion_inci.equals(""))
-        {
-            descripcion_incidencia.setError("Ingrese los sucesos");
-        }
-    }
 
 
      private void abrirGalery()
