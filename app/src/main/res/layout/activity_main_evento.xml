@@ -110,6 +110,7 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_help"
                 app:fab_label="Ayuda"
+                android:onClick="IrAyuda"
                 app:fab_colorNormal="@color/azulfront"
                 app:fab_colorPressed="@color/moradofront"
                 />
@@ -119,6 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_logout"
+                android:onClick="CerrarSesion"
                 app:fab_label="Cerrar sesion"
                 app:fab_colorNormal="@color/azulfront"
                 app:fab_colorPressed="@color/moradofront"

@@ -92,15 +92,11 @@ public class MainActivity extends AppCompatActivity {
         new Handler(getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent paginadashboard = new Intent(MainActivity.this, ActivityNoticiaInvitado.class);
+                Intent paginadashboard = new Intent(MainActivity.this,ActivityNoticiaInvitado.class);
                 startActivity(paginadashboard);
                 finish();
             }
 
         }, SPLASH_TIME);
-
     }
 }
-
-
-

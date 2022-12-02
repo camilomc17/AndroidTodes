@@ -101,26 +101,28 @@ public class MainActivityNoticia extends AppCompatActivity {
         startActivity(intentE);
     }
     public void IrMiPerfil(View view){
-        Intent ir_perfil = new Intent(this,MainActivityEvento.class);
-        startActivity(ir_perfil);
+
         finish();
     }
 
     public void IrCrearIncidencia(View view){
         Intent intentE = new Intent(this,categoriasIncidencia.class);
         startActivity(intentE);
-
-
+        finish();
     }
     public void IrMisIncidencias(View view){
 
-
+        finish();
     }
-    public void IrAyuda(){
-
+    public void IrAyuda(View view){
+        Intent intentE = new Intent(this,MainActivityOpcionMenuRegistrado.class);
+        startActivity(intentE);
+        finish();
     }
-    public void CerrarSesion(){
-
+    public void CerrarSesion(View view){
+        Intent intentE = new Intent(this,InicioSesion.class);
+        startActivity(intentE);
+        finish();
     }
 
 

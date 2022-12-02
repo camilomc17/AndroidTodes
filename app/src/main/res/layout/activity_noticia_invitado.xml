@@ -80,7 +80,7 @@
                 android:id="@+id/btnIrIniciarSesion"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_logout"
+                android:src="@drawable/ic_users"
                 android:onClick="IrInicioSesion"
                 app:fab_label="Iniciar Sesion"
                 app:fab_colorNormal="@color/azulfront"

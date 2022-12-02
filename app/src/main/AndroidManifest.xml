@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.android_todes">
 
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -13,8 +12,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature
-        android:name="android.hardware.camera"
-        android:required="true" />
+        android:name="android.hardware.camera" android:required="true" />
+
 
     <application
         android:allowBackup="true"
@@ -49,6 +48,28 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".MainActivityOpcionMenuRegistrado"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityOpcionMenuInvitado"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityOpcionMisIncidencias"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityOpcionEvenNoti"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityOpcionLlamadas"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityCrearIncidencia"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityMiPerfil"
+            android:exported="false" />
+
+        <activity
             android:name=".FormActivityDenuncia"
             android:exported="false" />
         <activity
@@ -59,9 +80,6 @@
             android:exported="false" />
         <activity
             android:name=".MiUbicacion"
-            android:exported="false" />
-        <activity
-            android:name=".formulario"
             android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.

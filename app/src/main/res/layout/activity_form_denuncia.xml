@@ -201,15 +201,17 @@
                         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName14"
                         tools:layout_editor_absoluteY="320dp" />
 
+
+
                     <EditText
                         android:id="@+id/editDescripcionIncidencia"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:background="@drawable/borde_edit_text"
                         android:ems="4"
                         android:hint="Descripción de la situación"
-                        android:inputType="textPersonName"
+                        android:inputType="textMultiLine"
                         android:textAlignment="center" />
 
                     <ImageView

@@ -120,11 +120,15 @@ public class MainActivityEvento extends AppCompatActivity {
         startActivity(ir_perfil);
     }
 
-    public void IrAyuda(){
-
+    public void IrAyuda(View view){
+        Intent intentE = new Intent(this,MainActivityOpcionMenuRegistrado.class);
+        startActivity(intentE);
+        finish();
     }
-    public void CerrarSesion(){
-
+    public void CerrarSesion(View view){
+        Intent intentE = new Intent(this,InicioSesion.class);
+        startActivity(intentE);
+        finish();
     }
 
 

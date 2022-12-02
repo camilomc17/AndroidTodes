@@ -51,7 +51,7 @@ public class InicioSesion extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
                     finish();
-                    startActivity(new Intent(InicioSesion.this, RegistrarseActivity.class));
+                    startActivity(new Intent(InicioSesion.this, MainActivityNoticia.class));
                     Toast.makeText(InicioSesion.this, "Bienvenido", Toast.LENGTH_SHORT).show();
                 }else {
                     Toast.makeText(InicioSesion.this, "Error" , Toast.LENGTH_SHORT).show();

@@ -88,7 +88,7 @@
                 android:drawableLeft="@drawable/ic_candado"
                 android:ems="10"
                 android:hint="Contraseña"
-                android:inputType="numberPassword"
+                android:inputType="textWebEditText"
                 android:padding="15dp" />
 
             <Button
