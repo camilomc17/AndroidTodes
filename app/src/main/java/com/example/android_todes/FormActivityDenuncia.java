@@ -117,6 +117,10 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
 
             }
         });
+        Bundle recibeDatos=getIntent().getExtras();
+        String info=recibeDatos.getString("KeyD");
+      lugar_incidencia.setText(info);
+
     }
 
     private void enviarIncidencia(String noms_apes, int years, String lugar_inci, String fecha_inci, String hora_inci, String descripcion_inci)
@@ -221,24 +225,3 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
          startActivity(atras);
      }
 }
-/*
-
-    public void guardar(String nom,String ape,String contra,String email1)
-    {
-        Map<String,Object> map = new HashMap<>();
-        map.put("nombre",nom);
-        map.put("apellido",ape);
-        map.put("contraseña",contra);
-        map.put("email",email1);
-
-        myfirebase.collection("Users")
-                .add(map)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(getApplicationContext(),"Usuario quedo Guardado", Toast.LENGTH_SHORT).show();
-                    }
-                });
-    }
-    request.time < timestamp.date(2022, 12, 30);
-     */

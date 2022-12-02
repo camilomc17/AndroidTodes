@@ -35,11 +35,10 @@ public class MapsUbicacion extends AppCompatActivity {
     TextView tvMensaje;
     Button btnRegresarUbi;
     RecyclerView mRecycler;
-TextView dir;
+    TextView dir;
     Button btnMuestraBottomSheet;
-
-EditText  texDiecc;
-Button contiFormu;
+    EditText  texDiecc;
+    Button contiFormu;
 
 
 
@@ -216,10 +215,5 @@ btnRegresarUbi.setOnClickListener(new View.OnClickListener(){
 
 
 
-    public void pasarFormulario (View view){
-        Intent pasaCate = new Intent(MapsUbicacion.this,formulario.class);
-        startActivity(pasaCate);
-
     }
 
-}

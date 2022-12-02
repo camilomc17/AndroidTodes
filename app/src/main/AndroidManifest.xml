@@ -3,15 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.android_todes">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="com.dev.cromer.jason.coverme.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.INTERNET" />
-  <uses-feature android:name="android.hardware.camera" android:required="true"/>
+
+    <uses-feature
+        android:name="android.hardware.camera" android:required="true" />
 
 
     <application
@@ -26,12 +27,48 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ActivityEventosInvitado"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ActivityNoticiaInvitado"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ActivityMenuBotones"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity
+            android:name=".MainActivityOpcionMenuRegistrado"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityOpcionMenuInvitado"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityOpcionMisIncidencias"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityOpcionEvenNoti"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityOpcionLlamadas"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityCrearIncidencia"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityMiPerfil"
+            android:exported="false" />
+
         <activity
             android:name=".FormActivityDenuncia"
             android:exported="false" />
@@ -40,12 +77,9 @@
             android:exported="false" />
         <activity
             android:name=".MainActivityNoticia"
-            android:exported="false"/>
-            <activity
-            android:name=".MiUbicacion"
             android:exported="false" />
         <activity
-            android:name=".formulario"
+            android:name=".MiUbicacion"
             android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.

@@ -23,8 +23,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
-public class MainActivityEvento extends AppCompatActivity {
+public class ActivityEventosInvitado extends AppCompatActivity {
 
     //almacenar el listado de noticias json
     private List<Evento_model> eventoModels;
@@ -36,12 +35,10 @@ public class MainActivityEvento extends AppCompatActivity {
 
     FloatingActionMenu actionMenu;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_evento);
-
+        setContentView(R.layout.activity_eventos_invitado);
 
         actionMenu = (FloatingActionMenu) findViewById(R.id.MenuPrincipal);
         actionMenu.setClosedOnTouchOutside(true);
@@ -92,43 +89,22 @@ public class MainActivityEvento extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Evento_model>> call, Throwable t) {
-                Toast.makeText(MainActivityEvento.this,"ERROR DE CONEXION",Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivityEventosInvitado.this,"ERROR DE CONEXION",Toast.LENGTH_SHORT).show();
             }
         });
     }
 
+
     // Metodos de los botones
     public void IrNoticias(View view)
     {
-        Intent ir = new Intent(this,MainActivityNoticia.class);
+        Intent ir = new Intent(this,ActivityNoticiaInvitado.class);
         startActivity(ir);
     }
 
-    public void IrCrearIncidencia(View view){
-        Intent intentE=new Intent(this,categoriasIncidencia.class);
-        startActivity(intentE);
-
-
-    }
-    public void IrMisIncidencias(View view){
-
-
-    }
-
-    public void IrMiPerfil(View view){
-        Intent ir_perfil = new Intent(this,MainActivityNoticia.class);
-        startActivity(ir_perfil);
-    }
-
-    public void IrAyuda(View view){
-        Intent intentE = new Intent(this,MainActivityOpcionMenuRegistrado.class);
-        startActivity(intentE);
-        finish();
-    }
-    public void CerrarSesion(View view){
-        Intent intentE = new Intent(this,InicioSesion.class);
-        startActivity(intentE);
-        finish();
+    public void IrIniciarSesion(View view){
+        Intent ir = new Intent(this,InicioSesion.class);
+        startActivity(ir);
     }
 
 

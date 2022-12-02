@@ -95,35 +95,37 @@ public class MainActivityNoticia extends AppCompatActivity {
         });
     }
 
-
+    // Metodos de los botones
+    public void IrEventos(View view) {
+        Intent intentE=new Intent(this,MainActivityEvento.class);
+        startActivity(intentE);
+    }
     public void IrMiPerfil(View view){
-        Intent ir_perfil = new Intent(this,MainActivityEvento.class);
-        startActivity(ir_perfil);
+
         finish();
     }
 
     public void IrCrearIncidencia(View view){
-        Intent intentE=new Intent(this,categoriasIncidencia.class);
+        Intent intentE = new Intent(this,categoriasIncidencia.class);
         startActivity(intentE);
-
-
+        finish();
     }
     public void IrMisIncidencias(View view){
 
-
+        finish();
     }
-    public void IrAyuda(){
-
-    }
-    public void CerrarSesion(){
-
-    }
-
-    public void IrEvento(View view) {
-        Intent intentE=new Intent(this,MainActivityEvento.class);
+    public void IrAyuda(View view){
+        Intent intentE = new Intent(this,MainActivityOpcionMenuRegistrado.class);
         startActivity(intentE);
-
+        finish();
     }
+    public void CerrarSesion(View view){
+        Intent intentE = new Intent(this,InicioSesion.class);
+        startActivity(intentE);
+        finish();
+    }
+
+
 
 
 

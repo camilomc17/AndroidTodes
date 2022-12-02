@@ -26,13 +26,15 @@ public class ActivityMenuBotones extends AppCompatActivity {
     }
 
         public void IrMiPerfil(View view){
-      Intent ir_perfil = new Intent(this,MainActivityEvento.class);
-     startActivity(ir_perfil);
-     finish();
+            Intent ir_perfil = new Intent(this,MainActivityEvento.class);
+            startActivity(ir_perfil);
+            finish();
         }
 
-        public void IrCrearIncidencia(){
-
+        public void IrCrearIncidencia(View view){
+            Intent intentE=new Intent(this,categoriasIncidencia.class);
+            startActivity(intentE);
+            finish();
         }
         public void IrMisIncidencias(View view){
             Intent intentE=new Intent(this,FormActivityDenuncia.class);
@@ -40,11 +42,15 @@ public class ActivityMenuBotones extends AppCompatActivity {
             finish();
 
         }
-        public void IrAyuda(){
-
-        }
-        public void CerrarSesion(){
-
+       public void IrAyuda(View view){
+        Intent intentE = new Intent(this,MainActivityOpcionMenuRegistrado.class);
+        startActivity(intentE);
+        finish();
+    }
+        public void CerrarSesion(View view){
+            Intent intentE = new Intent(this,InicioSesion.class);
+            startActivity(intentE);
+            finish();
         }
 
         public void IrEvento(View view) {
