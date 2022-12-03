@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "390356232637",
+    "firebase_url": "https://androidtodes-default-rtdb.firebaseio.com",
     "project_id": "androidtodes",
     "storage_bucket": "androidtodes.appspot.com"
   },
@@ -8,7 +9,6 @@
     {
       "client_info": {
         "mobilesdk_app_id": "1:390356232637:android:872bcf80d3740ccebdcad4",
-
         "android_client_info": {
           "package_name": "com.example.android_todes"
         }
@@ -16,14 +16,12 @@
       "oauth_client": [
         {
           "client_id": "390356232637-mg9g205ivd961f9c9c8d75g55j1l1vu9.apps.googleusercontent.com",
-
           "client_type": 3
         }
       ],
       "api_key": [
         {
           "current_key": "AIzaSyBH6Gd3txGSfFp8_4a_1CHlNFJo8lKA1I8"
-
         }
       ],
       "services": {
@@ -31,7 +29,6 @@
           "other_platform_oauth_client": [
             {
               "client_id": "390356232637-mg9g205ivd961f9c9c8d75g55j1l1vu9.apps.googleusercontent.com",
-
               "client_type": 3
             }
           ]

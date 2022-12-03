@@ -31,7 +31,6 @@ Button pasaMain;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categorias_incidencia);
 
-
         abuso = findViewById(R.id.imageViewAbuso);
         genero = findViewById(R.id.imageViewGenero);
         intrafamily = findViewById(R.id.imageIntrafamiliar);
@@ -79,8 +78,9 @@ Button pasaMain;
 
 
     }
-    public void IrAyuda(){
-
+    public void IrAyuda(View view){
+        Intent irAyudaRegistrado = new Intent(this,MainActivityOpcionMenuRegistrado.class);
+        startActivity(irAyudaRegistrado);
     }
     public void CerrarSesion(){
 
