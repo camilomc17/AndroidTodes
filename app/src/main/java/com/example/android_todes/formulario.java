@@ -1,7 +1,10 @@
 package com.example.android_todes;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
 import android.content.Context;
@@ -23,7 +26,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-public class formulario extends AppCompatActivity {
+public class formulario extends AppCompatActivity  {
 TextView dirr;
 
 
@@ -55,7 +58,11 @@ TextView dirr;
 
 
 
+
     }
+
+
+
 
 
 

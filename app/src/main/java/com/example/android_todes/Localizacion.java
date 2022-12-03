@@ -29,6 +29,7 @@ public class Localizacion implements LocationListener {
 
     MapsUbicacion mapsUbicacion;
     TextView tvMensaje;
+    formulario  formulario;
 
 
 
@@ -42,21 +43,36 @@ public class Localizacion implements LocationListener {
 
     }
 
+    public formulario getFormulario(){
+        return formulario;
+    }
+
+    public void setFormulario(formulario formulario, TextView tvMensaje ) {
+        this.formulario = formulario;
+        this.tvMensaje = tvMensaje;
+
+    }
+
 
 
 
     @Override
     public void onLocationChanged(Location location) {
+
+
         // Este metodo se ejecuta cuando el GPS recibe nuevas coordenadas
         String texto = "Mi ubicación es: \n"
-                + "Latitud = " + location.getLatitude() + "\n"
-                + "Longitud = " + location.getLongitude()
+              //  + "Latitud = " + location.getLatitude() + "\n"
+                //+ "Longitud = " + location.getLongitude()
                 ;
 
         tvMensaje.setText(texto);
 
-        mapa(location.getLatitude(), location.getLongitude());
+   mapa(location.getLatitude(), location.getLongitude());
+
+
     }
+
 
     public void mapa(double lat, double lon) {
         // Fragment del Mapa
@@ -77,12 +93,7 @@ public class Localizacion implements LocationListener {
 
 
 
-       // if (fragment != null)
-         //   if (fragment.isVisible()) {
-              //  getMapsUbicacion().getSupportFragmentManager().beginTransaction().hide(fragment).commit();
-          //  } else {
-             //   getMapsUbicacion().getSupportFragmentManager().beginTransaction().show(fragment).commit();
-           // }
+
     }
 
     @Override

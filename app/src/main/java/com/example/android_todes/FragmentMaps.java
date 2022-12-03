@@ -5,21 +5,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.common.collect.Maps;
 
 public class FragmentMaps extends SupportMapFragment implements OnMapReadyCallback {
 
     double lat, lon;
+    private GoogleMap mMap;
 
-
-
-
+    private Marker marcador;
     @Override
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View rootView = super.onCreateView(layoutInflater, viewGroup, bundle);
@@ -38,16 +41,18 @@ public class FragmentMaps extends SupportMapFragment implements OnMapReadyCallba
     public void onMapReady(GoogleMap googleMap) {
         LatLng latLng = new LatLng(lat, lon);
 
-        float zoom = 70;
+        float zoom = 18;
 
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom));
 
-        googleMap.getUiSettings().setZoomControlsEnabled(true);
+       // googleMap.getUiSettings().setZoomControlsEnabled(true);
 
         googleMap.addMarker(new MarkerOptions().position(latLng));
 
         UiSettings settings = googleMap.getUiSettings();
 
-        settings.setZoomControlsEnabled(true);
+       // settings.setZoomControlsEnabled(true);
+
+      
     }
 }

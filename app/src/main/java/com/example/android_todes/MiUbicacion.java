@@ -49,7 +49,7 @@ Button ircatego;
 
 
 
-        irmapa.setOnClickListener(new View.OnClickListener() {
+       /* irmapa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Bundle enviaDatos= new Bundle();
@@ -58,7 +58,7 @@ Button ircatego;
                 intent.putExtras(enviaDatos);
                 startActivity(intent);
             }
-        });
+        });*/
 
 
     }
