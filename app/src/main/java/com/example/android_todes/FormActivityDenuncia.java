@@ -48,8 +48,10 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
     EditText descripcion_incidencia;
     Button btn_send_incidencia;
 
+
     DatabaseReference databaseReference;
     ProgressDialog cargando;
+
 
     FirebaseFirestore myfirestore;
     //StorageReference storageReference;
