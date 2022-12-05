@@ -12,6 +12,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -20,9 +21,18 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.android_todes.models.Incidencias;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.StorageReference;
@@ -73,6 +83,7 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
         descripcion_incidencia=findViewById(R.id.editDescripcionIncidencia);
         imagenIncidencia=findViewById(R.id.imagenIncidencia);
         btn_send_incidencia=findViewById(R.id.enviarIncidencia);
+
         databaseReference = FirebaseDatabase.getInstance().getReference();
         myfirestore= FirebaseFirestore.getInstance();
 
@@ -94,7 +105,49 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
 
         Bundle recibeDatos=getIntent().getExtras();
         String info=recibeDatos.getString("KeyD");
-      lugar_incidencia.setText(info);
+       lugar_incidencia.setText(info);
+
+       /*databaseReference.child("Incidencias").addValueEventListener(new ValueEventListener() {
+           @Override
+           public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+               for(final DataSnapshot snapshots : snapshot.getChildren()){
+                   databaseReference.child("Incidencias").child(snapshots.getKey()).addValueEventListener(new ValueEventListener() {
+                       @Override
+                       public void onDataChange(@NonNull DataSnapshot snapshot) {
+                           Incidencias inci = snapshots.getValue(Incidencias.class);
+                           String date = inci.getDate();
+                           String descripcion = inci.getDescripcion();
+                           String edad = inci.getEdad();
+                           String hora = inci.getHora();
+                           String nombres_apellidos = inci.getNombres_apellidos();
+                           String ubicacion = inci.getUbicacion();
+                           Log.e("FechaIncidencia:",""+date);
+                           Log.e("DescripcionIncidencia:",""+descripcion);
+                           Log.e("Edad:",""+edad);
+                           Log.e("HoraIncidencia:",""+hora);
+                           Log.e("Nombre:",""+nombres_apellidos);
+                           Log.e("Ubicacion:",""+ubicacion);
+                           Log.e("Datos:",""+snapshots.getValue());
+                       }
+
+                       @Override
+                       public void onCancelled(@NonNull DatabaseError error) {
+
+                       }
+                   });
+
+               }
+           }
+           @Override
+           public void onCancelled(@NonNull DatabaseError error) {
+           }
+       });
+
+
+
+
+*/
 
     }
     public void Enviar(View view)
