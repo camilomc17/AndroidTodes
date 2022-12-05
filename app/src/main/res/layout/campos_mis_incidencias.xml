@@ -3,22 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
+
+  <androidx.cardview.widget.CardView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="0dp"
+      android:layout_marginTop="10dp"
+      android:layout_marginEnd="0dp"
+      android:layout_marginBottom="2dp"
+      app:cardCornerRadius="10dp">
 
 
   <LinearLayout
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
+      android:layout_height="match_parent"
+      android:gravity="center"
       android:orientation="vertical">
 
-  </LinearLayout>
+
 
   <TextView
       android:id="@+id/id_text_nombre_apellido"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
-      android:layout_marginBottom="10dp"
       android:hint="nombre y apellidos">
 
   </TextView>
@@ -27,9 +36,7 @@
       android:id="@+id/id_text_edad"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_below="@+id/id_text_nombre_apellido"
       android:layout_marginTop="4dp"
-      android:layout_marginBottom="20dp"
       android:hint="edad">
 
   </TextView>
@@ -38,30 +45,25 @@
       android:id="@+id/id_text_hora"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_below="@+id/id_text_edad"
-      android:layout_marginTop="10dp"
-      android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
       android:hint="hora">
 
   </TextView>
 
-  <TextView
-      android:id="@+id/id_text_fecha"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_below="@+id/id_text_hora"
-      android:layout_marginTop="10dp"
-      android:layout_marginBottom="20dp"
-      android:hint="fecha">
+    <TextView
+        android:id="@+id/id_text_fecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="fecha">
 
-  </TextView>
+    </TextView>
 
   <TextView
       android:id="@+id/id_text_ubicacion"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_marginTop="120dp"
-      android:layout_marginBottom="20dp"
+      android:layout_marginTop="10dp"
       android:hint="ubicacion">
 
   </TextView>
@@ -70,10 +72,14 @@
       android:id="@+id/id_text_descripcion"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_marginTop="140dp"
+      android:layout_marginTop="10dp"
       android:hint="descripcion">
 
   </TextView>
 
+
+  </LinearLayout>
+
+  </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

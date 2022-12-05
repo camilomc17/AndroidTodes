@@ -1,7 +1,11 @@
 package com.example.android_todes;
 
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
@@ -20,18 +24,25 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.android_todes.models.Incidencias_model;
+import com.example.android_todes.models.Noticia_model;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.StorageReference;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class FormActivityDenuncia extends AppCompatActivity implements View.OnClickListener {
@@ -64,6 +75,14 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
     private int dia,mes,year;
 
 
+/*    //esta para utilizar nuestro Adapter
+   private IncidenciasAdapter incidenciasAdapter;
+
+   private RecyclerView recyclerView;
+
+    //almacenar el listado de noticias json
+   private ArrayList<Incidencias_model> incidencias_models = new ArrayList<>();*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,6 +105,10 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
         databaseReference = FirebaseDatabase.getInstance().getReference();
         myfirestore= FirebaseFirestore.getInstance();
 
+     /*   recyclerView=findViewById(R.id.rv_mis_incidencias);
+        recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),1));
+        //ObtenerDatosFirebase();*/
+
         btnfecha = findViewById(R.id.buttonFecha);
         btnfecha.setOnClickListener(this);
         Btn_ircamara.setOnClickListener(new View.OnClickListener() {
@@ -101,9 +124,92 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
                 abrirGalery();
             }
         });
+        /*databaseReference.child("Incidencias").addValueEventListener(new ValueEventListener() {
+           @Override
+           public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+               for(final DataSnapshot snapshots : snapshot.getChildren()){
+                   databaseReference.child("Incidencias").child(snapshots.getKey()).addValueEventListener(new ValueEventListener() {
+                       @Override
+                       public void onDataChange(@NonNull DataSnapshot snapshot) {
+                           Incidencias inci = snapshots.getValue(Incidencias.class);
+                           String date = inci.getDate();
+                           String descripcion = inci.getDescripcion();
+                           String edad = inci.getEdad();
+                           String hora = inci.getHora();
+                           String nombres_apellidos = inci.getNombres_apellidos();
+                           String ubicacion = inci.getUbicacion();
+                           Log.e("FechaIncidencia:",""+date);
+                           Log.e("DescripcionIncidencia:",""+descripcion);
+                           Log.e("Edad:",""+edad);
+                           Log.e("HoraIncidencia:",""+hora);
+                           Log.e("Nombre:",""+nombres_apellidos);
+                           Log.e("Ubicacion:",""+ubicacion);
+                           Log.e("Datos:",""+snapshots.getValue());
+                       }
+
+                       @Override
+                       public void onCancelled(@NonNull DatabaseError error) {
+
+                       }
+                   });
+
+               }
+           }
+           @Override
+           public void onCancelled(@NonNull DatabaseError error) {
+           }
+       });
+
+
+
+
+*/
 
 
     }
+
+    /*public void ObtenerDatosFirebase()
+    {
+        databaseReference.child("Incidencias").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(final DataSnapshot snapshots : snapshot.getChildren()){
+                    databaseReference.child("Incidencias").child(snapshots.getKey()).addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            Incidencias_model datas = snapshot.getValue(Incidencias_model.class);
+                                incidencias_models.clear();
+                                String date = datas.getDate();
+                                String descripcion = datas.getDescripcion();
+                                String edad = datas.getEdad();
+                                String hora = datas.getHora();
+                                String nombres_apellidos = datas.getNombres_apellidos();
+                                String ubicacion = datas.getUbicacion();
+
+                                incidencias_models.add(new Incidencias_model(date,descripcion,edad,hora,nombres_apellidos,ubicacion));
+                                incidenciasAdapter = new IncidenciasAdapter(incidencias_models,getApplicationContext());
+                                recyclerView.setAdapter(incidenciasAdapter);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+                    }
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }*/
+
     public void Enviar(View view)
     {
         String noms_apes= nombres_apellidos.getText().toString();

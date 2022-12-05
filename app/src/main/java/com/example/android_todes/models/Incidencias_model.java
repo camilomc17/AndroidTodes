@@ -2,12 +2,21 @@ package com.example.android_todes.models;
 
 public class Incidencias_model {
 
-    String date;
-    String descripcion;
-    String edad;
-    String hora;
-    String nombres_apellidos;
-    String ubicacion;
+    private String date;
+    private String descripcion;
+    private String edad;
+    private String hora;
+    private String nombres_apellidos;
+    private String ubicacion;
+
+    public Incidencias_model(String date, String descripcion, String edad, String hora, String nombres_apellidos, String ubicacion) {
+        this.date = date;
+        this.descripcion = descripcion;
+        this.edad = edad;
+        this.hora = hora;
+        this.nombres_apellidos = nombres_apellidos;
+        this.ubicacion = ubicacion;
+    }
 
     public String getDate() {
         return date;
