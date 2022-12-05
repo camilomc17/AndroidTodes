@@ -9,7 +9,7 @@ public class ApiClient {
     public static Retrofit getClient()
     {
         retrofit =new Retrofit.Builder()
-                .baseUrl("https://conection-android-camilo.herokuapp.com/")
+                .baseUrl("https://todesapi-production.up.railway.app/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         return retrofit;

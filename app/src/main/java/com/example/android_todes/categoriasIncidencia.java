@@ -38,8 +38,8 @@ Button pasaMain;
         discriminacion = findViewById(R.id.imageViewDiscriminacion);
         igualdad = findViewById(R.id.imageViewIgualdad);
 
-        actionMenu = (FloatingActionMenu) findViewById(R.id.MenuPrincipal);
-        actionMenu.setClosedOnTouchOutside(true);
+      /*  actionMenu = (FloatingActionMenu) findViewById(R.id.MenuPrincipal);
+        actionMenu.setClosedOnTouchOutside(true);*/
 
         BottomNavigationView navigationViews = findViewById(R.id.bottom_navigation_incidencia);
         navigationViews.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -69,7 +69,7 @@ Button pasaMain;
         }
     };
 
-    public void IrMiPerfil(){
+    /*public void IrMiPerfil(){
 
     }
 
@@ -96,7 +96,7 @@ Button pasaMain;
         Intent ir = new Intent(this,MainActivityNoticia.class);
         startActivity(ir);
     }
-
+*/
     public void pasaUbicacion (View view){
         Intent atrasMenu= new Intent(categoriasIncidencia.this,MapsUbicacion.class);
         startActivity(atrasMenu);

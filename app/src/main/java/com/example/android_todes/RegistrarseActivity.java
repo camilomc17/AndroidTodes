@@ -91,6 +91,7 @@ import java.util.Map;
                             public void onComplete(@NonNull Task<Void> task2) {
                                 if (task2.isSuccessful()){
                                     startActivity(new Intent(RegistrarseActivity.this, InicioSesion.class));
+                                    Toast.makeText(RegistrarseActivity.this, "SE REGISTRO CORRECTAMENTE", Toast.LENGTH_SHORT).show();
                                     finish();
                                 }else{
                                     Toast.makeText(RegistrarseActivity.this, "no se creo usuario", Toast.LENGTH_SHORT).show();

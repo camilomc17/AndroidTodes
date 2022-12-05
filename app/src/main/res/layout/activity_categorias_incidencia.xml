@@ -148,7 +148,7 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/bottom_navigation_incidencia"
@@ -208,13 +208,13 @@
                 app:fab_colorNormal="@color/azulfront"
                 app:fab_label="Mis Reportes" />
 
-            <!--<com.github.clans.fab.FloatingActionButton
+            <com.github.clans.fab.FloatingActionButton
                 android:id="@+id/CrearReporte"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_newreport"
                 android:onClick="IrCrearIncidencia"
-                app:fab_label="Crear Reportes"/>-->
+                app:fab_label="Crear Reportes"/>
 
             <com.github.clans.fab.FloatingActionButton
                 android:id="@+id/btnAyuda"
@@ -235,7 +235,7 @@
 
 
         </com.github.clans.fab.FloatingActionMenu>
-    </LinearLayout>
+    </LinearLayout>-->
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -249,9 +249,10 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
-        app:fab_colorNormal="@color/azulfront"
         android:layout_marginBottom="0dp"
+        app:fab_colorNormal="@color/azulfront"
         app:itemIconSize="30dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="6.0"
         app:menu="@menu/bottom_navigation" />

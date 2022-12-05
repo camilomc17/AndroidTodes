@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -64,7 +65,9 @@ public class ActualizarContrasena extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
                     Toast.makeText(ActualizarContrasena.this, "Se envio a tu correo enlace para recuperar contraseña", Toast.LENGTH_SHORT).show();
-
+                    Intent intent = new Intent(ActualizarContrasena.this,InicioSesion.class);
+                    startActivity(intent);
+                    finish();
                 }else {
                     Toast.makeText(ActualizarContrasena.this, "No se pudo notificar solicitud al correo", Toast.LENGTH_SHORT).show();
                 }

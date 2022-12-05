@@ -24,6 +24,7 @@
             android:layout_margin="20dp"
             android:layout_marginRight="3dp"
             android:drawableLeft="@drawable/ic_action_flecha"
+            android:drawableTint="#0E0E0E"
             android:minWidth="48dp"
             android:minHeight="48dp"
             android:onClick="InicioSesion"
@@ -34,10 +35,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="REGISTRARSE"
-            android:onClick="Pasarcamara"
             android:textSize="30dp"
             android:padding="5dp"
-            android:layout_gravity="center"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="80dp"
+            android:gravity="center"
             />
 
     </LinearLayout>

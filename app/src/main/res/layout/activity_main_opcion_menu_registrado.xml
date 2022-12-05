@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo2"
+    android:background="@color/azulfront"
     tools:context=".MainActivityOpcionMenuRegistrado">
 
     <RelativeLayout
@@ -86,13 +86,13 @@
                     <ImageView
                         android:id="@+id/imageView"
                         android:layout_width="match_parent"
-                        android:layout_height="200dp"
+                        android:layout_height="400dp"
                         android:layout_below="@+id/textView3"
                         android:layout_marginTop="0dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView3"
-                        app:srcCompat="@drawable/crearrepor" />
+                        app:srcCompat="@drawable/noticiasregistrado" />
 
                     <TextView
                         android:id="@+id/textView"
@@ -100,7 +100,8 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
                         android:layout_marginBottom="20dp"
-                        android:text="Aquí encontraras un ."
+                        android:text="Al momento que hayas realizado tu Inicio de Sesion.
+Encontraras estas opciones que ves en pantalla.Donde podras hacer llamadas hasta crear tu propio Reporte y mirar los Eventos e Noticias que la comunidad LGTBIQ+ tiene para ti. "
                         android:textAlignment="textStart"
                         android:textColor="#000000"
                         android:textSize="16sp"
@@ -108,68 +109,69 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-                    <ImageView
-                        android:id="@+id/imageView2"
-                        android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        android:layout_below="@+id/textView3"
-                        android:layout_marginTop="0dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView3"
-                        app:srcCompat="@drawable/crearrepor" />
+                    <!--  <ImageView
+                          android:id="@+id/imageView2"
+                          android:layout_width="match_parent"
+                          android:layout_height="200dp"
+                          android:layout_below="@+id/textView3"
+                          android:layout_marginTop="0dp"
+                          app:layout_constraintEnd_toEndOf="parent"
+                          app:layout_constraintStart_toStartOf="parent"
+                          app:layout_constraintTop_toBottomOf="@+id/textView3"
+                          app:srcCompat="@drawable/crearrepor" />
 
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="20dp"
-                        android:text="Aquí encontraras un ."
-                        android:textAlignment="textStart"
-                        android:textColor="#000000"
-                        android:textSize="16sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                      <TextView
+                          android:id="@+id/textView2"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_alignParentBottom="true"
+                          android:layout_marginBottom="20dp"
+                          android:text="Aquí encontraras un ."
+                          android:textAlignment="textStart"
+                          android:textColor="#000000"
+                          android:textSize="16sp"
+                          app:layout_constraintEnd_toEndOf="parent"
+                          app:layout_constraintStart_toStartOf="parent"
+                          app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                 -->
                 </LinearLayout>
-            </ScrollView>
-        </LinearLayout>
+              </ScrollView>
+          </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/imageButtonCR2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginBottom="200dp"
-            android:background="#00FFFFFF"
-            android:foregroundGravity="center"
-            android:onClick="Siguiente"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/siguiente" />
+          <ImageButton
+              android:id="@+id/imageButtonCR2"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentEnd="true"
+              android:layout_alignParentBottom="true"
+              android:layout_marginStart="0dp"
+              android:layout_marginEnd="0dp"
+              android:layout_marginBottom="200dp"
+              android:background="#00FFFFFF"
+              android:foregroundGravity="center"
+              android:onClick="Siguiente"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:srcCompat="@drawable/siguiente" />
 
-        <ImageButton
-            android:id="@+id/imageButtonCR1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginBottom="200dp"
-            android:background="#00FFFFFF"
-            android:foregroundGravity="center"
-            android:onClick="Anterior"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/atras" />
+          <ImageButton
+              android:id="@+id/imageButtonCR1"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentStart="true"
+              android:layout_alignParentBottom="true"
+              android:layout_marginStart="0dp"
+              android:layout_marginEnd="0dp"
+              android:layout_marginBottom="200dp"
+              android:background="#00FFFFFF"
+              android:foregroundGravity="center"
+              android:onClick="Anterior"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:srcCompat="@drawable/atras" />
 
-    </RelativeLayout>
+      </RelativeLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+  </androidx.constraintlayout.widget.ConstraintLayout>

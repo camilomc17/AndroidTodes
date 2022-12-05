@@ -102,7 +102,7 @@
                 android:text="Ingresar"
                 android:textAllCaps="true"
                 app:iconGravity="textTop"
-                android:textColor="@color/oscuromorado"/>
+                android:textColor="@color/white"/>
 
             <TextView
                 android:id="@+id/tvmensaje"

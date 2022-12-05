@@ -22,7 +22,7 @@ public class MainActivityOpcionMenuInvitado extends AppCompatActivity {
         startActivity(pasar);
     }
     public void Anterior(View view){
-        Intent antes= new Intent(this,MainActivity.class);
+        Intent antes= new Intent(this,MainActivityNoticia.class);
         startActivity(antes);
     }
 }
