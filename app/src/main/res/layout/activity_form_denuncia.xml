@@ -161,26 +161,26 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:background="@drawable/borde_edit_text"
-                        android:gravity="center"
+                        android:gravity="center_horizontal"
                         android:orientation="horizontal">
 
                         <EditText
                             android:id="@+id/EditFechaIncidencia"
-                            android:layout_width="296dp"
-                            android:layout_height="40dp"
+                            android:layout_width="240dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginStart="0dp"
+                            android:hint="dd/mm/aa"
                             android:gravity="center"
-                            android:hint="                      dd/mm/aa"
-                            android:textAlignment="center"
                             app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName16"
                             app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName16" />
 
                         <Button
                             android:id="@+id/buttonFecha"
                             style="@style/Widget.AppCompat.Button.Borderless"
-                            android:layout_width="100dp"
-                            android:layout_height="30dp"
-                            android:layout_marginLeft="0dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="0dp"
                             app2:icon="@drawable/ic_calendar_diligencia"
                             app2:iconSize="30dp"
                             app2:iconTint="#0B0A0A" />
@@ -209,7 +209,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:background="@drawable/borde_edit_text"
-                        android:ems="4"
+                        android:ems="10"
                         android:hint="Descripción de la situación"
                         android:inputType="textMultiLine"
                         android:textAlignment="center" />

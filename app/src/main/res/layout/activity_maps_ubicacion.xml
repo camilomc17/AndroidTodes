@@ -1,28 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".MapsUbicacion">
-
-    <Button
-        android:id="@+id/idBtnShowBottomSheet"
-        android:layout_width="104dp"
-        android:layout_height="42dp"
-        android:text="Cambiar Ubicacion"
-        android:textSize="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/bottom_navigation_incidencia"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.052"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15" />
-
-
-
-
-
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo2"
+    tools:context=".MapsUbicacion">
 
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -30,113 +13,191 @@ tools:context=".MapsUbicacion">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_incidencia"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="731dp"
+
         tools:layout_editor_absoluteX="0dp">
 
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
-
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="360dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idBtnShowBottomSheet">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewSingle"
-            android:layout_width="295dp"
-            android:layout_height="300dp"
-            android:scrollbars="vertical" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mi Ubicacion"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="25dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/texLati"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Latitud: "
+                android:textColor="@color/black"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/txtLatitud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="Latitud"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textLon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:text="Longitud: " />
+
+            <TextView
+                android:id="@+id/txtLongitud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Longitud"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtDire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Direccion:  "
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/txtDireccion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Direccion"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center">
+   <!-- <Button
+        android:id="@+id/idBtnShowBottomSheet"
+        android:layout_width="104dp"
+        android:layout_height="42dp"
+        android:text="Cambiar Ubicacion"
+        android:textSize="8dp" />-->
+
+    <Button
+        android:id="@+id/butIrFormulario"
+        android:layout_width="104dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="20dp"
+        android:text="continuar"
+        android:textSize="8dp" />
+</androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <fragment
+            android:id="@+id/fragment"
+            android:name="com.example.android_todes.FragmentMaps"
+            android:layout_width="400dp"
+            android:layout_height="264dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewSingle"
+                android:layout_width="295dp"
+                android:layout_height="300dp"
+                android:scrollbars="vertical" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
-
-
-<TextView
-    android:id="@+id/tvMensaje"
-    android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:layout_marginLeft="8dp"
-    android:layout_marginTop="8dp"
-    android:layout_marginRight="8dp"
-    android:text="Ubicacion"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
-
-
-    <fragment
-        android:id="@+id/fragment"
-        android:name="com.example.android_todes.FragmentMaps"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-
-
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_incidencia"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMensaje"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <!--<Button
-        android:id="@+id/btnRegresoUbica"
-        android:layout_width="88dp"
-        android:layout_height="39dp"
-        android:text="Regresar"
-        android:textSize="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/fragment"
-        app:layout_constraintEnd_toEndOf="@+id/fragment"
-        app:layout_constraintHorizontal_bias="0.971"
-        app:layout_constraintStart_toStartOf="@+id/fragment"
-        app:layout_constraintTop_toTopOf="@+id/tvMensaje"
-        app:layout_constraintVertical_bias="0.0" />-->
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_incidencia"
         style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:itemIconSize="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
         app:fab_colorNormal="@color/azulfront"
+        app:itemIconSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:menu="@menu/bottom_navigation"
-        tools:layout_editor_absoluteX="16dp" />
-
-    <TextView
-        android:id="@+id/textDier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/tvMensaje"
-        app:layout_constraintEnd_toEndOf="@+id/tvMensaje"
-        app:layout_constraintHorizontal_bias="0.667"
-        app:layout_constraintStart_toStartOf="@+id/tvMensaje"
-        app:layout_constraintTop_toTopOf="@+id/tvMensaje"
-        app:layout_constraintVertical_bias="0.83" />
-
-    <Button
-        android:id="@+id/butIrFormulario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Continuar"
-
-        app:layout_constraintBottom_toBottomOf="@+id/fragment"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.71"
-        app:layout_constraintStart_toEndOf="@+id/idBtnShowBottomSheet"
-        app:layout_constraintTop_toTopOf="@+id/tvMensaje"
-        app:layout_constraintVertical_bias="0.155" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintVertical_bias="6.0"
+        app:menu="@menu/bottom_navigation" />
+</RelativeLayout>
+    <!--
+    */-->

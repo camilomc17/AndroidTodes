@@ -98,7 +98,7 @@ Button pasaMain;
     }
 
     public void pasaUbicacion (View view){
-        Intent atrasMenu= new Intent(categoriasIncidencia.this,MiUbicacion.class);
+        Intent atrasMenu= new Intent(categoriasIncidencia.this,MapsUbicacion.class);
         startActivity(atrasMenu);
 
     }
