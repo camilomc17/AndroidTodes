@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:app2="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    tools:context=".categoriasIncidenciaInvitado"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/bottom_navigation_incidencia_invitado"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="Categorias de Incidencia"
+                android:textAlignment="center"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayoutTextview"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:orientation="vertical"
+            app2:layout_constraintEnd_toEndOf="parent"
+            app2:layout_constraintStart_toStartOf="parent">
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:padding="2dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutCamposForm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_marginTop="0dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageViewFisico_invitado"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="pasaUbicacion"
+                            app:srcCompat="@drawable/fisico" />
+
+
+                        <ImageView
+                            android:id="@+id/imageViewGenero_invitado"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="pasaUbicacion"
+                            app:srcCompat="@drawable/genero" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_marginTop="0dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageViewAbuso_invitado"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="pasaUbicacion"
+                            app:srcCompat="@drawable/abuso" />
+
+                        <ImageView
+                            android:id="@+id/imageViewDiscriminacion_invitado"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="pasaUbicacion"
+                            app:srcCompat="@drawable/discriminacion" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_marginTop="0dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageViewIgualdad_invitado"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="pasaUbicacion"
+                            app:srcCompat="@drawable/igualdad" />
+
+                        <ImageView
+                            android:id="@+id/imageIntrafamiliar_invitado"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="pasaUbicacion"
+                            app:srcCompat="@drawable/intrafamiliar" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom_navigation_incidencia_invitado"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="0dp"
+        android:orientation="vertical">
+
+
+        <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/MenuPrincipal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="0dp"
+            app:menu_fab_label=""
+            fab:menu_colorNormal="@color/azulfront"
+            fab:menu_colorPressed="@color/moradofront"
+            fab:menu_labels_cornerRadius="10dp"
+            fab:menu_labels_showShadow="false"
+            fab:menu_labels_textColor="@color/white">
+
+            <!--<com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnMiPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_users"
+                app:fab_colorNormal="@color/azulfront"
+                app:fab_label="Mi Perfil" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnEventos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="IrEvento"
+                android:src="@drawable/ic__events"
+                app:fab_colorNormal="@color/azulfront"
+                app:fab_label="Eventos" />
+
+
+                <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/CrearReporte"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_newreport"
+                android:onClick="IrCrearIncidencia"
+                app:fab_label="Crear Reportes"/>-->
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnNoticias"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="IrNoticia"
+                android:src="@drawable/ic_news"
+                app:fab_colorNormal="@color/azulfront"
+                app:fab_colorPressed="@color/moradofront"
+                app:fab_label="Noticias" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnMisReportes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_myreports"
+                app:fab_colorNormal="@color/azulfront"
+                app:fab_colorPressed="@color/moradofront"
+                app:fab_label="Mis Reportes" />
+
+
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnAyuda"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="IrAyuda"
+                android:src="@drawable/ic_help"
+                app:fab_colorNormal="@color/azulfront"
+                app:fab_colorPressed="@color/moradofront"
+                app:fab_label="Ayuda" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnInicioSesionInvitado"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="IrInicioSesionInvitado"
+                android:src="@drawable/ic_users"
+                app:fab_colorNormal="@color/azulfront"
+                app:fab_colorPressed="@color/moradofront"
+                app:fab_label="Inicio sesion" />
+
+
+        </com.github.clans.fab.FloatingActionMenu>
+    </LinearLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_incidencia_invitado"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        app:fab_colorNormal="@color/azulfront"
+        app:itemIconSize="30dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="6.0"
+        app:menu="@menu/bottom_navigation" />
+</RelativeLayout>
