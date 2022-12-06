@@ -29,7 +29,7 @@ public class Localizacion implements LocationListener {
 
     MapsUbicacion mapsUbicacion;
     TextView tvMensaje;
-
+    FormActivityDenuncia formActivityDenuncia;
 
 
     public MapsUbicacion getMapsUbicacion(){
@@ -49,8 +49,8 @@ public class Localizacion implements LocationListener {
     public void onLocationChanged(Location location) {
         // Este metodo se ejecuta cuando el GPS recibe nuevas coordenadas
         String texto = "Mi ubicación es: \n"
-                + "Latitud = " + location.getLatitude() + "\n"
-                + "Longitud = " + location.getLongitude()
+         //       + "Latitud = " + location.getLatitude() + "\n"
+          //      + "Longitud = " + location.getLongitude()
                 ;
 
         tvMensaje.setText(texto);
@@ -71,7 +71,7 @@ public class Localizacion implements LocationListener {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.fragment, fragment, null);
 
-//        fragmentTransaction.commit();
+       fragmentTransaction.commit();
 
 
 

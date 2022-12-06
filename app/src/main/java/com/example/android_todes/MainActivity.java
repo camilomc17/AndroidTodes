@@ -70,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         iniciarapp();
-
     }
     public void iniciarapp() {
         Animation animacion1, animacion2;

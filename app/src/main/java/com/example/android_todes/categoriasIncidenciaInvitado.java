@@ -8,40 +8,39 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class categoriasIncidencia extends AppCompatActivity {
+public class categoriasIncidenciaInvitado extends AppCompatActivity {
 
-Button pasaMain;
-    ImageView abuso;
-    ImageView genero;
-    ImageView intrafamily;
-    ImageView fisico;
-    ImageView discriminacion;
-    ImageView igualdad;
+    ImageView abuso_invitado;
+    ImageView genero_invitado;
+    ImageView intrafamily_invitado;
+    ImageView fisico_invitado;
+    ImageView discriminacion_invitado;
+    ImageView igualdad_invitado;
 
-    FloatingActionMenu actionMenu;
-
+    FloatingActionMenu actionMenu_invitado;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_categorias_incidencia);
+        setContentView(R.layout.activity_categorias_incidencia_invitado);
 
-        abuso = findViewById(R.id.imageViewAbuso);
-        genero = findViewById(R.id.imageViewGenero);
-        intrafamily = findViewById(R.id.imageIntrafamiliar);
-        fisico = findViewById(R.id.imageViewFisico);
-        discriminacion = findViewById(R.id.imageViewDiscriminacion);
-        igualdad = findViewById(R.id.imageViewIgualdad);
 
-      /*  actionMenu = (FloatingActionMenu) findViewById(R.id.MenuPrincipal);
-        actionMenu.setClosedOnTouchOutside(true);*/
 
-        BottomNavigationView navigationViews = findViewById(R.id.bottom_navigation_incidencia);
+        fisico_invitado=findViewById(R.id.imageViewFisico_invitado);
+        genero_invitado=findViewById(R.id.imageViewGenero_invitado);
+        abuso_invitado=findViewById(R.id.imageViewAbuso_invitado);
+        discriminacion_invitado=findViewById(R.id.imageViewDiscriminacion_invitado);
+        igualdad_invitado=findViewById(R.id.imageViewIgualdad_invitado);
+        intrafamily_invitado=findViewById(R.id.imageIntrafamiliar_invitado);
+
+        actionMenu_invitado = (FloatingActionMenu) findViewById(R.id.MenuPrincipal);
+        actionMenu_invitado.setClosedOnTouchOutside(true);
+
+        BottomNavigationView navigationViews = findViewById(R.id.bottom_navigation_incidencia_invitado);
         navigationViews.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
     private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -69,7 +68,7 @@ Button pasaMain;
         }
     };
 
-    public void IrMiPerfil(){
+    /*public void IrMiPerfil(){
 
     }
 
@@ -78,34 +77,32 @@ Button pasaMain;
 
 
     }
-    public void IrAyuda(View view){
-        Intent irAyudaRegistrado = new Intent(this,MainActivityOpcionMenuRegistrado.class);
-        startActivity(irAyudaRegistrado);
-    }
+
     public void CerrarSesion(){
-        Intent ir = new Intent(this,InicioSesion.class);
-        startActivity(ir);
+
     }
     public void IrEvento(View view)
     {
         Intent ir = new Intent(this,MainActivityEvento.class);
         startActivity(ir);
-    }
-
-    public void IrNoticia(View view)
-    {
-        Intent ir = new Intent(this,MainActivityNoticia.class);
+    }*/
+    public void IrInicioSesionInvitado(View view){
+        Intent ir = new Intent(this,InicioSesion.class);
         startActivity(ir);
     }
-
+    public void IrNoticia(View view)
+    {
+        Intent ir = new Intent(this,ActivityNoticiaInvitado.class);
+        startActivity(ir);
+    }
+    public void IrAyuda(View view){
+        Intent irAyudaInvitado = new Intent(this,MainActivityOpcionMenuInvitado.class);
+        startActivity(irAyudaInvitado);
+    }
     public void pasaUbicacion (View view){
-        Intent atrasMenu= new Intent(categoriasIncidencia.this,MapsUbicacion.class);
+        Intent atrasMenu= new Intent(categoriasIncidenciaInvitado.this,MapsUbicacionInvitado.class);
         startActivity(atrasMenu);
 
     }
-
-
-
-
 
 }

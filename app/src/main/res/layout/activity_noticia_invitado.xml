@@ -27,8 +27,6 @@
         android:textStyle="bold" />
 
 
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_noticias"
         android:layout_width="match_parent"
@@ -65,12 +63,32 @@
             fab:menu_labels_textColor="@color/white"
             fab:menu_labels_showShadow="false"
             fab:menu_labels_cornerRadius="10dp">
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnMisReportes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_myreports"
+                app:fab_colorNormal="@color/azulfront"
+                app:fab_colorPressed="@color/moradofront"
+                app:fab_label="Mis Reportes" />
+
+
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnAyuda"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="IrAyuda"
+                android:src="@drawable/ic_help"
+                app:fab_colorNormal="@color/azulfront"
+                app:fab_colorPressed="@color/moradofront"
+                app:fab_label="Ayuda" />
 
             <com.github.clans.fab.FloatingActionButton
                 android:id="@+id/btnCrearIncidencia"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:onClick="IrCrearReporte"
+                android:onClick="IrCrearReporteInvitado"
                 android:src="@drawable/ic_newreport"
                 app:fab_label="Crear Reporte"
                 app:fab_colorNormal="@color/azulfront"

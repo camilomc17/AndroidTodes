@@ -3,7 +3,6 @@ package com.example.android_todes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -22,25 +21,21 @@ import android.location.LocationProvider;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
-
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-public class MapsUbicacion extends AppCompatActivity {
+public class MapsUbicacionInvitado extends AppCompatActivity {
 
     private GoogleMap mMap;
     TextView latitud, longitud;
@@ -48,23 +43,19 @@ public class MapsUbicacion extends AppCompatActivity {
     // Button btnRegresarUbi;
     RecyclerView mRecycler;
     TextView dir;
-    Button btnMuestraBottomSheet;
+    //Button btnMuestraBottomSheet;
     EditText texDiecc;
     Button contiFormu;
     TextView direccion;
 
-
-    // Minimo tiempo para updates en Milisegundos
-    private static final long MIN_TIME = 10000; // 10 segundos
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps_ubicacion);
-        latitud = findViewById(R.id.txtLatitud);
-        longitud = findViewById(R.id.txtLongitud);
-        direccion = findViewById(R.id.txtDireccion);
+        setContentView(R.layout.activity_maps_ubicacion_invitado);
+
+        latitud=findViewById(R.id.txtLatitud_invitado);
+        longitud=findViewById(R.id.txtLongitud_invitado);
+        direccion=findViewById(R.id.txtDireccion_invitado);
         //irmapa=findViewById(R.id.buttonIrMapa);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION,}, 1000);
@@ -75,29 +66,14 @@ public class MapsUbicacion extends AppCompatActivity {
 
 //btnRegresarUbi=findViewById(R.id.btnRegresoUbica);
 //tvMensaje=findViewById(R.id.tvMensaje);
-        contiFormu = findViewById(R.id.butIrFormulario);
-
-     /*   dir=findViewById(R.id.textDier);
-        Bundle recibeDatos=getIntent().getExtras();
-        String info=recibeDatos.getString("Keydireccion");
-        dir.setText(info);*/
-
-/*btnRegresarUbi.setOnClickListener(new View.OnClickListener(){
-
-    public void onClick(View view){
-        Intent intent = new Intent(MapsUbicacion.this,MiUbicacion.class);
-        startActivity(intent);
-    }
-     });*/
-
-     //   btnMuestraBottomSheet = findViewById(R.id.idBtnShowBottomSheet);
+        contiFormu = findViewById(R.id.butIrFormulario_invitado);
 
         contiFormu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Bundle enviaDatos = new Bundle();
                 enviaDatos.putString("KeyD", direccion.getText().toString());
-                Intent intent = new Intent(MapsUbicacion.this, FormActivityDenuncia.class);
+                Intent intent = new Intent(MapsUbicacionInvitado.this, FormActivityDenuncia.class);
                 intent.putExtras(enviaDatos);
                 startActivity(intent);
             }
@@ -139,11 +115,11 @@ public class MapsUbicacion extends AppCompatActivity {
             iniciarLocalizacion();
         }*/
 
-       // BottomNavigationView navigationView = findViewById(R.id.bottom_navigation_incidencia);
-       // navigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-    }
+         BottomNavigationView navigationView = findViewById(R.id.bottom_navigation_incidencia_invitado);
+         navigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-    /*private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+    }
+    private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -167,7 +143,7 @@ public class MapsUbicacion extends AppCompatActivity {
 
             return false;
         }
-    };*/
+    };
 
   /*  public void requestForCallPermission ()
     {
@@ -181,7 +157,7 @@ public class MapsUbicacion extends AppCompatActivity {
     private void locationStart() {
         LocationManager mlocManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         Localizacion Local = new Localizacion();
-        Local.setMapsUbicacion(this);
+        Local.setMapsUbicacionInvitado(this);
 
         final boolean gpsEnabled = mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
         if (!gpsEnabled) {
@@ -231,13 +207,13 @@ public class MapsUbicacion extends AppCompatActivity {
 
     /* Aqui empieza la Clase Localizacion */
     public class Localizacion implements LocationListener {
-        MapsUbicacion mapsUbicacion;
+        MapsUbicacionInvitado mapsUbicacion;
 
-        public MapsUbicacion getMapsUbicacion() {
+        public MapsUbicacionInvitado getMapsUbicacion() {
             return mapsUbicacion;
         }
 
-        public void setMapsUbicacion(MapsUbicacion mapsUbicacion) {
+        public void setMapsUbicacionInvitado(MapsUbicacionInvitado mapsUbicacion) {
             this.mapsUbicacion = mapsUbicacion;
         }
 
@@ -314,4 +290,3 @@ public class MapsUbicacion extends AppCompatActivity {
 
     }
 }
-

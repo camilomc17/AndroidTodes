@@ -6,7 +6,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".FormActivityDenuncia">
 
     <!--<RelativeLayout
@@ -183,9 +182,14 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="0dp"
                         android:layout_marginEnd="0dp"
+
                         app2:icon="@drawable/ic_calendar_diligencia"
                         app2:iconSize="30dp"
                         app2:iconTint="#0B0A0A" />
+
+
+
+
                 </LinearLayout>
 
                 <EditText

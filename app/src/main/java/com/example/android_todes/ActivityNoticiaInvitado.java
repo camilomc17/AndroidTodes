@@ -96,14 +96,19 @@ public class ActivityNoticiaInvitado extends AppCompatActivity {
     }
 
     // Metodos de los botones
-    public void IrCrearReporte(View view) {
-        Intent intentIncidencia=new Intent(this,categoriasIncidencia.class);
-        startActivity(intentIncidencia);
+    public void IrCrearReporteInvitado(View view) {
+        Intent intentIncidenciaInvitado = new Intent(this,categoriasIncidenciaInvitado.class);
+       startActivity(intentIncidenciaInvitado);
+        finish();
     }
 
     public void IrInicioSesion(View view){
         Intent ir = new Intent(this,InicioSesion.class);
         startActivity(ir);
+    }
+    public void IrAyuda(View view){
+        Intent irAyudaInvitado = new Intent(this,MainActivityOpcionMenuInvitado.class);
+        startActivity(irAyudaInvitado);
     }
 
 

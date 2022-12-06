@@ -74,6 +74,7 @@
         <activity
             android:name=".MiUbicacion"
             android:exported="false" />
+
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -94,7 +95,13 @@
             android:exported="false"
             android:label="@string/title_activity_maps_ubicacion" />
         <activity
+            android:name=".MapsUbicacionInvitado"
+            android:exported="false" />
+        <activity
             android:name=".categoriasIncidencia"
+            android:exported="false" />
+        <activity
+            android:name=".categoriasIncidenciaInvitado"
             android:exported="false" />
         <activity
             android:name=".InicioSesion"
