@@ -101,8 +101,9 @@ public class MainActivityNoticia extends AppCompatActivity {
         startActivity(intentE);
     }
     public void IrMiPerfil(View view){
+        Intent intentE=new Intent(this,ActivityMiCuenta.class);
+        startActivity(intentE);
 
-        finish();
     }
 
     public void IrCrearIncidencia(View view){

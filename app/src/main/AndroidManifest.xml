@@ -12,8 +12,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature
-        android:name="android.hardware.camera" android:required="true" />
-
+        android:name="android.hardware.camera"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -26,6 +26,13 @@
         android:theme="@style/Theme.Android_Todes"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".ActivityMiCuenta"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".ActivityNoticiaInvitado"
             android:exported="false">
@@ -61,7 +68,6 @@
         <activity
             android:name=".MainActivityMiPerfil"
             android:exported="false" />
-
         <activity
             android:name=".FormActivityDenuncia"
             android:exported="false" />
@@ -74,7 +80,6 @@
         <activity
             android:name=".MiUbicacion"
             android:exported="false" />
-
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 

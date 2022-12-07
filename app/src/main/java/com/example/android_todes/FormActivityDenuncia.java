@@ -294,6 +294,7 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
         map.put("date", fecha_inci);
         map.put("hora", hora_inci);
         map.put("descripcion", descripcion_inci);
+
         databaseReference.child("Incidencias").push().setValue(map);
     }
 
