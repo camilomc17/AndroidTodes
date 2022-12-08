@@ -132,17 +132,29 @@
                 <EditText
                     android:id="@+id/editLugarIncidencia"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="0dp"
                     android:layout_marginTop="2dp"
                     android:background="@drawable/borde_edit_text"
                     android:ems="4"
                     android:hint="Lugar"
-                    android:inputType="textPersonName"
+                    android:inputType="textMultiLine"
                     android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName14"
                     app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName14"
                     tools:layout_editor_absoluteY="320dp" />
+                <EditText
+                    android:id="@+id/editBarrio"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/borde_edit_text"
+                    android:ems="4"
+                    android:hint="Barrio"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="@+id/editLugar"
+                    app:layout_constraintStart_toStartOf="@+id/editLugar" />
 
                 <EditText
                     android:id="@+id/editEdad"
@@ -162,14 +174,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
                     android:background="@drawable/borde_edit_text"
-                    android:gravity="center_horizontal"
                     android:orientation="horizontal">
+
 
                     <EditText
                         android:id="@+id/EditFechaIncidencia"
                         android:layout_width="240dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="0dp"
+                        android:inputType="date"
                         android:gravity="center"
                         android:hint="dd/mm/aa"
                         app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName16"
@@ -178,40 +191,62 @@
                     <Button
                         android:id="@+id/buttonFecha"
                         style="@style/Widget.AppCompat.Button.Borderless"
-                        android:layout_width="wrap_content"
+                        android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="0dp"
-                        android:layout_marginEnd="0dp"
-
+                        android:layout_gravity="center_horizontal"
                         app2:icon="@drawable/ic_calendar_diligencia"
                         app2:iconSize="30dp"
                         app2:iconTint="#0B0A0A" />
 
+                    <DatePicker
+                        android:id="@+id/id_dtPicker"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:gravity="center"/>
 
 
 
                 </LinearLayout>
 
-                <EditText
-                    android:id="@+id/editHoraIncidencia"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="2dp"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/borde_edit_text"
-                    android:ems="4"
-                    android:hint="Hora"
-                    android:inputType="textPersonName"
-                    android:textAlignment="center"
-                    app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName14"
-                    app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName14"
-                    tools:layout_editor_absoluteY="320dp" />
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+                    <EditText
+                        android:id="@+id/editHoraIncidencia"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="2dp"
+                        android:ems="4"
+                        android:hint="Hora"
+                        android:inputType="text"
+                        android:textAlignment="center"
+                        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName14"
+                        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName14"
+                        tools:layout_editor_absoluteY="320dp" />
+                    <Button
+                        android:id="@+id/buttonHora"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_gravity="center_horizontal"
+                        app2:icon="@drawable/ic_time_form"
+                        app2:iconSize="30dp"
+                        app2:iconTint="#0B0A0A" />
+                </LinearLayout>
+
 
 
                 <EditText
                     android:id="@+id/editDescripcionIncidencia"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_marginTop="2dp"
                     android:background="@drawable/borde_edit_text"
                     android:ems="10"

@@ -31,7 +31,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
+//import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 
@@ -170,10 +170,10 @@ public class ActivityMiCuenta extends AppCompatActivity {
                     String  photoUser = snapshot.child("photo").getValue().toString();
                     Toast toast = Toast.makeText(getApplicationContext(),"Cargando foto", Toast.LENGTH_SHORT);
                     toast.show();
-                    Picasso.with(ActivityMiCuenta.this)
+   /*                 Picasso.with(ActivityMiCuenta.this)
                             .load(photoUser)
                             .resize(150,150)
-                            .into(photo_User);
+                            .into(photo_User);*/
                  }
                 else{
                     /*
