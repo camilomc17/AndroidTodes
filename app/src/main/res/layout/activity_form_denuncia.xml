@@ -98,7 +98,7 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
@@ -108,9 +108,10 @@
             <LinearLayout
                 android:id="@+id/linearLayoutCamposForm"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
                 android:gravity="center"
                 android:orientation="vertical"
                 app:layout_constraintTop_toBottomOf="@+id/imagen_para_incidencia">
@@ -169,26 +170,29 @@
                     app:layout_constraintEnd_toEndOf="@+id/editLugar"
                     app:layout_constraintStart_toStartOf="@+id/editLugar" />
 
-                <LinearLayout
+               <!-- <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
-                    android:background="@drawable/borde_edit_text"
-                    android:orientation="horizontal">
+
+                    android:gravity="center"
+                    android:orientation="horizontal">-->
 
 
                     <EditText
                         android:id="@+id/EditFechaIncidencia"
-                        android:layout_width="240dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/borde_edit_text"
                         android:layout_marginStart="0dp"
-                        android:inputType="date"
                         android:gravity="center"
-                        android:hint="dd/mm/aa"
+                        android:hint="mm/dd/aa"
+                        android:inputType="date"
                         app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName16"
                         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName16" />
 
-                    <Button
+                <!--   <Button
                         android:id="@+id/buttonFecha"
                         style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="50dp"
@@ -197,7 +201,7 @@
                         android:layout_gravity="center_horizontal"
                         app2:icon="@drawable/ic_calendar_diligencia"
                         app2:iconSize="30dp"
-                        app2:iconTint="#0B0A0A" />
+                        app2:iconTint="#0B0A0A" />-->
 
                     <DatePicker
                         android:id="@+id/id_dtPicker"
@@ -208,38 +212,39 @@
 
 
 
-                </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/borde_edit_text"
-                    android:layout_marginTop="2dp"
-                    android:orientation="horizontal">
-                    <EditText
-                        android:id="@+id/editHoraIncidencia"
-                        android:layout_width="240dp"
+                <!-- <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="0dp"
+                        android:background="@drawable/borde_edit_text"
                         android:layout_marginTop="2dp"
-                        android:ems="4"
-                        android:hint="Hora"
-                        android:inputType="text"
-                        android:textAlignment="center"
-                        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName14"
-                        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName14"
-                        tools:layout_editor_absoluteY="320dp" />
-                    <Button
-                        android:id="@+id/buttonHora"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="0dp"
-                        android:layout_gravity="center_horizontal"
-                        app2:icon="@drawable/ic_time_form"
-                        app2:iconSize="30dp"
-                        app2:iconTint="#0B0A0A" />
-                </LinearLayout>
+                        android:orientation="horizontal">-->
+
+                        <EditText
+                            android:id="@+id/editHoraIncidencia"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="2dp"
+                            android:background="@drawable/borde_edit_text"
+                            android:ems="4"
+                            android:hint="Hora"
+                            android:inputType="text"
+                            android:textAlignment="center"
+                            app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName14"
+                            app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName14"
+                            tools:layout_editor_absoluteY="320dp" />
+                       <!--<Button
+                            android:id="@+id/buttonHora"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="0dp"
+                            android:layout_gravity="center_horizontal"
+                            app2:icon="@drawable/ic_time_form"
+                            app2:iconSize="30dp"
+                            app2:iconTint="#0B0A0A" />-->
+
 
 
 
@@ -253,15 +258,14 @@
                     android:hint="Descripción de la situación"
                     android:inputType="textMultiLine"
                     android:textAlignment="center" />
-
                 <ImageView
                     android:id="@+id/imagenIncidencia"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="4dp"
-                    android:src="@drawable/ic_image_diligencia"
-                    tools:layout_editor_absoluteX="16dp" />
-
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/ic_image_diligencia" />
                 <LinearLayout
                     android:id="@+id/linearLayout3"
                     android:layout_width="match_parent"
@@ -307,6 +311,9 @@
                         app2:maxImageSize="30dp" />
 
                 </LinearLayout>
+
+
+
 
             </LinearLayout>
 

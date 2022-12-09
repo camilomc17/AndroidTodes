@@ -1,6 +1,7 @@
 package com.example.android_todes;
 
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
@@ -21,10 +22,15 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 
+import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -40,7 +46,7 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
     EditText edad;
     EditText lugar_incidencia;
     EditText barrio_incidencia;
-    EditText fecha_incidencia;
+    private EditText fecha_incidencia;
     EditText hora;
     EditText descripcion_incidencia;
     Button btn_send_incidencia;
@@ -51,27 +57,34 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
 
 
     FirebaseFirestore myfirestore;
-    //StorageReference storageReference;
-    String storage_path = "imagesIncidencia/";
-    private Uri image_url;
+    StorageReference storageReference; //para la img
+    private static final int GALLERY_INTENT = 1;
+    private static final int CAMARA_INTENT = 2;
+    private int requestCode;
+    private int resultCode;
+    private Intent data;
     String photo = "photo";
     String id;
 
     DatePicker verPicker;
     Button btnfecha;
     Button btnhora;
-    private int dia,mes,year,hour,minutos,rest;
+    private int year,mes,dia,hour,minutos,rest;
 
-private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
+private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener()  {
     @Override
     public void onDateSet(DatePicker datePicker, int mount, int day, int years) {
-        fecha_incidencia.setText(mount+day+years);
+      year = years;
+      mes=mount;
+      dia=day;
+        //  fecha_incidencia.setText(years+"/"+(mount+1)+"/"+day);
         refrescarFecha();
     }
 };
 
+
     public void refrescarFecha() {
-        String date= String.format(Locale.getDefault(),"%02d-%02d-%02d",mes+1,dia,year);
+        String date= String.format(Locale.getDefault(),"%02d-%02d-%02d",year,mes+1,dia);
          fecha_incidencia.setText(date);
     }
 /*    //esta para utilizar nuestro Adapter
@@ -95,21 +108,24 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
         lugar_incidencia=findViewById(R.id.editLugarIncidencia);
         barrio_incidencia=findViewById(R.id.editBarrio);
         fecha_incidencia = findViewById(R.id.EditFechaIncidencia);
+        fecha_incidencia.setOnClickListener(this);
         hora=findViewById(R.id.editHoraIncidencia);
+        hora.setOnClickListener(this);
         descripcion_incidencia=findViewById(R.id.editDescripcionIncidencia);
         imagenIncidencia=findViewById(R.id.imagenIncidencia);
         btn_send_incidencia=findViewById(R.id.enviarIncidencia);
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
         myfirestore= FirebaseFirestore.getInstance();
-
+        storageReference = FirebaseStorage.getInstance().getReference();
+        cargando = new ProgressDialog(this);
      /*   recyclerView=findViewById(R.id.rv_mis_incidencias);
         recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),1));
         //ObtenerDatosFirebase();*/
-        btnhora=findViewById(R.id.buttonHora);
+    /*    btnhora=findViewById(R.id.buttonHora);
         btnhora.setOnClickListener(this);
         btnfecha = findViewById(R.id.buttonFecha);
-        btnfecha.setOnClickListener(this);
+        btnfecha.setOnClickListener(this);*/
         Btn_ircamara.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,6 +137,9 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
             @Override
             public void onClick(View view) {
                 abrirGalery();
+      /*          Intent intent = new Intent(Intent.ACTION_PICK);
+                intent.setType("image/*");
+               startActivityForResult(intent,GALLERY_INTENT);*/
             }
         });
         Bundle recibeDatos=getIntent().getExtras();
@@ -255,45 +274,41 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
      private void abrirGalery()
      {
          Intent galeria = new Intent();
-         galeria.setAction(Intent.ACTION_VIEW);
+         galeria.setAction(Intent.ACTION_PICK);
          galeria.setType("image/*");
          if(galeria.resolveActivity(getPackageManager())!=null)
          {
-             startActivityForResult(galeria, 1);
+             startActivityForResult(galeria, GALLERY_INTENT);
          }
      }
      private void abrirCamara()
      {
-         Intent camara = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+         Intent camara = new Intent();
+         camara.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
          if(camara.resolveActivity(getPackageManager())!= null)
          {
-             startActivityForResult(camara,1);
+             startActivityForResult(camara,CAMARA_INTENT);
          }
 
      }
-     protected void onActivityResult(int requestCode, int resultCode, Intent data)
-     {
-         super.onActivityResult(requestCode, resultCode, data);
-         if(requestCode==1 && resultCode==RESULT_OK)
-         {
-             Bundle extras = data.getExtras();
-             Bitmap imgBitmap =(Bitmap) extras.get("data");
-             imagenIncidencia.setImageBitmap(imgBitmap);
-         }
-     }
+
+
+
+
          @Override
-           public void onClick(View view) {
-        if(view == btnfecha){
-            final Calendar C = Calendar.getInstance();
-            mes = C.get(Calendar.MONTH);
-            dia = C.get(Calendar.DAY_OF_MONTH);
-            year = C.get(Calendar.YEAR);
 
-             refrescarFecha();
-             btnfecha.setOnClickListener(new View.OnClickListener() {
+           public void onClick(View view) {
+        if(view == fecha_incidencia){
+            final Calendar calendar = Calendar.getInstance();
+            year = calendar.get(Calendar.YEAR);
+            mes = calendar.get(Calendar.MONTH);
+            dia = calendar.get(Calendar.DAY_OF_MONTH);
+            refrescarFecha();
+
+             fecha_incidencia.setOnClickListener(new View.OnClickListener() {
                  @Override
                  public void onClick(View view) {
-                     DatePickerDialog dialog = new DatePickerDialog(FormActivityDenuncia.this,listener,mes,dia,year);
+                     DatePickerDialog dialog = new DatePickerDialog(FormActivityDenuncia.this,listener,year,mes,dia);
                      dialog.show();
                  }
              });
@@ -307,8 +322,7 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
                     ,dia,mes,year);
             datePickerDialog.show();*/
         }
-        if(view== btnhora)
-        {
+        if(view== hora) {
             final Calendar C = Calendar.getInstance();
             hour = C.get(Calendar.HOUR_OF_DAY);
             minutos = C.get(Calendar.MINUTE);
@@ -322,5 +336,44 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
             },hour,minutos,false);
         timePickerDialog.show();
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+   if(requestCode==CAMARA_INTENT && resultCode==RESULT_OK){
+       cargando.setTitle("SUBIENDO FOTO");
+       cargando.setMessage("Subiendo foto al Formulario");
+       cargando.setCancelable(false);
+       cargando.show();
+      Bundle extras = data.getExtras();
+       Bitmap imgBitmap = (Bitmap) extras.get("data");
+       imagenIncidencia.setImageBitmap(imgBitmap);
+       cargando.dismiss();
+       //StorageReference storecamara = storageReference.child("imagesIncidencia/").child(extras.);
+   }
+   if (requestCode==GALLERY_INTENT && resultCode==RESULT_OK) {
+       cargando.setTitle("SUBIENDO FOTO");
+       cargando.setMessage("Subiendo foto al Formulario");
+       cargando.setCancelable(false);
+       cargando.show();
+       Uri url_img = data.getData();
+       StorageReference storage_path = storageReference.child("imagesIncidencia/").child(url_img.getLastPathSegment());
+       storage_path.putFile(url_img).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+           @Override
+           public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+               cargando.dismiss();
+
+               Uri desargaFoto = taskSnapshot.getUploadSessionUri();
+               Glide.with(FormActivityDenuncia.this)
+                       .load(desargaFoto)
+                       .into(imagenIncidencia);
+               Toast.makeText(FormActivityDenuncia.this,"LA FOTO SE SUBIO CORRECTAMENTE",Toast.LENGTH_SHORT).show();
+           }
+       });
+
+   }
+
     }
 }
