@@ -8,7 +8,7 @@ public class ApiClientEvento {
     public static Retrofit getClientEvento()
     {
         retrofit =new Retrofit.Builder()
-                .baseUrl("https://todesapi-production.up.railway.app/")
+                .baseUrl("https://proyectotodes-production.up.railway.app/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         return retrofit;
