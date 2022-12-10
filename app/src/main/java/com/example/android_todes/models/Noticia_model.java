@@ -1,6 +1,15 @@
 package com.example.android_todes.models;
 
 public class Noticia_model {
+    /*"imagen": "https:\/\/www.bbc.com\/mundo\/noticias-internacional-62683218",
+    "id": 1,
+    "nombre_publicacion": "Muerte de un trans peruano",
+    "descripcion_publicacion": "Rodrigo Ventocilla: la pol\u00e9mica muerte de un estudiante de Harvard trans peruano tras ser detenido por la polic\u00eda en Bali",
+    "lugar": "Indonesia",
+    "responsable": "Secretario de la  comunidad ",
+    "estado": "activo",
+    "tipo": "noticia",
+    "ruta_archivo": "img"*/
     private String nombre_publicacion;
     private String descripcion_publicacion;
     private String lugar;
@@ -9,6 +18,15 @@ public class Noticia_model {
     private String estado;
     private String tipo;
     private String ruta_archivo;
+    private String image;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     public String getNombre_publicacion() {
         return nombre_publicacion;

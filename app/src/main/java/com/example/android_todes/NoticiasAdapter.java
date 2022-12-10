@@ -44,7 +44,7 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.ViewHo
      holder.responsableNoticia.setText(noticiaModels.get(position).getResponsable());
      //holder.estadoNoticia.setText(noticiaModels.get(position).getEstado());
      //holder.tipoNoticia.setText(noticiaModels.get(position).getTipo());
-        Glide.with(context).load(noticiaModels.get(position).getRuta_archivo()).into(holder.rutaarchivoNoticia);
+        Glide.with(context).load(noticiaModels.get(position).getImage()).into(holder.rutaarchivoNoticia);
 
 
     }

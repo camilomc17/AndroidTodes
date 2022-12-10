@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.android_todes.models.Evento_model;
-import com.example.android_todes.models.Noticia_model;
 
 import java.util.List;
 
@@ -46,7 +45,7 @@ public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.ViewHold
         holder.fechaEvento.setText(eventoModels.get(position).getFecha_y_hora());
         holder.responsableEvento.setText(eventoModels.get(position).getResponsable());
        // holder.tipoEvento.setText(eventoModels.get(position).getTipo());
-        Glide.with(context).load(eventoModels.get(position).getRuta_archivo()).into(holder.rutaarchivoEvento);
+        Glide.with(context).load(eventoModels.get(position).getImage()).into(holder.rutaarchivoEvento);
     }
 
     @Override

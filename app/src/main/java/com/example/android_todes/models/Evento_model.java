@@ -1,6 +1,15 @@
 package com.example.android_todes.models;
 
 public class Evento_model {
+    /*  "imagen": "http:\/\/portalantiguo.sdmujer.gov.co\/inicio\/424-dia-de-las-rebeldias-lesbicas",
+    "id": 2,
+    "nombre_publicacion": " la rebeldia lesbica",
+    "descripcion_publicacion": "El 13 de octubre se celebra.",
+    "lugar": "parque  caldas-popayan",
+    "responsable": "Secretario de la  comunidad ",
+    "estado": "activo",
+    "tipo": "evento",
+    "ruta_archivo": "img"*/
     private String nombre_publicacion;
     private String descripcion_publicacion;
     private String lugar;
@@ -9,6 +18,15 @@ public class Evento_model {
     private String estado;
     private String tipo;
     private String ruta_archivo;
+    private String image;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     public String getNombre_publicacion() {
         return nombre_publicacion;
