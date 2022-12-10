@@ -31,6 +31,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -63,12 +64,14 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
     private int requestCode;
     private int resultCode;
     private Intent data;
+
+
+    private Uri image_url_galeria;
     String photo = "photo";
     String id;
 
     DatePicker verPicker;
-    Button btnfecha;
-    Button btnhora;
+    //Button btnfecha;Button btnhora;
     private int year,mes,dia,hour,minutos,rest;
 
 private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener()  {
@@ -198,9 +201,12 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
         String fecha_inci = fecha_incidencia.getText().toString();
         String hora_inci = hora.getText().toString();
         String descripcion_inci = descripcion_incidencia.getText().toString();
+        String url = image_url_galeria.toString();
+        String estad = "no revisado";
         if(validation()) {
-            enviarIncidencia(noms_apes, years, lugar_inci, barrio_inci, fecha_inci, hora_inci, descripcion_inci);
+            enviarIncidencia(noms_apes, years, lugar_inci, barrio_inci, fecha_inci, hora_inci, descripcion_inci,url,estad);
             Toast.makeText(FormActivityDenuncia.this, "FORMULARIO SE ENVIO CORRECTAMENTE", Toast.LENGTH_SHORT).show();
+            vaciarRegistro();
         }else{
             Toast.makeText(FormActivityDenuncia.this, "Falta ingresar datos", Toast.LENGTH_SHORT).show();
 
@@ -208,6 +214,18 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
         }
 
     }
+
+        private void vaciarRegistro() {
+
+            nombres_apellidos.setText("");
+            edad.setText("");
+            lugar_incidencia.setText("");
+            barrio_incidencia.setText("");
+            fecha_incidencia.setText("");
+            hora.setText("");
+            descripcion_incidencia.setText("");
+    }
+
     public boolean validation()
     {
         boolean retorno=true;
@@ -257,8 +275,9 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
         }
         return retorno;
     }
-    private void enviarIncidencia(String noms_apes,String years, String lugar_inci,String barrio_inci, String fecha_inci, String hora_inci, String descripcion_inci)
+    private void enviarIncidencia(String noms_apes,String years, String lugar_inci,String barrio_inci, String fecha_inci, String hora_inci, String descripcion_inci,String url_galeria,String estado)
     {
+
         Map<String,Object> map = new HashMap<>();
         map.put("nombres_apellidos", noms_apes);
         map.put("edad", years);
@@ -267,6 +286,8 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
         map.put("date", fecha_inci);
         map.put("hora", hora_inci);
         map.put("descripcion", descripcion_inci);
+        map.put("url_imagen", url_galeria);
+        map.put("estado",estado);
 
         databaseReference.child("Incidencias").push().setValue(map);
     }
@@ -358,17 +379,20 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
        cargando.setCancelable(false);
        cargando.show();
        Uri url_img = data.getData();
-       StorageReference storage_path = storageReference.child("imagesIncidencia/").child(url_img.getLastPathSegment());
-       storage_path.putFile(url_img).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+       String url_image = url_img.toString();
+       this.image_url_galeria=url_img;
+       StorageReference storage_path = storageReference.child("imagesIncidencia/").child(url_image);
+       storage_path.putFile(image_url_galeria).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
            @Override
            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
                cargando.dismiss();
-
-               Uri desargaFoto = taskSnapshot.getUploadSessionUri();
-               Glide.with(FormActivityDenuncia.this)
-                       .load(desargaFoto)
+               Picasso.with(FormActivityDenuncia.this)
+                       .load(image_url_galeria)
+                       .resize(100,200)
                        .into(imagenIncidencia);
+
+
                Toast.makeText(FormActivityDenuncia.this,"LA FOTO SE SUBIO CORRECTAMENTE",Toast.LENGTH_SHORT).show();
            }
        });
