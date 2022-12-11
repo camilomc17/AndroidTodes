@@ -63,28 +63,36 @@
             fab:menu_labels_textColor="@color/white"
             fab:menu_labels_showShadow="false"
             fab:menu_labels_cornerRadius="10dp">
-            <com.github.clans.fab.FloatingActionButton
+          <!--  <com.github.clans.fab.FloatingActionButton
                 android:id="@+id/btnMisReportes"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_myreports"
                 app:fab_colorNormal="@color/azulfront"
                 app:fab_colorPressed="@color/moradofront"
-                app:fab_label="Mis Reportes" />
+                app:fab_label="Mis Reportes" />-->
 
-
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnEventos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="IrEventos_invitado"
+                android:src="@drawable/ic__events"
+                app:fab_colorNormal="@color/azulfront"
+                app:fab_colorPressed="@color/moradofront"
+                app:fab_label="Eventos" />
 
             <com.github.clans.fab.FloatingActionButton
                 android:id="@+id/btnAyuda"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:onClick="IrAyuda"
+                android:onClick="IrAyuda_invitado"
                 android:src="@drawable/ic_help"
                 app:fab_colorNormal="@color/azulfront"
                 app:fab_colorPressed="@color/moradofront"
                 app:fab_label="Ayuda" />
 
-            <com.github.clans.fab.FloatingActionButton
+          <!--  <com.github.clans.fab.FloatingActionButton
                 android:id="@+id/btnCrearIncidencia"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -93,14 +101,14 @@
                 app:fab_label="Crear Reporte"
                 app:fab_colorNormal="@color/azulfront"
                 app:fab_colorPressed="@color/moradofront"
-                />
+                />-->
 
             <com.github.clans.fab.FloatingActionButton
                 android:id="@+id/btnIrIniciarSesion"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_users"
-                android:onClick="IrInicioSesion"
+                android:onClick="IrInicioSesion_invitado"
                 app:fab_label="Iniciar Sesion"
                 app:fab_colorNormal="@color/azulfront"
                 app:fab_colorPressed="@color/moradofront"
@@ -123,6 +131,7 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="0dp"
+        android:background="@color/moradofront"
         app:fab_colorNormal="@color/azulfront"
         app:itemIconSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"

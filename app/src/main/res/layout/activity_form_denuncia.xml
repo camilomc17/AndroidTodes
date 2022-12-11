@@ -17,42 +17,56 @@
         app2:layout_constraintStart_toStartOf="parent"
         app2:layout_constraintTop_toTopOf="parent">-->
 
-        <LinearLayout
-            android:id="@+id/linearLayoutTextview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginEnd="0dp"
-            android:orientation="vertical"
-            android:background="@color/azulfront"
-            app2:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-            app2:layout_constraintEnd_toEndOf="parent"
-            app2:layout_constraintStart_toStartOf="parent"
-            app2:layout_constraintTop_toTopOf="parent">
+    <LinearLayout
+        android:id="@+id/linearLayoutTextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="@color/azulfront"
+        android:orientation="vertical"
+        app2:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app2:layout_constraintEnd_toEndOf="parent"
+        app2:layout_constraintStart_toStartOf="parent"
+        app2:layout_constraintTop_toTopOf="parent">
 
-         <!--<Button
+        <!--<Button
                 android:id="@+id/button_atras"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="Atras"
                 android:text="ATRAS" />-->
+        <TextView
+            android:id="@+id/tvFlecha"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:drawableLeft="@drawable/ic_action_flecha"
+            android:drawableTint="@color/black"
+            android:gravity="center"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:onClick="volverLocation" />
 
-            <TextView
-                android:id="@+id/textViewSubtitulo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="0dp"
-                android:text="Te recomendamos suministrar la mayor información posible "
-                android:textAlignment="center"
-                android:textColor="#090909"
-                android:textSize="12sp" />
+        <TextView
+            android:id="@+id/textViewSubtitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:text="Te recomendamos suministrar la mayor información posible "
+            android:textAlignment="center"
+            android:textColor="#090808"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-            <LinearLayout
+        <!--  <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -71,10 +85,10 @@
                     android:textColor="#090808"
                     android:textSize="16sp"
                     android:textStyle="bold" />
-            </LinearLayout>
+            </LinearLayout>-->
 
 
-        </LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -88,10 +102,8 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="0dp"
-        android:background="@drawable/shadow_header"
-        android:backgroundTint="#560CA1"
         android:orientation="vertical"
-        android:padding="6dp"
+        android:padding="4dp"
         app2:layout_constraintEnd_toEndOf="parent"
         app2:layout_constraintStart_toStartOf="parent"
         app2:layout_constraintTop_toBottomOf="@+id/linearLayoutTextview">
@@ -103,13 +115,13 @@
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
             android:layout_marginEnd="0dp"
-            android:padding="4dp">
+            android:padding="2dp">
 
             <LinearLayout
                 android:id="@+id/linearLayoutCamposForm"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="0dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginBottom="0dp"
                 android:gravity="center"
@@ -258,13 +270,14 @@
                     android:hint="Descripción de la situación"
                     android:inputType="textMultiLine"
                     android:textAlignment="center" />
+
                 <ImageView
                     android:id="@+id/imagenIncidencia"
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="4dp"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="10dp"
                     android:src="@drawable/ic_image_diligencia" />
                 <LinearLayout
                     android:id="@+id/linearLayout3"
@@ -286,8 +299,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
-                        android:layout_marginEnd="30dp"
+                        android:layout_marginEnd="50dp"
                         android:src="@drawable/ic_galeria_foreground"
+                        android:background="@color/azulfront"
+                        app:backgroundTint="@null"
                         app2:maxImageSize="30dp" />
 
                     <Button
@@ -298,15 +313,17 @@
                         android:layout_marginTop="10dp"
                         android:onClick="Enviar"
                         android:text="ENVIAR"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent" />
+                        app:backgroundTint="@null"
+                        android:background="@drawable/botton"/>
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/button_ir_camara"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
-                        android:layout_marginStart="30dp"
+                        android:layout_marginStart="50dp"
+                        android:background="@color/azulfront"
+                        app:backgroundTint="@null"
                         android:src="@drawable/ic_camara_foreground"
                         app2:maxImageSize="30dp" />
 

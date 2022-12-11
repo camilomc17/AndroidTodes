@@ -31,7 +31,19 @@
         android:layout_marginTop="0dp"
         android:orientation="vertical">
 
-
+        <TextView
+            android:id="@+id/tvFlecha"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginRight="10dp"
+            android:drawableLeft="@drawable/ic_action_flecha"
+            android:drawableTint="@color/black"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:gravity="center"
+            android:onClick="volverCategorias" />
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
@@ -133,11 +145,15 @@
 
     <Button
         android:id="@+id/butIrFormulario"
-        android:layout_width="104dp"
-        android:layout_height="42dp"
+        style="@style/Theme.Android_Todes"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
         android:layout_marginStart="20dp"
-        android:text="continuar"
-        android:textSize="8dp" />
+        android:layout_marginBottom="2dp"
+        android:text="CONTINUAR"
+        android:textSize="10dp"
+        app:backgroundTint="@null"
+        android:background="@drawable/botton"/>
 </androidx.appcompat.widget.LinearLayoutCompat>
 
 
@@ -145,11 +161,9 @@
             android:id="@+id/fragment"
             android:name="com.example.android_todes.FragmentMaps"
             android:layout_width="400dp"
-            android:layout_height="264dp"
+            android:layout_height="290dp"
             android:layout_marginStart="0dp"
             android:layout_marginEnd="0dp"
-
-
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -193,6 +207,7 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="0dp"
+        android:background="@color/moradofront"
         app:fab_colorNormal="@color/azulfront"
         app:itemIconSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"

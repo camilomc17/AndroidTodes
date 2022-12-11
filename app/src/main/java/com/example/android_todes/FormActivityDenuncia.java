@@ -197,7 +197,7 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
         String fecha_inci = fecha_incidencia.getText().toString();
         String hora_inci = hora.getText().toString();
         String descripcion_inci = descripcion_incidencia.getText().toString();
-        String url = image_url_galeria.toString();
+        String url = imagenIncidencia.toString();
         String estad = "no revisado";
         if(validation()) {
             enviarIncidencia(noms_apes, years, lugar_inci, barrio_inci, fecha_inci, hora_inci, descripcion_inci,url,estad);
@@ -209,17 +209,6 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
 
         }
 
-    }
-
-        private void vaciarRegistro() {
-
-            nombres_apellidos.setText("");
-            edad.setText("");
-            lugar_incidencia.setText("");
-            barrio_incidencia.setText("");
-            fecha_incidencia.setText("");
-            hora.setText("");
-            descripcion_incidencia.setText("");
     }
 
     public boolean validation()
@@ -270,6 +259,16 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
             retorno=false;
         }
         return retorno;
+    }
+    private void vaciarRegistro() {
+
+        nombres_apellidos.setText("");
+        edad.setText("");
+        lugar_incidencia.setText("");
+        barrio_incidencia.setText("");
+        fecha_incidencia.setText("");
+        hora.setText("");
+        descripcion_incidencia.setText("");
     }
     private void enviarIncidencia(String noms_apes,String years, String lugar_inci,String barrio_inci, String fecha_inci, String hora_inci, String descripcion_inci,String url_galeria,String estado)
     {
@@ -383,7 +382,7 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
                cargando.dismiss();
-          /*     Picasso.with(FormActivityDenuncia.this)
+             /*  Picasso.with(FormActivityDenuncia.this)
                        .load(image_url_galeria)
                        .resize(100,200)
                        .into(imagenIncidencia);*/
@@ -394,6 +393,11 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
        });
 
    }
-
     }
+
+public void volverLocation(View view){
+        Intent regresar = new Intent(FormActivityDenuncia.this,MapsUbicacion.class);
+        startActivity(regresar);
+        finish();
+}
 }

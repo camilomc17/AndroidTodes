@@ -1,16 +1,16 @@
 package com.example.android_todes;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android_todes.apinoticias.ApiClient;
 import com.example.android_todes.apinoticias.ApiNoticia;
@@ -102,13 +102,20 @@ public class ActivityNoticiaInvitado extends AppCompatActivity {
         finish();
     }
 
-    public void IrInicioSesion(View view){
+    public void IrInicioSesion_invitado(View view){
         Intent ir = new Intent(this,InicioSesion.class);
         startActivity(ir);
+        finish();
     }
-    public void IrAyuda(View view){
+    public void IrAyuda_invitado(View view){
         Intent irAyudaInvitado = new Intent(this,MainActivityOpcionMenuInvitado.class);
         startActivity(irAyudaInvitado);
+        finish();
+    }
+    public void IrEventos_invitado(View view){
+        Intent irAyudaInvitado = new Intent(this,ActivityEventoInvitado.class);
+        startActivity(irAyudaInvitado);
+        finish();
     }
 
 

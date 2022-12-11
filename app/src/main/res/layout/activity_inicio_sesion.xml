@@ -17,10 +17,10 @@
         android:layout_weight="7"
         android:orientation="vertical">
 
-        <FrameLayout
+        <!--<FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            >
+            >-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -43,11 +43,11 @@
                     android:gravity="bottom|end"
                     android:text=" Inicio de Sesión"
                     android:textColor="@color/white"
-                    android:textSize="20dp"/>
+                    android:textSize="24dp"/>
 
 
             </LinearLayout>
-        </FrameLayout>
+        <!--</FrameLayout>-->
     </LinearLayout>
 
     <LinearLayout
@@ -56,7 +56,7 @@
         android:layout_weight="3"
         android:background="@drawable/shadow_header"
         android:orientation="vertical"
-        android:padding="40dp">
+        android:padding="36dp">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -77,19 +77,19 @@
                 android:ems="10"
                 android:hint="Correo electrónico"
                 android:inputType="textEmailAddress"
-                android:padding="15dp" />
+                android:padding="12dp" />
 
             <EditText
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="18dp"
                 android:background="@drawable/bordes"
                 android:drawableLeft="@drawable/ic_candado"
                 android:ems="10"
                 android:hint="Contraseña"
-                android:inputType="textWebEditText"
-                android:padding="15dp" />
+                android:inputType="textPassword"
+                android:padding="12dp" />
 
             <Button
                 android:id="@+id/btIngresar"

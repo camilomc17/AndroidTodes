@@ -33,6 +33,7 @@
                 android:text="Categorias de Incidencia"
                 android:textAlignment="center"
                 android:textSize="24dp"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -179,6 +180,7 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_users"
                 app:fab_colorNormal="@color/azulfront"
+                app:fab_colorPressed="@color/moradofront"
                 app:fab_label="Mi Perfil" />
 
             <com.github.clans.fab.FloatingActionButton
@@ -188,6 +190,7 @@
                 android:onClick="IrEvento"
                 android:src="@drawable/ic__events"
                 app:fab_colorNormal="@color/azulfront"
+                app:fab_colorPressed="@color/moradofront"
                 app:fab_label="Eventos" />
 
             <com.github.clans.fab.FloatingActionButton
@@ -226,6 +229,8 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_logout"
                 app:fab_colorNormal="@color/azulfront"
+                app:fab_colorPressed="@color/moradofront"
+                android:onClick="cerrarSesion"
                 app:fab_label="Cerrar sesion" />
 
 
@@ -245,9 +250,10 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="0dp"
+        android:background="@color/moradofront"
+        app:backgroundTint="@null"
         app:fab_colorNormal="@color/azulfront"
         app:itemIconSize="30dp"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="6.0"
         app:menu="@menu/bottom_navigation" />

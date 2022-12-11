@@ -117,6 +117,7 @@ import java.util.Map;
         public  void InicioSesion(View view) {
             Intent i = new Intent(this,InicioSesion.class);
             startActivity(i);
+            finish();
         }
 
 

@@ -4,51 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".RegistrarseActivity">
 
-    <LinearLayout
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
 
+
+    <LinearLayout
         android:id="@+id/lEnunciados"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_gravity="center_horizontal"
-        android:orientation="horizontal"
-        android:background="@drawable/color_login">
+        android:layout_height="wrap_content"
+        android:background="@drawable/color_login"
+        android:gravity="center"
+        android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tvFlecha"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:drawableLeft="@drawable/ic_action_flecha"
+        android:drawableTint="@color/white"
+        android:onClick="InicioSesion" />
+</LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:paddingStart="5dp"
+            app:srcCompat="@drawable/logotodes" />
 
         <TextView
-            android:id="@+id/tvFlecha"
+            android:id="@+id/tviniciosesion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:layout_marginRight="3dp"
-            android:drawableLeft="@drawable/ic_action_flecha"
-            android:drawableTint="#0E0E0E"
-            android:minWidth="48dp"
-            android:minHeight="48dp"
-            android:onClick="InicioSesion"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/tvTitulo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="REGISTRARSE"
-            android:textSize="30dp"
-            android:padding="5dp"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="80dp"
-            android:gravity="center"
-            />
+            android:gravity="bottom|end"
+            android:text=" Registrarse"
+            android:textColor="@color/white"
+            android:textSize="28dp"/>
 
     </LinearLayout>
 
-
+    </FrameLayout>
     <LinearLayout
         android:id="@+id/lsecundario"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         android:background="@drawable/shadow_header"
         android:gravity="center"
         android:orientation="vertical">
@@ -60,6 +69,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:layout_marginBottom="30dp"
     android:gravity="center">
 
 
@@ -106,15 +116,16 @@
         android:textColorHint="@color/oscuromorado2"
         android:textSize="15dp" />
 
-        <Button
-            android:id="@+id/btGuardar"
-            android:layout_width="200dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="10dp"
-            android:onClick="InicioSesion"
-            android:text="REGISTRARSE"
-            android:background="@drawable/botton"
-            app:backgroundTint="@null"/>
+    <Button
+        android:id="@+id/btGuardar"
+        style="@style/Theme.Android_Todes"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/botton"
+        app:backgroundTint="@null"
+        android:onClick="InicioSesion"
+        android:text="REGISTRARSE" />
 
 </LinearLayout>
     </ScrollView>

@@ -1,11 +1,11 @@
 package com.example.android_todes;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivityOpcionMenuInvitado extends AppCompatActivity {
     ImageButton siguiente;
@@ -20,9 +20,11 @@ public class MainActivityOpcionMenuInvitado extends AppCompatActivity {
     public void Siguiente(View view){
         Intent pasar=new Intent(this,MainActivityCrearIncidencia.class);
         startActivity(pasar);
+        finish();
     }
     public void Anterior(View view){
         Intent antes= new Intent(this,ActivityNoticiaInvitado.class);
         startActivity(antes);
+        finish();
     }
 }

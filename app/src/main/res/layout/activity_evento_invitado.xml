@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivityNoticia"
+    tools:context=".MainActivityEvento"
     android:background="@drawable/fond_form_inicidencia">
+    <!--android:background="@drawable/bandera"-->
 
     <TextView
-        android:id="@+id/textViewNoticias"
+        android:id="@+id/textViewEventos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -20,20 +20,19 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="100dp"
         android:gravity="center"
-        android:text="@string/title_noticias"
+        android:text="@string/title_evento"
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold" />
 
 
 
-
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_noticias"
+        android:id="@+id/rv_eventos"
         android:layout_width="match_parent"
         android:layout_height="456dp"
-        android:layout_above="@+id/bottom_navigation_noticia"
-        android:layout_below="@+id/textViewNoticias"
+        android:layout_above="@+id/bottom_navigation_evento_invitado"
+        android:layout_below="@+id/textViewEventos"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="2dp"
@@ -41,13 +40,11 @@
         android:layout_marginEnd="2dp"
         android:layout_marginBottom="0dp" />
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentTop="true"
-    android:orientation="vertical">
-
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
 
         <com.github.clans.fab.FloatingActionMenu
             android:id="@+id/MenuPrincipal"
@@ -58,7 +55,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginRight="4dp"
             android:layout_marginBottom="50dp"
-            app:menu_fab_label=""
+            app:menu_fab_label="Menu"
             fab:menu_colorNormal="@color/azulfront"
             fab:menu_colorPressed="@color/moradofront"
             fab:menu_labels_textColor="@color/white"
@@ -66,77 +63,42 @@
             fab:menu_labels_cornerRadius="10dp">
 
             <com.github.clans.fab.FloatingActionButton
-                android:id="@+id/btnEventos"
+                android:id="@+id/btnNoticiasInvitado"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:onClick="IrEventos"
-                android:src="@drawable/ic__events"
-                app:fab_label="Eventos"
+                android:onClick="Noticia_event"
+                android:src="@drawable/ic_news"
+                app:fab_label="Noticias"
                 app:fab_colorNormal="@color/azulfront"
                 app:fab_colorPressed="@color/moradofront"
-                />
+                tools:ignore="OnClick" />
 
             <com.github.clans.fab.FloatingActionButton
-                android:id="@+id/btnMisReportes"
+                android:id="@+id/btnAyuda_Invitado"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_myreports"
-                app:fab_label="Mis Reportes"
+                android:onClick="IrAyuda_invitado"
+                android:src="@drawable/ic_help"
                 app:fab_colorNormal="@color/azulfront"
                 app:fab_colorPressed="@color/moradofront"
-                />
-
+                app:fab_label="Ayuda"
+                tools:ignore="OnClick" />
             <com.github.clans.fab.FloatingActionButton
-                android:id="@+id/CrearReporte"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:onClick="IrCrearIncidencia"
-                android:src="@drawable/ic_newreport"
-                app:fab_label="Crear Reportes"
-                app:fab_colorNormal="@color/azulfront"
-                app:fab_colorPressed="@color/moradofront"
-                />
-
-            <com.github.clans.fab.FloatingActionButton
-                android:id="@+id/btnMiPerfil"
+                android:id="@+id/btnIrIniciarSesion"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_users"
-                android:onClick="IrMiPerfil"
-                app:fab_label="Mi Perfil"
+                android:onClick="inicioSesion_event"
+                app:fab_label="Iniciar Sesion"
                 app:fab_colorNormal="@color/azulfront"
                 app:fab_colorPressed="@color/moradofront"
-                />
-
-            <com.github.clans.fab.FloatingActionButton
-                android:id="@+id/btnAyuda"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_help"
-                app:fab_label="Ayuda"
-                android:onClick="IrAyuda"
-                app:fab_colorNormal="@color/azulfront"
-                app:fab_colorPressed="@color/moradofront"
-                />
-
-            <com.github.clans.fab.FloatingActionButton
-                android:id="@+id/btnCerrarSesion"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_logout"
-                app:fab_label="Cerrar sesion"
-                android:onClick="cerrarSesionNoticia"
-                app:fab_colorNormal="@color/azulfront"
-                app:fab_colorPressed="@color/moradofront"
-                />
-
+                tools:ignore="OnClick" />
 
         </com.github.clans.fab.FloatingActionMenu>
-</LinearLayout>
-
+    </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation_noticia"
+        android:id="@+id/bottom_navigation_evento_invitado"
         style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -144,7 +106,6 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="0dp"
         android:background="@color/moradofront"
@@ -154,6 +115,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="6.0"
         app:menu="@menu/bottom_navigation" />
-
-
+    <!-- style="@style/Widget.MaterialComponents.BottomNavigationView.Colored" -->
 </RelativeLayout>
