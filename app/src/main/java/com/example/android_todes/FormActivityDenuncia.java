@@ -3,22 +3,30 @@ package com.example.android_todes;
 
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
-import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -29,6 +37,9 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
@@ -43,6 +54,7 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
     EditText edad;
     EditText lugar_incidencia;
     EditText barrio_incidencia;
+    private Spinner myspinner;
     private EditText fecha_incidencia;
     EditText hora;
     EditText descripcion_incidencia;
@@ -61,26 +73,27 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
     private int resultCode;
     private Intent data;
 
-
+    String rut_imagen_camara;
     private Uri image_url_galeria;
     String photo = "photo";
     String id;
 
     DatePicker verPicker;
+    TimePicker timePicker;
     //Button btnfecha;Button btnhora;
     private int year,mes,dia,hour,minutos,rest;
 
 private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener()  {
     @Override
     public void onDateSet(DatePicker datePicker, int mount, int day, int years) {
+      refrescarFecha();
       year = years;
       mes=mount;
       dia=day;
         //  fecha_incidencia.setText(years+"/"+(mount+1)+"/"+day);
-        refrescarFecha();
+
     }
 };
-
 
     public void refrescarFecha() {
         String date= String.format(Locale.getDefault(),"%02d-%02d-%02d",year,mes+1,dia);
@@ -101,15 +114,19 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
         Btn_ircamara=findViewById(R.id.button_ir_camara);
         Btn_irgalery=findViewById(R.id.button_ir_galery);
 
+        timePicker=findViewById(R.id.timePickerform);
+        timePicker.setIs24HourView(true);
         verPicker=findViewById(R.id.id_dtPicker);
         nombres_apellidos=findViewById(R.id.editNombreYApellidos);
         edad=findViewById(R.id.editEdad);
         lugar_incidencia=findViewById(R.id.editLugarIncidencia);
-        barrio_incidencia=findViewById(R.id.editBarrio);
+       // barrio_incidencia=findViewById(R.id.editBarrio);
+        myspinner= findViewById(R.id.editBarrio);
         fecha_incidencia = findViewById(R.id.EditFechaIncidencia);
         fecha_incidencia.setOnClickListener(this);
         hora=findViewById(R.id.editHoraIncidencia);
         hora.setOnClickListener(this);
+
         descripcion_incidencia=findViewById(R.id.editDescripcionIncidencia);
         imagenIncidencia=findViewById(R.id.imagenIncidencia);
         btn_send_incidencia=findViewById(R.id.enviarIncidencia);
@@ -141,6 +158,37 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
                startActivityForResult(intent,GALLERY_INTENT);*/
             }
         });
+
+
+        ArrayList<String> barrio = new ArrayList<>();
+        barrio.add("SeleccionaBarrio...");
+        barrio.add("Lomas de Granada");
+        barrio.add("Los Campos");
+        barrio.add("La Paz");
+        barrio.add("El Centro");
+        barrio.add("La Esmeralda");
+        barrio.add("Villa del Viento");
+        barrio.add("El Recuerdo");
+        barrio.add("La Maria");
+
+
+        ArrayAdapter adb = new ArrayAdapter(FormActivityDenuncia.this, android.R.layout.simple_list_item_1,barrio);
+
+        myspinner.setAdapter(adb);
+
+        myspinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
+                String elemento = (String) myspinner.getAdapter().getItem(position);
+                Toast.makeText(FormActivityDenuncia.this,"Seleccionaste el Barrio "+ elemento,Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         Bundle recibeDatos=getIntent().getExtras();
         String info=recibeDatos.getString("KeyD");
         lugar_incidencia.setText(info);
@@ -193,7 +241,7 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
         String noms_apes= nombres_apellidos.getText().toString();
         String years=edad.getText().toString();
         String lugar_inci = lugar_incidencia.getText().toString();
-        String barrio_inci = barrio_incidencia.getText().toString();
+        String barrio_inci = myspinner.getSelectedItem().toString();
         String fecha_inci = fecha_incidencia.getText().toString();
         String hora_inci = hora.getText().toString();
         String descripcion_inci = descripcion_incidencia.getText().toString();
@@ -205,8 +253,6 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
             vaciarRegistro();
         }else{
             Toast.makeText(FormActivityDenuncia.this, "Falta ingresar datos", Toast.LENGTH_SHORT).show();
-
-
         }
 
     }
@@ -218,7 +264,7 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
         String noms_apes= nombres_apellidos.getText().toString();
         String years=edad.getText().toString();
         String lugar_inci = lugar_incidencia.getText().toString();
-        String barrio_inci = barrio_incidencia.getText().toString();
+        String barrio_inci = myspinner.getSelectedItem().toString();
         String fecha_inci = fecha_incidencia.getText().toString();
         String hora_inci = hora.getText().toString();
         String descripcion_inci = descripcion_incidencia.getText().toString();
@@ -240,7 +286,7 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
         }
         if(barrio_inci.isEmpty())
         {
-            barrio_incidencia.setError("Ingrese el Barrio de la incidencia");
+          //  barrio_incidencia.setError("Ingrese el Barrio de la incidencia");
             retorno=false;
         }
         if(fecha_inci.isEmpty())
@@ -265,7 +311,7 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
         nombres_apellidos.setText("");
         edad.setText("");
         lugar_incidencia.setText("");
-        barrio_incidencia.setText("");
+       // barrio_incidencia.setText("");
         fecha_incidencia.setText("");
         hora.setText("");
         descripcion_incidencia.setText("");
@@ -303,17 +349,28 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
          camara.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
          if(camara.resolveActivity(getPackageManager())!= null)
          {
-             startActivityForResult(camara,CAMARA_INTENT);
+
+             File imagenArchivo=null;
+             try {
+               imagenArchivo = cargarImage();
+
+             }catch (IOException exception){
+                 Log.e("ERROR",exception.toString());
+             }
+             if(imagenArchivo !=null){
+                 Uri fotoUri = FileProvider.getUriForFile(this, "com.example.android_todes.fileprovider",imagenArchivo);
+                 camara.putExtra(MediaStore.EXTRA_OUTPUT,fotoUri);
+                 startActivityForResult(camara,CAMARA_INTENT);
+             }
+
+
          }
 
      }
 
 
-
-
          @Override
-
-           public void onClick(View view) {
+          public void onClick(View view) {
         if(view == fecha_incidencia){
             final Calendar calendar = Calendar.getInstance();
             year = calendar.get(Calendar.YEAR);
@@ -339,10 +396,31 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
             datePickerDialog.show();*/
         }
         if(view== hora) {
-            final Calendar C = Calendar.getInstance();
+
+            int hour, minute;
+            String am_pm;
+
+            if (Build.VERSION.SDK_INT >= 23 ){
+                hour = timePicker.getHour();
+                minute = timePicker.getMinute();
+                timePicker.isShown();
+            }
+            else{
+                hour = timePicker.getCurrentHour();
+                minute = timePicker.getCurrentMinute();
+            }
+            if(hour > 12) {
+                am_pm = " PM ";
+                hour = hour - 12;
+            }
+            else
+            {
+                am_pm=" AM ";
+            }
+            hora.setText(" "+hour+":"+minute+" " +am_pm);
+        /*    final Calendar C = Calendar.getInstance();
             hour = C.get(Calendar.HOUR_OF_DAY);
             minutos = C.get(Calendar.MINUTE);
-            rest = Integer.parseInt(String.valueOf(C.get(Calendar.AM_PM)));
 
             TimePickerDialog timePickerDialog = new TimePickerDialog(FormActivityDenuncia.this, new TimePickerDialog.OnTimeSetListener() {
                 @Override
@@ -350,26 +428,27 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
                   hora.setText(hours+":"+minutes);
                 }
             },hour,minutos,false);
-        timePickerDialog.show();
+        timePickerDialog.show();*/
         }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-   if(requestCode==CAMARA_INTENT && resultCode==RESULT_OK){
-       cargando.setTitle("SUBIENDO FOTO");
-       cargando.setMessage("Subiendo foto al Formulario");
-       cargando.setCancelable(false);
-       cargando.show();
-      Bundle extras = data.getExtras();
-       Bitmap imgBitmap = (Bitmap) extras.get("data");
-       imagenIncidencia.setImageBitmap(imgBitmap);
-       cargando.dismiss();
-       //StorageReference storecamara = storageReference.child("imagesIncidencia/").child(extras.);
+      if(requestCode==CAMARA_INTENT && resultCode==RESULT_OK){
+         cargando.setTitle("SUBIENDO FOTO");
+         cargando.setMessage("Subiendo foto al Formulario");
+         cargando.setCancelable(false);
+         cargando.show();
+        // Bundle extras = data.getExtras();
+        // Bitmap imgBitmap = (Bitmap) extras.get("data");
+          Bitmap imgBitmap = BitmapFactory.decodeFile(rut_imagen_camara);
+         imagenIncidencia.setImageBitmap(imgBitmap);
+         cargando.dismiss();
+         //StorageReference storecamara = storageReference.child("imagesIncidencia/").child(extras.);
    }
-   if (requestCode==GALLERY_INTENT && resultCode==RESULT_OK) {
-       cargando.setTitle("SUBIENDO FOTO");
+      if(requestCode==GALLERY_INTENT && resultCode==RESULT_OK) {
+       cargando.setTitle("CARGANDO FOTO");
        cargando.setMessage("Subiendo foto al Formulario");
        cargando.setCancelable(false);
        cargando.show();
@@ -393,6 +472,14 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
        });
 
    }
+   }
+   private File cargarImage() throws IOException {
+        String url_img_camara="foto_";
+        File directorio = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File imagen = File.createTempFile(url_img_camara,".jpg",directorio);
+
+       rut_imagen_camara = imagen.getAbsolutePath();
+       return imagen;
     }
 
 public void volverLocation(View view){

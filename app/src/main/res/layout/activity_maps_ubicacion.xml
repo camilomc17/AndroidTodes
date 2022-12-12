@@ -57,7 +57,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -84,7 +84,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="3dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -148,8 +148,9 @@
         style="@style/Theme.Android_Todes"
         android:layout_width="wrap_content"
         android:layout_height="36dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
-        android:layout_marginBottom="2dp"
+        android:layout_marginBottom="10dp"
         android:text="CONTINUAR"
         android:textSize="10dp"
         app:backgroundTint="@null"

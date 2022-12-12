@@ -156,13 +156,16 @@
                     app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName14"
                     app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName14"
                     tools:layout_editor_absoluteY="320dp" />
-                <EditText
+                   <!--  <Spinner
+                         android:id="@+id/spinnerBarrio"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"/>       -->
+                <Spinner
                     android:id="@+id/editBarrio"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
                     android:background="@drawable/borde_edit_text"
-                    android:ems="4"
                     android:hint="Barrio"
                     android:inputType="textPersonName"
                     android:textAlignment="center"
@@ -232,6 +235,14 @@
                         android:layout_marginTop="2dp"
                         android:orientation="horizontal">-->
 
+                <TimePicker
+                    android:id="@+id/timePickerform"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:visibility="gone"
+                    android:timePickerMode="spinner"/>
                         <EditText
                             android:id="@+id/editHoraIncidencia"
                             android:layout_width="match_parent"
