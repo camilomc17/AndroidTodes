@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+
 public class MainActivityOpcionMisIncidencias extends AppCompatActivity {
     ImageButton anterior;
     ImageButton siguiente;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

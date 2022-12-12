@@ -30,12 +30,14 @@ import androidx.core.content.FileProvider;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.io.File;
 import java.io.IOException;
@@ -61,6 +63,7 @@ public class FormActivityDenuncia extends AppCompatActivity implements View.OnCl
     Button btn_send_incidencia;
 
 
+    FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
     ProgressDialog cargando;
 
@@ -133,6 +136,8 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
         myfirestore= FirebaseFirestore.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
+
         storageReference = FirebaseStorage.getInstance().getReference();
         cargando = new ProgressDialog(this);
      /*   recyclerView=findViewById(R.id.rv_mis_incidencias);
@@ -246,9 +251,10 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
         String hora_inci = hora.getText().toString();
         String descripcion_inci = descripcion_incidencia.getText().toString();
         String url = imagenIncidencia.toString();
+        String idUsuario = firebaseAuth.getUid();
         String estad = "no revisado";
         if(validation()) {
-            enviarIncidencia(noms_apes, years, lugar_inci, barrio_inci, fecha_inci, hora_inci, descripcion_inci,url,estad);
+            enviarIncidencia(noms_apes, years, lugar_inci, barrio_inci, fecha_inci, hora_inci, descripcion_inci,url,estad,idUsuario);
             Toast.makeText(FormActivityDenuncia.this, "FORMULARIO SE ENVIO CORRECTAMENTE", Toast.LENGTH_SHORT).show();
             vaciarRegistro();
         }else{
@@ -316,18 +322,19 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
         hora.setText("");
         descripcion_incidencia.setText("");
     }
-    private void enviarIncidencia(String noms_apes,String years, String lugar_inci,String barrio_inci, String fecha_inci, String hora_inci, String descripcion_inci,String url_galeria,String estado)
+    private void enviarIncidencia(String noms_apes,String years, String lugar_inci,String barrio_inci, String fecha_inci, String hora_inci, String descripcion_inci,String url_galeria,String estado, String idU)
     {
 
         Map<String,Object> map = new HashMap<>();
-        map.put("nombres_apellidos", noms_apes);
+        map.put("IdUsuario",idU);
+        map.put("nombres", noms_apes);
         map.put("edad", years);
         map.put("ubicacion", lugar_inci);
         map.put("barrio",barrio_inci);
         map.put("date", fecha_inci);
         map.put("hora", hora_inci);
         map.put("descripcion", descripcion_inci);
-        map.put("url_imagen", url_galeria);
+        map.put("urlimagen", url_galeria);
         map.put("estado",estado);
 
         databaseReference.child("Incidencias").push().setValue(map);
@@ -461,10 +468,10 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
                cargando.dismiss();
-             /*  Picasso.with(FormActivityDenuncia.this)
+               Picasso.with(FormActivityDenuncia.this)
                        .load(image_url_galeria)
                        .resize(100,200)
-                       .into(imagenIncidencia);*/
+                       .into(imagenIncidencia);
 
 
                Toast.makeText(FormActivityDenuncia.this,"LA FOTO SE SUBIO CORRECTAMENTE",Toast.LENGTH_SHORT).show();

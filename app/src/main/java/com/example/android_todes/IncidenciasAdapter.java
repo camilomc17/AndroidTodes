@@ -57,6 +57,8 @@ public class IncidenciasAdapter extends RecyclerView.Adapter<IncidenciasAdapter.
         holder.hora.setText(incidencias_modelLista.get(position).getHora());
         holder.nombres_apellidos.setText(incidencias_modelLista.get(position).getNombres_apellidos());
         holder.ubicacion.setText(incidencias_modelLista.get(position).getUbicacion());
+        holder.barrio.setText(incidencias_modelLista.get(position).getBarrio());
+        holder.estado.setText(incidencias_modelLista.get(position).getEstado());
     }
 
     @Override
@@ -66,12 +68,15 @@ public class IncidenciasAdapter extends RecyclerView.Adapter<IncidenciasAdapter.
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
+
         private TextView date;
         private TextView descripcion;
         private TextView edad;
         private TextView hora;
         private TextView nombres_apellidos;
         private TextView ubicacion;
+        private TextView barrio;
+        private TextView estado;
 
         public ViewHolder(View view){
             super(view);
@@ -81,6 +86,8 @@ public class IncidenciasAdapter extends RecyclerView.Adapter<IncidenciasAdapter.
             this.hora = view.findViewById(R.id.id_text_hora);
             this.nombres_apellidos =view.findViewById(R.id.id_text_nombre_apellido);
             this.ubicacion =view.findViewById(R.id.id_text_ubicacion);
+            this.barrio =view.findViewById(R.id.id_text_barrio);
+            this.estado =view.findViewById(R.id.id_text_estado);
 
         }
     }

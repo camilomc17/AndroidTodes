@@ -77,6 +77,24 @@
 
   </TextView>
 
+    <TextView
+        android:id="@+id/id_text_barrio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:hint="edad">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/id_text_estado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:hint="edad">
+
+    </TextView>
+
 
   </LinearLayout>
 
