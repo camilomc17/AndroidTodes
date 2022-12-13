@@ -154,6 +154,7 @@
         android:text="CONTINUAR"
         android:textSize="10dp"
         app:backgroundTint="@null"
+        app:fab_colorNormal="@color/azulfront"
         android:background="@drawable/botton"/>
 </androidx.appcompat.widget.LinearLayoutCompat>
 

@@ -81,8 +81,8 @@
         android:id="@+id/id_text_barrio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:hint="edad">
+        android:layout_marginTop="10dp"
+        android:hint="barrio">
 
     </TextView>
 
@@ -90,8 +90,8 @@
         android:id="@+id/id_text_estado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:hint="edad">
+        android:layout_marginTop="10dp"
+        android:hint="estado">
 
     </TextView>
 

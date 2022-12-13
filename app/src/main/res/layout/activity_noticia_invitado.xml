@@ -82,7 +82,7 @@
                 app:fab_colorPressed="@color/moradofront"
                 app:fab_label="Eventos" />
 
-            <com.github.clans.fab.FloatingActionButton
+            <!--<com.github.clans.fab.FloatingActionButton
                 android:id="@+id/btnAyuda"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -92,7 +92,7 @@
                 app:fab_colorPressed="@color/moradofront"
                 app:fab_label="Ayuda" />
 
-          <!--  <com.github.clans.fab.FloatingActionButton
+          <com.github.clans.fab.FloatingActionButton
                 android:id="@+id/btnCrearIncidencia"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

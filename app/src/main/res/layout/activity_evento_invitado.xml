@@ -73,7 +73,7 @@
                 app:fab_colorPressed="@color/moradofront"
                 tools:ignore="OnClick" />
 
-            <com.github.clans.fab.FloatingActionButton
+          <!--  <com.github.clans.fab.FloatingActionButton
                 android:id="@+id/btnAyuda_Invitado"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -82,7 +82,8 @@
                 app:fab_colorNormal="@color/azulfront"
                 app:fab_colorPressed="@color/moradofront"
                 app:fab_label="Ayuda"
-                tools:ignore="OnClick" />
+                tools:ignore="OnClick" />-->
+
             <com.github.clans.fab.FloatingActionButton
                 android:id="@+id/btnIrIniciarSesion"
                 android:layout_width="match_parent"

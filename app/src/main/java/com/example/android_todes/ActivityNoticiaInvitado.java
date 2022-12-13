@@ -107,11 +107,11 @@ public class ActivityNoticiaInvitado extends AppCompatActivity {
         startActivity(ir);
         finish();
     }
-    public void IrAyuda_invitado(View view){
+    /*public void IrAyuda_invitado(View view){
         Intent irAyudaInvitado = new Intent(this,MainActivityOpcionMenuInvitado.class);
         startActivity(irAyudaInvitado);
         finish();
-    }
+    }*/
     public void IrEventos_invitado(View view){
         Intent irAyudaInvitado = new Intent(this,ActivityEventoInvitado.class);
         startActivity(irAyudaInvitado);

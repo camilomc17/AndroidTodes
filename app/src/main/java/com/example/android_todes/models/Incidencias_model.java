@@ -2,39 +2,37 @@ package com.example.android_todes.models;
 
 public class Incidencias_model {
 
-    private String IdUsuario;
+   // private String IdUsuario;
     private String estado;
     private String date;
     private String descripcion;
     private String barrio;
     private String edad;
     private String hora;
-    private String nombres_apellidos;
+    private String nombres;
     private String ubicacion;
-    private String url_imagen;
+   private String urlimagen;
 
-
-    public Incidencias_model(String idUsuario, String estado, String date, String descripcion, String barrio, String edad, String hora, String nombres_apellidos, String ubicacion, String url_imagen) {
-        IdUsuario = idUsuario;
+ /*   public Incidencias_model(String estado, String date, String descripcion, String barrio, String edad, String hora, String nombres, String ubicacion, String urlimagen) {
+      //  IdUsuario = idUsuario;
         this.estado = estado;
         this.date = date;
         this.descripcion = descripcion;
         this.barrio = barrio;
         this.edad = edad;
         this.hora = hora;
-        this.nombres_apellidos = nombres_apellidos;
+        this.nombres = nombres;
         this.ubicacion = ubicacion;
-        this.url_imagen = url_imagen;
-    }
+        this.urlimagen = urlimagen;
+    }*/
 
-
-    public String getIdUsuario() {
+    /*public String getIdUsuario() {
         return IdUsuario;
     }
 
     public void setIdUsuario(String idUsuario) {
         IdUsuario = idUsuario;
-    }
+    }*/
 
     public String getEstado() {
         return estado;
@@ -84,12 +82,12 @@ public class Incidencias_model {
         this.hora = hora;
     }
 
-    public String getNombres_apellidos() {
-        return nombres_apellidos;
+    public String getNombres() {
+        return nombres;
     }
 
-    public void setNombres_apellidos(String nombres_apellidos) {
-        this.nombres_apellidos = nombres_apellidos;
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
     public String getUbicacion() {
@@ -100,11 +98,11 @@ public class Incidencias_model {
         this.ubicacion = ubicacion;
     }
 
-    public String getUrl_imagen() {
-        return url_imagen;
+  /*  public String getUrlimagen() {
+        return urlimagen;
     }
 
-    public void setUrl_imagen(String url_imagen) {
-        this.url_imagen = url_imagen;
-    }
+    public void setUrlimagen(String urlimagen) {
+        this.urlimagen = urlimagen;
+    }*/
 }

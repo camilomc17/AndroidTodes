@@ -1,50 +1,34 @@
 package com.example.android_todes;
 
 
-import android.content.Context;
-
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.android_todes.models.Incidencias_model;
-
-import java.util.ArrayList;
-
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.android_todes.models.Incidencias_model;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class IncidenciasAdapter extends RecyclerView.Adapter<IncidenciasAdapter.ViewHolder> {
 
     private ArrayList<Incidencias_model> incidencias_modelLista;
-    private Context context;
-    public IncidenciasAdapter(ArrayList<Incidencias_model> incidencias_modelLista, Context context) {
+    private int resource;
+
+
+    public IncidenciasAdapter(ArrayList<Incidencias_model> incidencias_modelLista, int resource) {
         this.incidencias_modelLista = incidencias_modelLista;
-        this.context = context;
+        this.resource = resource;
     }
-
-
-
-
-
-
-
-
-
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.campos_mis_incidencias,parent,false);
+                .inflate(resource,parent,false);
         return new ViewHolder(view);
     }
 
@@ -55,7 +39,7 @@ public class IncidenciasAdapter extends RecyclerView.Adapter<IncidenciasAdapter.
         holder.date.setText(incidencias_modelLista.get(position).getDate());
         holder.descripcion.setText(incidencias_modelLista.get(position).getDescripcion());
         holder.hora.setText(incidencias_modelLista.get(position).getHora());
-        holder.nombres_apellidos.setText(incidencias_modelLista.get(position).getNombres_apellidos());
+        holder.nombres.setText(incidencias_modelLista.get(position).getNombres());
         holder.ubicacion.setText(incidencias_modelLista.get(position).getUbicacion());
         holder.barrio.setText(incidencias_modelLista.get(position).getBarrio());
         holder.estado.setText(incidencias_modelLista.get(position).getEstado());
@@ -68,15 +52,16 @@ public class IncidenciasAdapter extends RecyclerView.Adapter<IncidenciasAdapter.
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
+        private EditText estado;
+        private EditText  date;
+        private EditText  descripcion;
+        private EditText  barrio;
+        private EditText  edad;
+        private EditText  hora;
+        private EditText  nombres;
+        private EditText  ubicacion;
+    //    private ImageView urlimagen;
 
-        private TextView date;
-        private TextView descripcion;
-        private TextView edad;
-        private TextView hora;
-        private TextView nombres_apellidos;
-        private TextView ubicacion;
-        private TextView barrio;
-        private TextView estado;
 
         public ViewHolder(View view){
             super(view);
@@ -84,10 +69,11 @@ public class IncidenciasAdapter extends RecyclerView.Adapter<IncidenciasAdapter.
             this.descripcion = view.findViewById(R.id.id_text_descripcion);
             this.edad =  view.findViewById(R.id.id_text_edad);
             this.hora = view.findViewById(R.id.id_text_hora);
-            this.nombres_apellidos =view.findViewById(R.id.id_text_nombre_apellido);
+            this.nombres =view.findViewById(R.id.id_text_nombre_apellido);
             this.ubicacion =view.findViewById(R.id.id_text_ubicacion);
             this.barrio =view.findViewById(R.id.id_text_barrio);
             this.estado =view.findViewById(R.id.id_text_estado);
+         //   this.estado =view.findViewById(R.id.id_text_estado);
 
         }
     }

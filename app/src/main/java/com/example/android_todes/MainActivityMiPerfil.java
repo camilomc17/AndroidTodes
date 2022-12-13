@@ -1,11 +1,11 @@
 package com.example.android_todes;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivityMiPerfil extends AppCompatActivity {
 
@@ -21,7 +21,7 @@ public class MainActivityMiPerfil extends AppCompatActivity {
         startActivity(pasar);
     }
     public void Anterior(View view){
-        Intent antes=new Intent(this,MainActivity.class);
+        Intent antes=new Intent(this,MainActivityOpcionLlamadas.class);
         startActivity(antes);
     }
 }

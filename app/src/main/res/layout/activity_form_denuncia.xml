@@ -325,6 +325,7 @@
                         android:onClick="Enviar"
                         android:text="ENVIAR"
                         app:backgroundTint="@null"
+                        app:fab_colorNormal="@color/azulfront"
                         android:background="@drawable/botton"/>
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
