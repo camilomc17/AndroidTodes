@@ -45,7 +45,7 @@ public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.ViewHold
         holder.fechaEvento.setText(eventoModels.get(position).getFecha_y_hora());
         holder.responsableEvento.setText(eventoModels.get(position).getResponsable());
        // holder.tipoEvento.setText(eventoModels.get(position).getTipo());
-        Glide.with(context).load(eventoModels.get(position).getImage()).into(holder.rutaarchivoEvento);
+        Glide.with(context).load(eventoModels.get(position).getImagen()).into(holder.rutaarchivoEvento);
     }
 
     @Override

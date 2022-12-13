@@ -18,14 +18,14 @@ public class Evento_model {
     private String estado;
     private String tipo;
     private String ruta_archivo;
-    private String image;
+    private String imagen;
 
-    public String getImage() {
-        return image;
+    public String getImagen() {
+        return imagen;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 
     public String getNombre_publicacion() {
