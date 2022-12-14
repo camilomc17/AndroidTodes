@@ -78,6 +78,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_myreports"
+                android:onClick="IrMisIncidencias"
                 app:fab_label="Mis Reportes"
                 app:fab_colorNormal="@color/azulfront"
                 app:fab_colorPressed="@color/moradofront"

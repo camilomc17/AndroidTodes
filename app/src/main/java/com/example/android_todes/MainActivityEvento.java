@@ -60,7 +60,7 @@ public class MainActivityEvento extends AppCompatActivity {
 
             switch (item.getItemId()) {
                 case R.id.phone_admin:
-                    String cellAdmin = "+57-";
+                    String cellAdmin = "+57-3103557789";
                     Intent llamada_admin = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", cellAdmin, null));
                     startActivity(llamada_admin);
                     return true;
@@ -100,19 +100,20 @@ public class MainActivityEvento extends AppCompatActivity {
     // Metodos de los botones
     public void IrNoticias(View view)
     {
-        Intent ir = new Intent(this,MainActivityNoticia.class);
-        startActivity(ir);
+        Intent iraNoticias = new Intent(this,MainActivityNoticia.class);
+        startActivity(iraNoticias);
+        finish();
     }
 
     public void IrCrearIncidencia(View view){
-        Intent intentE=new Intent(this,categoriasIncidencia.class);
-        startActivity(intentE);
-
-
+        Intent intentirIncidencia=new Intent(this,categoriasIncidencia.class);
+        startActivity(intentirIncidencia);
+        finish();
     }
     public void IrMisIncidencias(View view){
-
-
+        Intent misincidencias2 = new Intent(this,MainActivityListMisIncidencias.class);
+        startActivity(misincidencias2);
+        finish();
     }
 
     public void IrMiPerfil(View view){

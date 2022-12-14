@@ -50,7 +50,7 @@ Button pasaMain;
 
             switch (item.getItemId()) {
                 case R.id.phone_admin:
-                    String cellAdmin = "+57-";
+                    String cellAdmin = "+57-3103557789";
                     Intent llamada_admin = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", cellAdmin, null));
                     startActivity(llamada_admin);
                     return true;
@@ -76,7 +76,9 @@ Button pasaMain;
 
     public void IrMisIncidencias(View view){
 
-
+        Intent misincidencias1 = new Intent(this,MainActivityListMisIncidencias.class);
+        startActivity(misincidencias1);
+        finish();
     }
     public void IrAyuda(View view){
         Intent irAyudaRegistrado = new Intent(this,MainActivityOpcionMenuRegistrado.class);

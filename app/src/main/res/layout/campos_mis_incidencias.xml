@@ -12,6 +12,7 @@
       android:layout_marginTop="10dp"
       android:layout_marginEnd="0dp"
       android:layout_marginBottom="2dp"
+
       app:cardCornerRadius="10dp">
 
 
@@ -19,15 +20,27 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:gravity="center"
+      android:background="@drawable/bordes_cardview"
       android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/id_text_fecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="16dp"
+        android:hint="fecha">
 
+    </TextView>
 
   <TextView
       android:id="@+id/id_text_nombre_apellido"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
+      android:gravity="center"
+      android:textStyle="bold"
+      android:textSize="20dp"
       android:hint="nombre y apellidos">
 
   </TextView>
@@ -50,14 +63,7 @@
 
   </TextView>
 
-    <TextView
-        android:id="@+id/id_text_fecha"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:hint="fecha">
 
-    </TextView>
 
   <TextView
       android:id="@+id/id_text_ubicacion"
@@ -67,16 +73,6 @@
       android:hint="ubicacion">
 
   </TextView>
-
-  <TextView
-      android:id="@+id/id_text_descripcion"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="10dp"
-      android:hint="descripcion">
-
-  </TextView>
-
     <TextView
         android:id="@+id/id_text_barrio"
         android:layout_width="match_parent"
@@ -94,6 +90,17 @@
         android:hint="estado">
 
     </TextView>
+  <TextView
+      android:id="@+id/id_text_descripcion"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:gravity="center"
+      android:hint="descripcion">
+
+  </TextView>
+
+
 
 
   </LinearLayout>

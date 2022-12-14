@@ -57,7 +57,7 @@ public class MainActivityNoticia extends AppCompatActivity {
 
             switch (item.getItemId()) {
                 case R.id.phone_admin:
-                    String cellAdmin = "+57-";
+                    String cellAdmin = "+57-3103557789";
                     Intent llamada_admin = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", cellAdmin, null));
                     startActivity(llamada_admin);
                     return true;
@@ -99,6 +99,7 @@ public class MainActivityNoticia extends AppCompatActivity {
     public void IrEventos(View view) {
         Intent intentE=new Intent(this,MainActivityEvento.class);
         startActivity(intentE);
+        finish();
     }
     public void IrMiPerfil(View view){
         Intent intentE=new Intent(this,ActivityMiCuenta.class);

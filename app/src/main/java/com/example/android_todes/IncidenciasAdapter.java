@@ -4,7 +4,7 @@ package com.example.android_todes;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,7 +17,6 @@ public class IncidenciasAdapter extends RecyclerView.Adapter<IncidenciasAdapter.
 
     private ArrayList<Incidencias_model> incidencias_modelLista;
     private int resource;
-
 
     public IncidenciasAdapter(ArrayList<Incidencias_model> incidencias_modelLista, int resource) {
         this.incidencias_modelLista = incidencias_modelLista;
@@ -52,27 +51,29 @@ public class IncidenciasAdapter extends RecyclerView.Adapter<IncidenciasAdapter.
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        private EditText estado;
-        private EditText  date;
-        private EditText  descripcion;
-        private EditText  barrio;
-        private EditText  edad;
-        private EditText  hora;
-        private EditText  nombres;
-        private EditText  ubicacion;
-    //    private ImageView urlimagen;
-
+      //  private EditText IdUsuario;
+        private TextView barrio;
+        private TextView date;
+        private TextView descripcion;
+        private TextView edad;
+        private TextView estado;
+        private TextView hora;
+        private TextView nombres;
+        private TextView ubicacion;
+       // private EditText urlimagen;
 
         public ViewHolder(View view){
             super(view);
+            this.barrio =view.findViewById(R.id.id_text_barrio);
             this.date =view.findViewById(R.id.id_text_fecha);
             this.descripcion = view.findViewById(R.id.id_text_descripcion);
             this.edad =  view.findViewById(R.id.id_text_edad);
+            this.estado =view.findViewById(R.id.id_text_estado);
             this.hora = view.findViewById(R.id.id_text_hora);
             this.nombres =view.findViewById(R.id.id_text_nombre_apellido);
             this.ubicacion =view.findViewById(R.id.id_text_ubicacion);
-            this.barrio =view.findViewById(R.id.id_text_barrio);
-            this.estado =view.findViewById(R.id.id_text_estado);
+
+
          //   this.estado =view.findViewById(R.id.id_text_estado);
 
         }

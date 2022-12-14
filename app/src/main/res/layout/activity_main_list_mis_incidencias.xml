@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivityListMisIncidencias"
     android:background="@drawable/fondo2">
 
@@ -36,6 +37,97 @@
         android:layout_marginEnd="2dp"
         android:layout_marginBottom="0dp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/MenuPrincipal_Incidencias"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="50dp"
+            app:menu_fab_label="Menu"
+            fab:menu_colorNormal="@color/azulfront"
+            fab:menu_colorPressed="@color/moradofront"
+            fab:menu_labels_cornerRadius="10dp"
+            fab:menu_labels_showShadow="false"
+            fab:menu_labels_textColor="@color/white">
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnNoticiasinci"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="IrNoticiasInci"
+                android:src="@drawable/ic_news"
+                app:fab_colorNormal="@color/azulfront"
+                app:fab_colorPressed="@color/moradofront"
+                app:fab_label="Noticias"
+                tools:ignore="OnClick" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnEventosinci"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="IrEventosInci"
+                android:src="@drawable/ic__events"
+                app:fab_colorNormal="@color/azulfront"
+                app:fab_colorPressed="@color/moradofront"
+                app:fab_label="Eventos"
+                tools:ignore="OnClick" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/CrearReporteinci"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="IrCrearIncidencia"
+                android:src="@drawable/ic_newreport"
+                app:fab_colorNormal="@color/azulfront"
+                app:fab_colorPressed="@color/moradofront"
+                app:fab_label="Crear Reportes"
+                tools:ignore="OnClick" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnMiPerfilinci"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_users"
+                app:fab_colorNormal="@color/azulfront"
+                app:fab_colorPressed="@color/moradofront"
+                app:fab_label="Mi Perfil" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnAyudainci"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="IrAyuda"
+                android:src="@drawable/ic_help"
+                app:fab_colorNormal="@color/azulfront"
+                app:fab_colorPressed="@color/moradofront"
+                app:fab_label="Ayuda"
+                tools:ignore="OnClick" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnCerrarSesioninci"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="cerrarSesionIncidencia"
+                android:src="@drawable/ic_logout"
+                app:fab_colorNormal="@color/azulfront"
+                app:fab_colorPressed="@color/moradofront"
+                app:fab_label="Cerrar sesion"
+                tools:ignore="OnClick" />
+
+
+        </com.github.clans.fab.FloatingActionMenu>
+
+</LinearLayout>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_mis_incidencias"
         style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
@@ -48,6 +140,8 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="0dp"
+        android:background="@color/moradofront"
+        app:backgroundTint="@null"
         app:itemIconSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="6.0"
