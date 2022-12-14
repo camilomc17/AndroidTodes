@@ -37,6 +37,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.io.File;
 import java.io.IOException;
@@ -250,10 +251,10 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
         String hora_inci = hora.getText().toString();
         String descripcion_inci = descripcion_incidencia.getText().toString();
         String url = imagenIncidencia.toString();
-     //   String idUsuario = firebaseAuth.getUid();
+        String idUsuario = firebaseAuth.getUid();
         String estad = "no revisado";
         if(validation()) {
-            enviarIncidencia(noms_apes, years, lugar_inci, barrio_inci, fecha_inci, hora_inci, descripcion_inci,url,estad);
+            enviarIncidencia(noms_apes, years, lugar_inci, barrio_inci, fecha_inci, hora_inci, descripcion_inci,url,estad,idUsuario);
             Toast.makeText(FormActivityDenuncia.this, "FORMULARIO SE ENVIO CORRECTAMENTE", Toast.LENGTH_SHORT).show();
             vaciarRegistro();
         }else{
@@ -291,7 +292,7 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
         }
         if(barrio_inci.isEmpty())
         {
-          //  barrio_incidencia.setError("Ingrese el Barrio de la incidencia");
+            barrio_incidencia.setError("Ingrese el Barrio de la incidencia");
             retorno=false;
         }
         if(fecha_inci.isEmpty())
@@ -321,11 +322,11 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
         hora.setText("");
         descripcion_incidencia.setText("");
     }
-    private void enviarIncidencia(String noms_apes,String years, String lugar_inci,String barrio_inci, String fecha_inci, String hora_inci, String descripcion_inci,String url_galeria,String estado)
+    private void enviarIncidencia(String noms_apes,String years, String lugar_inci,String barrio_inci, String fecha_inci, String hora_inci, String descripcion_inci,String url_galeria,String estado,String idU)
     {
 
         Map<String,Object> map = new HashMap<>();
-      //  map.put("IdUsuario",idU);
+        map.put("IdUsuario",idU);
         map.put("nombres", noms_apes);
         map.put("edad", years);
         map.put("ubicacion", lugar_inci);
@@ -467,10 +468,10 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
                cargando.dismiss();
-           /*    Picasso.with(FormActivityDenuncia.this)
+               Picasso.with(FormActivityDenuncia.this)
                        .load(image_url_galeria)
                        .resize(100,200)
-                       .into(imagenIncidencia);*/
+                       .into(imagenIncidencia);
 
 
                Toast.makeText(FormActivityDenuncia.this,"LA FOTO SE SUBIO CORRECTAMENTE",Toast.LENGTH_SHORT).show();
