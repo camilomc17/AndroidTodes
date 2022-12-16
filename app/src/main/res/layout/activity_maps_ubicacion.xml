@@ -146,7 +146,7 @@
     <Button
         android:id="@+id/butIrFormulario"
         style="@style/Theme.Android_Todes"
-        android:layout_width="120dp"
+        android:layout_width="140dp"
         android:layout_height="36dp"
         android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
