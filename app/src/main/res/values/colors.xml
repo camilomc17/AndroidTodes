@@ -19,7 +19,6 @@
     <color name="azul">#BE5E7CC3</color>
     <color name="azul_fondo_card">#8086A4FC</color>
     <color name="moradofront">#891A89</color>
-
-    <color name="azulfront">#0095F6</color>
-    <color name="white_text">#E6FFFFFF</color>
+    <color name="azulfront">#00ADB5</color>
+    <color name="white_text">#E6F8F2F2</color>
 </resources>

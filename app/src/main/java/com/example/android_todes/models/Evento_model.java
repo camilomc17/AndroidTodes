@@ -1,32 +1,22 @@
 package com.example.android_todes.models;
 
 public class Evento_model {
-    /*  "imagen": "http:\/\/portalantiguo.sdmujer.gov.co\/inicio\/424-dia-de-las-rebeldias-lesbicas",
-    "id": 2,
-    "nombre_publicacion": " la rebeldia lesbica",
-    "descripcion_publicacion": "El 13 de octubre se celebra.",
-    "lugar": "parque  caldas-popayan",
-    "responsable": "Secretario de la  comunidad ",
-    "estado": "activo",
-    "tipo": "evento",
-    "ruta_archivo": "img"*/
+    /* nombre_publicacion":" la rebeldia lesbica"
+    ,"descripcion_publicacion":"El 13 de octubre se celebra.",
+    "lugar":"parque caldas-popayan",
+    "responsable":"Secretario de la comunidad ",
+    "estado":"activo",
+    "tipo":"evento",
+    "image":"https:\/\/images.pexels.com\/photos\/1167034\/pexels-photo-1167034.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "fecha_y_hora":"2022-10-13 00:00:00"*/
     private String nombre_publicacion;
     private String descripcion_publicacion;
     private String lugar;
-    private String fecha_y_hora;
     private String responsable;
     private String estado;
     private String tipo;
-    private String ruta_archivo;
-    private String imagen;
-
-    public String getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
-    }
+    private String image;
+    private String fecha_y_hora;
 
     public String getNombre_publicacion() {
         return nombre_publicacion;
@@ -50,14 +40,6 @@ public class Evento_model {
 
     public void setLugar(String lugar) {
         this.lugar = lugar;
-    }
-
-    public String getFecha_y_hora() {
-        return fecha_y_hora;
-    }
-
-    public void setFecha_y_hora(String fecha_y_hora) {
-        this.fecha_y_hora = fecha_y_hora;
     }
 
     public String getResponsable() {
@@ -84,11 +66,19 @@ public class Evento_model {
         this.tipo = tipo;
     }
 
-    public String getRuta_archivo() {
-        return ruta_archivo;
+    public String getImage() {
+        return image;
     }
 
-    public void setRuta_archivo(String ruta_archivo) {
-        this.ruta_archivo = ruta_archivo;
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getFecha_y_hora() {
+        return fecha_y_hora;
+    }
+
+    public void setFecha_y_hora(String fecha_y_hora) {
+        this.fecha_y_hora = fecha_y_hora;
     }
 }

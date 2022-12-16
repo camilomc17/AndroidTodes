@@ -77,10 +77,13 @@
                 android:layout_height="match_parent"
                 android:onClick="IrEventos_invitado"
                 android:src="@drawable/ic__events"
-                android:foreground="@color/white"
+                android:tint="#E3DADA"
+                app:buttonTint="@color/white"
                 app:fab_colorNormal="@color/azulfront"
                 app:fab_colorPressed="@color/moradofront"
-                app:fab_label="Eventos" />
+                app:fab_label="Eventos"
+                
+                app:fab_shadowColor="#F6F0F0" />
 
             <!--<com.github.clans.fab.FloatingActionButton
                 android:id="@+id/btnAyuda"
@@ -110,7 +113,6 @@
                 android:src="@drawable/ic_users"
                 android:onClick="IrInicioSesion_invitado"
                 app:fab_label="Iniciar Sesion"
-                android:foreground="@color/white"
                 app:fab_colorNormal="@color/azulfront"
                 app:fab_colorPressed="@color/moradofront"
                 />

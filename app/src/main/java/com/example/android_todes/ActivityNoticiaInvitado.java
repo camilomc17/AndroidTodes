@@ -43,6 +43,7 @@ public class ActivityNoticiaInvitado extends AppCompatActivity {
         actionMenu = (FloatingActionMenu) findViewById(R.id.MenuPrincipal);
         actionMenu.setClosedOnTouchOutside(true);
 
+
         recyclerView=findViewById(R.id.rv_noticias);
         recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),1));
 

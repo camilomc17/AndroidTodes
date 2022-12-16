@@ -69,7 +69,7 @@
                 android:onClick="Noticia_event"
                 android:src="@drawable/ic_news"
                 app:fab_label="Noticias"
-                android:foreground="@color/white"
+                fab:menu_labels_textColor="@color/white"
                 app:fab_colorNormal="@color/azulfront"
                 app:fab_colorPressed="@color/moradofront"
                 tools:ignore="OnClick" />
@@ -92,7 +92,7 @@
                 android:src="@drawable/ic_users"
                 android:onClick="inicioSesion_event"
                 app:fab_label="Iniciar Sesion"
-                android:foreground="@color/white"
+                fab:menu_labels_textColor="@color/white"
                 app:fab_colorNormal="@color/azulfront"
                 app:fab_colorPressed="@color/moradofront"
                 tools:ignore="OnClick" />

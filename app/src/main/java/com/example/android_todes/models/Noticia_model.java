@@ -1,33 +1,23 @@
 package com.example.android_todes.models;
 
 public class Noticia_model {
-    /*"imagen": "https:\/\/www.bbc.com\/mundo\/noticias-internacional-62683218",
-    "id": 1,
-    "nombre_publicacion": "Muerte de un trans peruano",
-    "descripcion_publicacion": "Rodrigo Ventocilla: la pol\u00e9mica muerte de un estudiante de Harvard trans peruano tras ser detenido por la polic\u00eda en Bali",
-    "lugar": "Indonesia",
-    "responsable": "Secretario de la  comunidad ",
-    "estado": "activo",
-    "tipo": "noticia",
-    "ruta_archivo": "img"*/
+    /*"nombre_publicacion":"Muerte de un trans peruano",
+    "descripcion_publicacion":"Rodrigo Ventocilla:
+    la pol\u00e9micno tras ser detenidoolic\u00eda en Bali",
+    "lugar":"Indonesia",
+    "responsable":"Secretario de la comunidad ",
+    "estado":"activo",
+    "tipo":"noticia",
+    "image":"https:\/\/images.pexels.com\/photos\/9587911\/pexels-photo-9587911.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    "fecha_y_hora":"2022-11-25 20:22:11"*/
     private String nombre_publicacion;
     private String descripcion_publicacion;
     private String lugar;
-    private String fecha_y_hora;
     private String responsable;
     private String estado;
     private String tipo;
-    private String ruta_archivo;
-    private String imagen;
-
-
-    public String getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
-    }
+    private String image;
+    private String fecha_y_hora;
 
     public String getNombre_publicacion() {
         return nombre_publicacion;
@@ -51,13 +41,6 @@ public class Noticia_model {
 
     public void setLugar(String lugar) {
         this.lugar = lugar;
-    }
-    public String getFecha_y_hora() {
-        return fecha_y_hora;
-    }
-
-    public void setFecha_y_hora(String fecha_y_hora) {
-        this.fecha_y_hora = fecha_y_hora;
     }
 
     public String getResponsable() {
@@ -84,11 +67,19 @@ public class Noticia_model {
         this.tipo = tipo;
     }
 
-    public String getRuta_archivo() {
-        return ruta_archivo;
+    public String getImage() {
+        return image;
     }
 
-    public void setRuta_archivo(String ruta_archivo) {
-        this.ruta_archivo = ruta_archivo;
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getFecha_y_hora() {
+        return fecha_y_hora;
+    }
+
+    public void setFecha_y_hora(String fecha_y_hora) {
+        this.fecha_y_hora = fecha_y_hora;
     }
 }
