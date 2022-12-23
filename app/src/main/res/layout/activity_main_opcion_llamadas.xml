@@ -92,44 +92,65 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView3" />
                     <!--app:srcCompat="@drawable/crearrepor"-->
+
                     <TextView
                         android:id="@+id/textView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
                         android:layout_alignParentBottom="true"
                         android:layout_marginBottom="20dp"
-                        android:text="Aquí encontraras un ."
-                        android:textAlignment="textStart"
+                        android:text="Nuestra aplicacion cuenta con un menu en el cual puedes hacer llamadas de emergencia:"
+                        android:textAlignment="center"
                         android:textColor="#000000"
                         android:textSize="16sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-                    <ImageView
-                        android:id="@+id/imageView2"
-                        android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        android:layout_below="@+id/textView3"
-                        android:layout_marginTop="0dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView3"
-                        app:srcCompat="@drawable/reportmi" />
-
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/textViewemergencia"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
                         android:layout_marginBottom="20dp"
-                        android:text="Aquí encontraras un ."
-                        android:textAlignment="textStart"
+                        android:text="Emergencia: Te cominicaras con el departamento de la policia"
+                        android:textAlignment="center"
                         android:textColor="#000000"
                         android:textSize="16sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+                    <TextView
+                        android:id="@+id/textViewAmbulancia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="20dp"
+                        android:text="Ambulancia: Para hacer una llamada en caso de que necesites de el servicio de ambulancia"
+                        android:textAlignment="center"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+                    <TextView
+                        android:id="@+id/textViewAdmin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="20dp"
+                        android:text="Administrador: Si necesitas comunicarte con la oficina de diversidad de genero de la alcaldia de nuestra ciudad"
+                        android:textAlignment="center"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+
                 </LinearLayout>
             </ScrollView>
         </LinearLayout>

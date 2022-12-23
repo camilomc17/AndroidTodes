@@ -17,6 +17,8 @@ import com.example.android_todes.apinoticias.ApiNoticia;
 import com.example.android_todes.models.Noticia_model;
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.List;
 
@@ -32,6 +34,8 @@ public class MainActivityNoticia extends AppCompatActivity {
     //esta para utilizar nuestro Adapter
     private NoticiasAdapter noticiasAdapter;
 
+    FirebaseAuth firebaseAuth;
+    FirebaseUser firebaseUser;
 
     FloatingActionMenu actionMenu;
 
@@ -45,7 +49,8 @@ public class MainActivityNoticia extends AppCompatActivity {
 
         recyclerView=findViewById(R.id.rv_noticias);
         recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),1));
-
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
         obtenerNoticias();
         BottomNavigationView navigationView = findViewById(R.id.bottom_navigation_noticia);
@@ -110,21 +115,22 @@ public class MainActivityNoticia extends AppCompatActivity {
     public void IrCrearIncidencia(View view){
         Intent intentE = new Intent(this,categoriasIncidencia.class);
         startActivity(intentE);
-        finish();
+
     }
     public void IrMisIncidencias(View view){
         Intent misincidencias1 = new Intent(this,MainActivityListMisIncidencias.class);
         startActivity(misincidencias1);
-        finish();
+
     }
     public void IrAyuda(View view){
         Intent intentE = new Intent(this,MainActivityOpcionMenuRegistrado.class);
         startActivity(intentE);
-        finish();
+
     }
     public void cerrarSesionNoticia(View view){
-        Intent intentE = new Intent(this,InicioSesion.class);
-        startActivity(intentE);
+        firebaseAuth.signOut();
+        Toast.makeText(this,"Se ha cerrado sesion",Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this,InicioSesion.class));
         finish();
     }
 

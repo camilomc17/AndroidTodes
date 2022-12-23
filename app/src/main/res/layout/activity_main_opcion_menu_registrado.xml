@@ -85,8 +85,9 @@
 
                     <ImageView
                         android:id="@+id/imageView"
+                        android:src="@drawable/logotodes"
                         android:layout_width="match_parent"
-                        android:layout_height="400dp"
+                        android:layout_height="200dp"
                         android:layout_below="@+id/textView3"
                         android:layout_marginTop="0dp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -100,9 +101,8 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
                         android:layout_marginBottom="20dp"
-                        android:text="Al momento que hayas realizado tu Inicio de Sesion.
-Encontraras estas opciones que ves en pantalla.Donde podras hacer llamadas hasta crear tu propio Reporte y mirar los Eventos e Noticias que la comunidad LGTBIQ+ tiene para ti. "
-                        android:textAlignment="textStart"
+                        android:text="BIENVENIDO!!!"
+                        android:textAlignment="center"
                         android:textColor="#000000"
                         android:textSize="16sp"
                         app:layout_constraintEnd_toEndOf="parent"

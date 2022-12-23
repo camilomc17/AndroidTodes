@@ -7,12 +7,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class categoriasIncidencia extends AppCompatActivity {
 
@@ -24,12 +27,18 @@ Button pasaMain;
     ImageView discriminacion;
     ImageView igualdad;
 
+    FirebaseAuth firebaseAuth;
+    FirebaseUser firebaseUser;
+
+
     FloatingActionMenu actionMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categorias_incidencia);
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
         abuso = findViewById(R.id.imageViewAbuso);
         genero = findViewById(R.id.imageViewGenero);
@@ -85,8 +94,9 @@ Button pasaMain;
         startActivity(irAyudaRegistrado);
     }
     public void cerrarSesion(View view){
-        Intent ir = new Intent(this,InicioSesion.class);
-        startActivity(ir);
+        firebaseAuth.signOut();
+        Toast.makeText(this,"Se ha cerrado sesion",Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this,InicioSesion.class));
         finish();
     }
     public void IrEvento(View view)

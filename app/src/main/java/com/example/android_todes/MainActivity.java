@@ -11,15 +11,32 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class MainActivity extends AppCompatActivity {
+
+    FirebaseAuth firebaseAuth;
+    FirebaseUser firebaseUser;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_main);
-        iniciarapp();
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        if(user != null){
+            startActivity(new Intent(this,MainActivityNoticia.class));
+            finish();
+        }else{
+            iniciarapp();
+        }
+
     }
     public void iniciarapp() {
         Animation animacion1, animacion2;
@@ -47,5 +64,15 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }, SPLASH_TIME);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        if(user != null){
+            startActivity(new Intent(this,MainActivityNoticia.class));
+            finish();
+        }
     }
 }

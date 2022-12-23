@@ -27,6 +27,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 
@@ -68,10 +69,12 @@ public class ActivityMiCuenta extends AppCompatActivity {
         idd = mAuth.getUid();
 
         getUser(idd);
-        linearLayoutImageBtn = findViewById(R.id.imagesbtn);
+
         photo_User = findViewById(R.id.imageViewUser);
         btnSubirfoto = findViewById(R.id.btnSubirFoto);
         btnDeletePhoto = findViewById(R.id.btnEliminar);
+        emailUser = findViewById(R.id.txtCorreoActualizar);
+        PasswordUser = findViewById(R.id.txtPasswordActualizar);
 
         btnSubirfoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -158,17 +161,22 @@ public class ActivityMiCuenta extends AppCompatActivity {
         });*/
 
 
-        Database.child("Usuarios").child(idd).addValueEventListener(new ValueEventListener() {
+        Database.child("Usuarios").child(id).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
                     String  photoUser = snapshot.child("photo").getValue().toString();
+                    String correo = snapshot.child("email").getValue().toString();
+                    String password = snapshot.child("contrasena").getValue().toString();
                     Toast toast = Toast.makeText(getApplicationContext(),"Cargando foto", Toast.LENGTH_SHORT);
                     toast.show();
-                    /*Picasso.with(ActivityMiCuenta.this)
+                    Picasso.with(ActivityMiCuenta.this)
                             .load(photoUser)
-                            .resize(150,150)
-                            .into(photo_User);*/
+                            .resize(400,400)
+                            .into(photo_User);
+                    emailUser.setText(correo);
+                    PasswordUser.setText(password);
+
                  }
                 else{
                     /*
@@ -187,5 +195,11 @@ public class ActivityMiCuenta extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void VistaPrincipal(View view) {
+        Intent i = new Intent(this,MainActivityNoticia.class);
+        startActivity(i);
+        finish();
     }
 }

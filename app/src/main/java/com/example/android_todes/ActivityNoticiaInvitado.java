@@ -10,19 +10,30 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.Request;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.android_todes.apinoticias.ApiClient;
 import com.example.android_todes.apinoticias.ApiNoticia;
 import com.example.android_todes.models.Noticia_model;
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
 
 public class ActivityNoticiaInvitado extends AppCompatActivity {
 
@@ -33,6 +44,7 @@ public class ActivityNoticiaInvitado extends AppCompatActivity {
     //esta para utilizar nuestro Adapter
     private NoticiasAdapter noticiasAdapter;
 
+    private static String url ="http://127.0.0.1:8000/api/eventos";
 
     FloatingActionMenu actionMenu;
 
@@ -45,10 +57,13 @@ public class ActivityNoticiaInvitado extends AppCompatActivity {
 
 
         recyclerView=findViewById(R.id.rv_noticias);
-        recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),1));
-
+        //recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),1));
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        noticiaModels = new ArrayList<>();
 
         obtenerNoticias();
+        //cargarNoticias();
         BottomNavigationView navigationView = findViewById(R.id.bottom_navigation_noticia);
         navigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
@@ -106,7 +121,7 @@ public class ActivityNoticiaInvitado extends AppCompatActivity {
     public void IrInicioSesion_invitado(View view){
         Intent ir = new Intent(this,InicioSesion.class);
         startActivity(ir);
-        finish();
+
     }
     /*public void IrAyuda_invitado(View view){
         Intent irAyudaInvitado = new Intent(this,MainActivityOpcionMenuInvitado.class);
@@ -117,6 +132,50 @@ public class ActivityNoticiaInvitado extends AppCompatActivity {
         Intent irAyudaInvitado = new Intent(this,ActivityEventoInvitado.class);
         startActivity(irAyudaInvitado);
         finish();
+    }
+
+    private void cargarNoticias(){
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        if(response != null){
+                            Toast.makeText(ActivityNoticiaInvitado.this,"si hay noticias",Toast.LENGTH_SHORT).show();
+                        }
+
+                        try {
+                            JSONArray array = new JSONArray(response);
+                            for (int i = 0; i < array.length(); i++)
+                            {
+                                JSONObject NoticiasJson = array.getJSONObject(i);/*
+                                noticiaModels.add( new Noticia_model(
+                                        NoticiasJson.getString("nombre_publicacion"),
+                                        NoticiasJson.getString("descripcion_publicacion"),
+                                        NoticiasJson.getString("lugar"),
+                                        NoticiasJson.getString("fecha_y_hora"),
+                                        NoticiasJson.getString("responsable"),
+                                        NoticiasJson.getString("estado"),
+                                        NoticiasJson.getString("tipo"),
+                                        NoticiasJson.getString("ruta_archivo"),
+                                        NoticiasJson.getString("imagen")
+                                        ));*/
+                            }
+                            NoticiasAdapter adapter = new NoticiasAdapter(noticiaModels, getApplicationContext());
+                            recyclerView.setAdapter(adapter);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                    Toast.makeText(ActivityNoticiaInvitado.this,"No hay noticias",Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        Volley.newRequestQueue(this).add(stringRequest);
     }
 
 

@@ -134,6 +134,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
+                    <!--
                     <ImageView
                         android:id="@+id/imageView3"
                         android:layout_width="match_parent"
@@ -143,7 +144,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView3"
-                        app:srcCompat="@drawable/formincidencia" />
+                        app:srcCompat="@drawable/formincidencia" />  -->
 
                     <TextView
                         android:id="@+id/textView4"

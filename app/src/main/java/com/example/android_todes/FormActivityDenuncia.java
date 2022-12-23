@@ -37,6 +37,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.io.File;
 import java.io.IOException;
@@ -467,10 +468,10 @@ private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDat
            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
                cargando.dismiss();
-         /*     Picasso.with(FormActivityDenuncia.this)
+               Picasso.with(FormActivityDenuncia.this)
                        .load(image_url_galeria)
                        .resize(100,200)
-                       .into(imagenIncidencia);*/
+                       .into(imagenIncidencia);
 
 
                Toast.makeText(FormActivityDenuncia.this,"LA FOTO SE SUBIO CORRECTAMENTE",Toast.LENGTH_SHORT).show();

@@ -17,6 +17,8 @@ import com.example.android_todes.apieventos.ApiEvento;
 import com.example.android_todes.models.Evento_model;
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.List;
 
@@ -33,6 +35,10 @@ public class MainActivityEvento extends AppCompatActivity {
     //esta para utilizar nuestro Adapter
     private EventosAdapter eventosAdapter;
 
+    FirebaseAuth firebaseAuth;
+    FirebaseUser firebaseUser;
+
+
 
     FloatingActionMenu actionMenu;
 
@@ -48,6 +54,9 @@ public class MainActivityEvento extends AppCompatActivity {
 
         recyclerView=findViewById(R.id.rv_eventos);
         recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),1));
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
 
         obtenerEventos();
@@ -108,12 +117,12 @@ public class MainActivityEvento extends AppCompatActivity {
     public void IrCrearIncidencia(View view){
         Intent intentirIncidencia=new Intent(this,categoriasIncidencia.class);
         startActivity(intentirIncidencia);
-        finish();
+
     }
     public void IrMisIncidencias(View view){
         Intent misincidencias2 = new Intent(this,MainActivityListMisIncidencias.class);
         startActivity(misincidencias2);
-        finish();
+
     }
 
     public void IrMiPerfil(View view){
@@ -124,11 +133,12 @@ public class MainActivityEvento extends AppCompatActivity {
     public void IrAyuda(View view){
         Intent intentE = new Intent(this,MainActivityOpcionMenuRegistrado.class);
         startActivity(intentE);
-        finish();
+
     }
     public void CerrarSesion(View view){
-        Intent intentE = new Intent(this,InicioSesion.class);
-        startActivity(intentE);
+        firebaseAuth.signOut();
+        Toast.makeText(this,"Se ha cerrado sesion",Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this,InicioSesion.class));
         finish();
     }
 

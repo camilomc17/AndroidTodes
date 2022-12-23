@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class InicioSesion extends AppCompatActivity {
     EditText etCorreo, etPassword;
@@ -76,5 +77,15 @@ public class InicioSesion extends AppCompatActivity {
         Intent y = new Intent(this,ActualizarContrasena.class);
         startActivity(y);
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = Auth.getCurrentUser();
+        if(user != null){
+            startActivity(new Intent(this,MainActivityNoticia.class));
+            finish();
+        }
     }
 }
